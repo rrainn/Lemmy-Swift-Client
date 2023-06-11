@@ -1,0 +1,33 @@
+name: Generate Documentation Website
+on:
+  release:
+    types: [published]
+  workflow_dispatch:
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+jobs:
+  build:
+    runs-on: macos-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v1
+      - name: Build DocC Files
+        uses: fwcd/swift-docc-action@v1
+        with:
+          target: "Lemmy-Swift-Client"
+          output: "./docs"
+          transform-for-static-hosting: true
+      - name: Upload GitHub Pages
+        uses: actions/upload-pages-artifact@v1
+        with:
+          path: "./docs"
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy
+        uses: actions/deploy-pages@v1
