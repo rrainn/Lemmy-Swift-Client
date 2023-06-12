@@ -33,7 +33,6 @@ public struct GetPostsRequest: APIRequest {
 		self.sort = sort
 		self.type_ = type_
 	}
-
 }
 public struct GetPostsResponse: APIResponse {
 	public let posts: [PostView]
