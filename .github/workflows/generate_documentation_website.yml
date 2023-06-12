@@ -21,6 +21,7 @@ jobs:
           target: "Lemmy-Swift-Client"
           output: "./docs"
           transform-for-static-hosting: true
+          hosting-base-path: Lemmy-Swift-Client
       - name: Upload GitHub Pages
         uses: actions/upload-pages-artifact@v1
         with:
