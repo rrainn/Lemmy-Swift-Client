@@ -1,4 +1,4 @@
-// swift-tools-version: 5.7.1
+// swift-tools-version: 5.7
 // The swift-tools-version declares the minimum version of Swift required to build this package.
 
 import PackageDescription
@@ -17,6 +17,9 @@ let package = Package(
 		.library(
 			name: "Lemmy-Swift-Client",
 			targets: ["Lemmy-Swift-Client"]),
+	],
+	dependencies: [
+		.package(url: "https://github.com/apple/swift-docc-plugin.git", from: "1.1.0")
 	],
 	targets: [
 		// Targets are the basic building blocks of a package, defining a module or a test suite.
