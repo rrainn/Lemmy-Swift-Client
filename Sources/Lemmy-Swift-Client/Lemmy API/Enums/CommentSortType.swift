@@ -16,8 +16,8 @@ public enum CommentSortType: String, Codable, CustomStringConvertible {
 	case old = "Old"
 	/// Comments sorted by top score.
 	case top = "Top"
-    
-    public var description: String {
-        return self.rawValue
-    }
+
+	public var description: String {
+		return self.rawValue
+	}
 }

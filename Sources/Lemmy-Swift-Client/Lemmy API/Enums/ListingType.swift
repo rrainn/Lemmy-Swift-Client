@@ -12,8 +12,8 @@ public enum ListingType: String, Codable, CustomStringConvertible {
 	case community = "Community"
 	case local = "Local"
 	case subscribed = "Subscribed"
-    
-    public var description: String {
-        return self.rawValue
-    }
+
+	public var description: String {
+		return self.rawValue
+	}
 }

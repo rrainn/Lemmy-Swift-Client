@@ -24,8 +24,8 @@ public enum ModlogActionType: String, Codable, CustomStringConvertible {
 	case modRemoveComunity = "ModRemoveCommunity"
 	case modRemovePost = "ModRemovePost"
 	case modTransferCommunity = "ModTransferCommunity"
-    
-    public var description: String {
-        return self.rawValue
-    }
+
+	public var description: String {
+		return self.rawValue
+	}
 }

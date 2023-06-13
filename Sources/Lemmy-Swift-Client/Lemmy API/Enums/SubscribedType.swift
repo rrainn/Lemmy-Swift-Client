@@ -11,8 +11,8 @@ public enum SubscribedType: String, Codable, CustomStringConvertible {
 	case notSubscribed = "NotSubscribed"
 	case pending = "Pending"
 	case subscribed = "Subscribed"
-    
-    public var description: String {
-        return self.rawValue
-    }
+
+	public var description: String {
+		return self.rawValue
+	}
 }

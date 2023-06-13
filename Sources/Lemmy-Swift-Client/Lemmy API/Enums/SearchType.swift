@@ -14,8 +14,8 @@ public enum SearchType: String, Codable, CustomStringConvertible {
 	case posts = "Posts"
 	case url = "Url"
 	case users = "Users"
-    
-    public var description: String {
-        return self.rawValue
-    }
+
+	public var description: String {
+		return self.rawValue
+	}
 }

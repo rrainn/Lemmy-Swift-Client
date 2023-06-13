@@ -31,8 +31,8 @@ public enum SortType: String, Codable, CustomStringConvertible {
 	case topWeek = "TopWeek"
 	/// The top posts for this last year.
 	case topYear = "TopYear"
-    
-    public var description: String {
-        return self.rawValue
-    }
+
+	public var description: String {
+		return self.rawValue
+	}
 }
