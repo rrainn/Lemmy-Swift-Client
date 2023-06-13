@@ -13,9 +13,9 @@ public struct GetSiteRequest: APIRequest {
 	public static let httpMethod: HTTPMethod = .get
 	public static let path: String = "/site"
 
-	public let auth: String
+	public let auth: String?
 
-	public init(auth: String) {
+	public init(auth: String? = nil) {
 		self.auth = auth
 	}
 }
