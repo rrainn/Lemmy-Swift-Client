@@ -8,7 +8,7 @@
 import Foundation
 
 /// Different post sort types used in lemmy.
-public enum SortType: String, Codable {
+public enum SortType: String, Codable, CustomStringConvertible {
 	/// Posts sorted by hot, but bumped by new comments up to 2 days.
 	case active = "Active"
 	/// Posts sorted by a decaying rank.
@@ -31,4 +31,8 @@ public enum SortType: String, Codable {
 	case topWeek = "TopWeek"
 	/// The top posts for this last year.
 	case topYear = "TopYear"
+    
+    public var description: String {
+        return self.rawValue
+    }
 }
