@@ -17,9 +17,9 @@ public class LemmyAPI {
 		if T.httpMethod == .get {
 			let mirror = Mirror(reflecting: apiRequest)
 			request.url = request.url?.appending(queryItems: mirror.children.compactMap { (label, value) in
-				guard let label, let valueString = value as? String else { return nil }
+				guard let label, let valueString = value as? CustomStringConvertible else { return nil }
 
-				return URLQueryItem(name: label, value: valueString)
+				return URLQueryItem(name: label, value: String(describing: valueString))
 			})
 		} else {
 			request.httpBody = try encoder.encode(apiRequest)

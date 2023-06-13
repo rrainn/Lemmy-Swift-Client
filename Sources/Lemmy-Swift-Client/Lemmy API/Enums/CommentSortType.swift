@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum CommentSortType: String, Codable {
+public enum CommentSortType: String, Codable, CustomStringConvertible {
 	/// Comments sorted by a decaying rank.
 	case hot = "Hot"
 	/// Comments sorted by new.
@@ -16,4 +16,8 @@ public enum CommentSortType: String, Codable {
 	case old = "Old"
 	/// Comments sorted by top score.
 	case top = "Top"
+
+	public var description: String {
+		return self.rawValue
+	}
 }
