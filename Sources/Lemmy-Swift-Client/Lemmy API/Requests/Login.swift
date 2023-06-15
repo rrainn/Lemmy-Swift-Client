@@ -22,7 +22,9 @@ public struct LoginRequest: APIRequest {
 	}
 }
 public struct LoginResponse: APIResponse {
-	public let jwt: String
+    /// This is None in response to Register if email verification is enabled, or the server requires registration applications.
+    /// Or simply if the login is wrong
+	public let jwt: String?
 	public let registration_created: Bool
 	public let verify_email_sent: Bool
 }
