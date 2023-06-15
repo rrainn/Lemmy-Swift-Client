@@ -23,7 +23,7 @@ public struct LocalSite: Codable {
 	public let federation_worker_count: Int
 	public let hide_modlog_mod_names: Bool
 	public let id: Int
-	public let legal_information: String
+	public let legal_information: String?
 	public let private_instance: Bool
 	public let published: String
 	public let registration_mode: RegistrationMode
