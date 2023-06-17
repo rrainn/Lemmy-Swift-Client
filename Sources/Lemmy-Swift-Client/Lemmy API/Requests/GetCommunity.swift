@@ -26,7 +26,7 @@ public struct GetCommunityRequest: APIRequest {
 public struct GetCommunityResponse: APIResponse {
 	public let community_view: CommunityView
 	public let default_post_language: Int?
-	public let discussion_languaages: [Int]
+	public let discussion_languages: [Int]
 	public let moderators: [CommunityModeratorView]
 	public let online: Int
 	public let site: Site?
