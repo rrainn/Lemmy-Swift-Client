@@ -31,4 +31,8 @@ public struct ListPostReportsRequest: APIRequest {
 }
 public struct ListPostReportsResponse: APIResponse {
 	public let post_reports: [PostReportView]
+
+	public init(post_reports: [PostReportView]) {
+		self.post_reports = post_reports
+	}
 }

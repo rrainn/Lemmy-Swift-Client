@@ -14,4 +14,13 @@ public struct ModFeaturePost: Codable {
 	public let mod_person_id: Int
 	public let post_id: Int
 	public let when_: String
+
+	public init(featured: Bool, id: Int, is_featured_community: Bool, mod_person_id: Int, post_id: Int, when_: String) {
+		self.featured = featured
+		self.id = id
+		self.is_featured_community = is_featured_community
+		self.mod_person_id = mod_person_id
+		self.post_id = post_id
+		self.when_ = when_
+	}
 }

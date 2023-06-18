@@ -27,4 +27,8 @@ public struct AddModToCommunityRequest: APIRequest {
 }
 public struct AddModToCommunityResponse: APIResponse {
 	public let moderators: [CommunityModeratorView]
+
+	public init(moderators: [CommunityModeratorView]) {
+		self.moderators = moderators
+	}
 }

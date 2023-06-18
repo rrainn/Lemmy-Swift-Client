@@ -20,4 +20,5 @@ public struct PasswordResetRequest: APIRequest {
 	}
 }
 public struct PasswordResetResponse: APIResponse {
+	public init() {}
 }

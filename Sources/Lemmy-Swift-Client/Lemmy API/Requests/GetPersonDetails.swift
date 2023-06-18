@@ -39,4 +39,11 @@ public struct GetPersonDetailsResponse: APIResponse {
 	public let moderates: [CommunityModeratorView]
 	public let person_view: PersonViewSafe
 	public let posts: [PostView]
+
+	public init(comments: [CommentView], moderates: [CommunityModeratorView], person_view: PersonViewSafe, posts: [PostView]) {
+		self.comments = comments
+		self.moderates = moderates
+		self.person_view = person_view
+		self.posts = posts
+	}
 }

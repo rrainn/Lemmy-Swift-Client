@@ -27,4 +27,8 @@ public struct ListPrivateMessageReportsRequest: APIRequest {
 }
 public struct ListPrivateMessageReportsResponse: APIResponse {
 	public let private_message_reports: [PrivateMessageReportView]
+
+	public init(private_message_reports: [PrivateMessageReportView]) {
+		self.private_message_reports = private_message_reports
+	}
 }

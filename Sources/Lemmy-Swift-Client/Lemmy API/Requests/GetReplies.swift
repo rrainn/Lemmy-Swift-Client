@@ -21,4 +21,8 @@ public struct GetRepliesRequest: APIRequest {
 }
 public struct GetRepliesResponse: APIResponse {
 	public let replies: [CommentReplyView]
+
+	public init(replies: [CommentReplyView]) {
+		self.replies = replies
+	}
 }

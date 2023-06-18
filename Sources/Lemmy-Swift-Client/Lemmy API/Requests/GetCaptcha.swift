@@ -18,4 +18,8 @@ public struct GetCaptchaRequest: APIRequest {
 public struct GetCaptchaResponse: APIResponse {
 	/// Will be nil if captchas are disabled.
 	public let ok: CaptchaResponse?
+
+	public init(ok: CaptchaResponse? = nil) {
+		self.ok = ok
+	}
 }

@@ -20,4 +20,5 @@ public struct VerifyEmailRequest: APIRequest {
 	}
 }
 public struct VerifyEmailResponse: APIResponse {
+	public init() {}
 }

@@ -21,4 +21,8 @@ public struct GetSiteMetadataRequest: APIRequest {
 }
 public struct GetSiteMetadataResponse: APIResponse {
 	public let metadata: SiteMetadata
+
+	public init(metadata: SiteMetadata) {
+		self.metadata = metadata
+	}
 }

@@ -25,4 +25,8 @@ public struct CreatePostReportRequest: APIRequest {
 }
 public struct PostReportResponse: APIResponse {
 	public let post_report_view: PostReportView
+
+	public init(post_report_view: PostReportView) {
+		self.post_report_view = post_report_view
+	}
 }

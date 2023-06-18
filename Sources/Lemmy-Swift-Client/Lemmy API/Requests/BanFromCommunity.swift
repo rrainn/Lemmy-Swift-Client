@@ -36,4 +36,9 @@ public struct BanFromCommunityRequest: APIRequest {
 public struct BanFromCommunityResponse: APIResponse {
 	public let banned: Bool
 	public let person_view: PersonViewSafe
+
+	public init(banned: Bool, person_view: PersonViewSafe) {
+		self.banned = banned
+		self.person_view = person_view
+	}
 }

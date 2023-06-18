@@ -22,4 +22,5 @@ public struct DeleteAccountRequest: APIRequest {
 	}
 }
 public struct DeleteAccountResponse: APIResponse {
+	public init() {}
 }

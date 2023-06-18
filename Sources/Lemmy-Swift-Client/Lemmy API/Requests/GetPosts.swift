@@ -41,4 +41,8 @@ public struct GetPostsRequest: APIRequest {
 }
 public struct GetPostsResponse: APIResponse {
 	public let posts: [PostView]
+
+	public init(posts: [PostView]) {
+		self.posts = posts
+	}
 }

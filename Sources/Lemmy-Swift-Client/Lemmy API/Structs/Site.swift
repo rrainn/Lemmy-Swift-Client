@@ -22,4 +22,21 @@ public struct Site: Codable {
 	public let published: String
 	public let sidebar: String?
 	public let updated: String?
+
+	public init(actor_id: String, banner: String? = nil, description: String? = nil, icon: String? = nil, id: Int, inbox_url: String, instance_id: Int, last_refreshed_at: String, name: String, private_key: String? = nil, public_key: String, published: String, sidebar: String? = nil, updated: String? = nil) {
+		self.actor_id = actor_id
+		self.banner = banner
+		self.description = description
+		self.icon = icon
+		self.id = id
+		self.inbox_url = inbox_url
+		self.instance_id = instance_id
+		self.last_refreshed_at = last_refreshed_at
+		self.name = name
+		self.private_key = private_key
+		self.public_key = public_key
+		self.published = published
+		self.sidebar = sidebar
+		self.updated = updated
+	}
 }

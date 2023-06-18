@@ -103,4 +103,8 @@ public struct CreateSiteRequest: APIRequest {
 }
 public struct SiteResponse: APIResponse {
 	public let site_view: SiteView
+
+	public init(site_view: SiteView) {
+		self.site_view = site_view
+	}
 }
