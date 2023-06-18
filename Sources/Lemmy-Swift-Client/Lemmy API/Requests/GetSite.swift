@@ -23,11 +23,11 @@ public struct GetSiteResponse: APIResponse {
 	public let admins: [PersonViewSafe]
 	public let all_languages: [Language]
 	public let discussion_languages: [Int]
-	public let federated_instances: FederatedInstances
-	public let my_user: MyUserInfo
+	public let federated_instances: FederatedInstances?
+	public let my_user: MyUserInfo?
 	public let online: Int
 	public let site_view: SiteView
-	public let taglines: [Tagline]
+	public let taglines: [Tagline]?
 	public let version: String
 
 	public init(admins: [PersonViewSafe], all_languages: [Language], discussion_languages: [Int], federated_instances: FederatedInstances? = nil, my_user: MyUserInfo? = nil, online: Int, site_view: SiteView, taglines: [Tagline]? = nil, version: String) {
