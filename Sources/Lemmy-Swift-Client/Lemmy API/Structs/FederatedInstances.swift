@@ -8,7 +8,7 @@
 import Foundation
 
 public struct FederatedInstances: Codable {
-	public let allowed: [String]
-	public let blocked: [String]
+	public let allowed: [String]?
+	public let blocked: [String]?
 	public let linked: [String]
 }
