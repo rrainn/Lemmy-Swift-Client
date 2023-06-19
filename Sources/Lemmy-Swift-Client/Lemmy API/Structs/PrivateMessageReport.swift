@@ -17,4 +17,16 @@ public struct PrivateMessageReport: Codable {
 	public let resolved: Bool
 	public let resolver_id: Int?
 	public let updated: String?
+
+	public init(creator_id: Int, id: Int, original_pm_text: String, private_message_id: Int, published: String, reason: String, resolved: Bool, resolver_id: Int? = nil, updated: String? = nil) {
+		self.creator_id = creator_id
+		self.id = id
+		self.original_pm_text = original_pm_text
+		self.private_message_id = private_message_id
+		self.published = published
+		self.reason = reason
+		self.resolved = resolved
+		self.resolver_id = resolver_id
+		self.updated = updated
+	}
 }

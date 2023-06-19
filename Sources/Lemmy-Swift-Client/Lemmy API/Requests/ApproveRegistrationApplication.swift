@@ -20,4 +20,8 @@ public struct ApproveRegistrationApplicationRequest: APIRequest {
 }
 public struct RegistrationApplicationResponse: APIResponse {
 	public let registration_application: RegistrationApplicationView
+
+	public init(registration_application: RegistrationApplicationView) {
+		self.registration_application = registration_application
+	}
 }

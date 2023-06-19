@@ -28,4 +28,12 @@ public struct GetPostResponse: APIResponse {
 	public let moderators: [CommunityModeratorView]
 	public let online: Int
 	public let post_view: PostView
+
+	public init(community_view: CommunityView, moderators: [CommunityModeratorView], online: Int, post_view: PostView) {
+		self.community_view = community_view
+		self.moderators = moderators
+		self.online = online
+		self.post_view = post_view
+	}
+
 }

@@ -21,4 +21,8 @@ public struct GetUnreadRegistrationApplicationCountRequest: APIRequest {
 }
 public struct GetUnreadRegistrationApplicationCountResponse: APIResponse {
 	public let registration_applications: Int
+
+	public init(registration_applications: Int) {
+		self.registration_applications = registration_applications
+	}
 }

@@ -25,4 +25,8 @@ public struct AddAdminRequest: APIRequest {
 }
 public struct AddAdminResponse: APIResponse {
 	public let admins: [PersonViewSafe]
+
+	public init(admins: [PersonViewSafe]) {
+		self.admins = admins
+	}
 }

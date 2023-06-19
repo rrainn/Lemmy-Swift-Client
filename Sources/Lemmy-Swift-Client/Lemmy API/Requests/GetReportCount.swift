@@ -27,4 +27,11 @@ public struct GetReportCountResponse: APIResponse {
 	public let community_id: Int?
 	public let post_reports: Int
 	public let private_message_reports: Int?
+
+	public init(comment_reports: Int, community_id: Int? = nil, post_reports: Int, private_message_reports: Int? = nil) {
+		self.comment_reports = comment_reports
+		self.community_id = community_id
+		self.post_reports = post_reports
+		self.private_message_reports = private_message_reports
+	}
 }

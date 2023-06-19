@@ -38,4 +38,9 @@ public struct CreateCommunityRequest: APIRequest {
 public struct CommunityResponse: APIResponse {
 	public let community_view: CommunityView
 	public let discussion_languages: [Int]
+
+	public init(community_view: CommunityView, discussion_languages: [Int]) {
+		self.community_view = community_view
+		self.discussion_languages = discussion_languages
+	}
 }

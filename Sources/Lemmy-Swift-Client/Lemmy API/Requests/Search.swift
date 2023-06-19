@@ -43,4 +43,12 @@ public struct SearchResponse: APIResponse {
 	public let posts: [PostView]
 	public let type_: String
 	public let users: [PersonViewSafe]
+
+	public init(comments: [CommentView], communities: [CommunityView], posts: [PostView], type_: String, users: [PersonViewSafe]) {
+		self.comments = comments
+		self.communities = communities
+		self.posts = posts
+		self.type_ = type_
+		self.users = users
+	}
 }

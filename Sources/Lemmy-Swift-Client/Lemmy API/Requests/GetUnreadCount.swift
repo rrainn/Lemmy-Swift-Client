@@ -23,4 +23,10 @@ public struct GetUnreadCountResponse: APIResponse {
 	public let mentions: Int
 	public let private_messages: Int
 	public let replies: Int
+
+	public init(mentions: Int, private_messages: Int, replies: Int) {
+		self.mentions = mentions
+		self.private_messages = private_messages
+		self.replies = replies
+	}
 }

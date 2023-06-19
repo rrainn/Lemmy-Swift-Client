@@ -25,4 +25,8 @@ public struct PurgeCommentRequest: APIRequest {
 }
 public struct PurgeItemResponse: APIResponse {
 	public let success: Bool
+
+	public init(success: Bool) {
+		self.success = success
+	}
 }

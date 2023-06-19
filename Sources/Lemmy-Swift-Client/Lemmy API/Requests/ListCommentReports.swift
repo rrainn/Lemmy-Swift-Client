@@ -31,4 +31,8 @@ public struct ListCommentReportsRequest: APIRequest {
 }
 public struct ListCommentReportsResponse: APIResponse {
 	public let comment_reports: [CommentReportView]
+
+	public init(comment_reports: [CommentReportView]) {
+		self.comment_reports = comment_reports
+	}
 }

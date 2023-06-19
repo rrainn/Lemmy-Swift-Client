@@ -41,4 +41,8 @@ public struct GetCommentsRequest: APIRequest {
 }
 public struct GetCommentsResponse: APIResponse {
 	public let comments: [CommentView]
+
+	public init(comments: [CommentView]) {
+		self.comments = comments
+	}
 }

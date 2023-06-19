@@ -21,4 +21,8 @@ public struct GetBannedPersonsRequest: APIRequest {
 }
 public struct BannedPersonsResponse: APIResponse {
 	public let banned: [PersonViewSafe]
+
+	public init(banned: [PersonViewSafe]) {
+		self.banned = banned
+	}
 }

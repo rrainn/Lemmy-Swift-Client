@@ -28,4 +28,8 @@ public struct ListRegistrationApplicationsRequest: APIRequest {
 }
 public struct ListRegistrationApplicationsResponse: APIResponse {
 	public let registration_applications: [RegistrationApplicationView]
+
+	public init(registration_applications: [RegistrationApplicationView]) {
+		self.registration_applications = registration_applications
+	}
 }

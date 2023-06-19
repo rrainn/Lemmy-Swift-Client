@@ -25,4 +25,8 @@ public struct CreatePrivateMessageRequest: APIRequest {
 }
 public struct PrivateMessageResponse: APIResponse {
 	public let private_message_view: PrivateMessageView
+
+	public init(private_message_view: PrivateMessageView) {
+		self.private_message_view = private_message_view
+	}
 }

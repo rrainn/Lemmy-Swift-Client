@@ -29,5 +29,9 @@ public struct GetPersonMentionsRequest: APIRequest {
 }
 public struct GetPersonMentionsResponse: APIResponse {
 	public let mentions: [PersonMentionView]
+
+	public init(mentions: [PersonMentionView]) {
+		self.mentions = mentions
+	}
 }
 

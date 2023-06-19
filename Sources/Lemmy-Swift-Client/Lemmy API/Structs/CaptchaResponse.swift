@@ -14,4 +14,10 @@ public struct CaptchaResponse: Codable {
 	public let uuid: String
 	/// A Base64 encoded wav file.
 	public let wav: String?
+
+	public init(png: String, uuid: String, wav: String? = nil) {
+		self.png = png
+		self.uuid = uuid
+		self.wav = wav
+	}
 }

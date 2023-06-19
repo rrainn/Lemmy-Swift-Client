@@ -26,4 +26,11 @@ public struct ResolveObjectResponse: APIResponse {
 	public let community: CommunityView?
 	public let person: PersonViewSafe?
 	public let post: PostView?
+
+	public init(comment: CommentView? = nil, community: CommunityView? = nil, person: PersonViewSafe? = nil, post: PostView? = nil) {
+		self.comment = comment
+		self.community = community
+		self.person = person
+		self.post = post
+	}
 }

@@ -26,4 +26,9 @@ public struct BlockPersonRequest: APIRequest {
 public struct BlockPersonResponse: APIResponse {
 	public let blocked: Bool
 	public let person_view: PersonViewSafe
+
+	public init(blocked: Bool, person_view: PersonViewSafe) {
+		self.blocked = blocked
+		self.person_view = person_view
+	}
 }
