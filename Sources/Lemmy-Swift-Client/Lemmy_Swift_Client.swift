@@ -1,15 +1,15 @@
 import Foundation
 
 public enum LemmyAPIError: Error, CustomStringConvertible, LocalizedError {
-    case badResponse(response: URLResponse, data: Data)
-    case invalidResponse(response: HTTPURLResponse, data: Data)
+    case badResponse(response: URLResponse, request: URLRequest, data: Data)
+    case invalidResponse(response: HTTPURLResponse, request: URLRequest, data: Data)
     case decodeError(_ error: Error, data: Data, request: URLRequest)
     
     public var description: String {
         switch self {
-        case .badResponse(response: _, data: _):
+        case .badResponse(response: _, request: _, data: _):
             return "Bad response from server"
-        case .invalidResponse(response: let response, data: _):
+        case .invalidResponse(response: let response, request: _, data: _):
             return "Invalid response from server, status code \(response.statusCode)"
         case .decodeError(let error, data: _, request: _):
             return "Decode error, \(error.localizedDescription) (\(error))"
@@ -29,11 +29,16 @@ public class LemmyAPI {
 		self.headers = headers
 	}
     
+    static let isoDateFormatter: ISO8601DateFormatter = {
+        let formatter = ISO8601DateFormatter()
+        formatter.formatOptions = [.withFullDate, .withTime, .withColonSeparatorInTime, .withDashSeparatorInDate, .withFractionalSeconds]
+        return formatter
+    }()
+    
     static let dateDecodingStrategy: JSONDecoder.DateDecodingStrategy = .custom { decoder in
         let container = try decoder.singleValueContainer()
         let dateString = try container.decode(String.self)
-        let formatter = ISO8601DateFormatter()
-        formatter.formatOptions = [.withFullDate, .withTime, .withColonSeparatorInTime, .withDashSeparatorInDate, .withFractionalSeconds]
+        let formatter = isoDateFormatter
         if let date = formatter.date(from: dateString) { return date }
         formatter.formatOptions.remove(.withFractionalSeconds)
         if let date = formatter.date(from: dateString) { return date }
@@ -50,8 +55,8 @@ public class LemmyAPI {
 				guard let label else { return nil }
                 
                 if let date = value as? Date {
-                    let dateFormatter = ISO8601DateFormatter()
-                    return URLQueryItem(name: label, value: dateFormatter.string(from: date))
+                    let formatter = LemmyAPI.isoDateFormatter
+                    return URLQueryItem(name: label, value: formatter.string(from: date))
                 }
                 
                 if let valueString = value as? CustomStringConvertible {
@@ -65,7 +70,7 @@ public class LemmyAPI {
 		}
 		request.setValue("application/json", forHTTPHeaderField: "Content-Type")
 		let (data, response) = try await URLSession.shared.data(for: request)
-        if let urlResponse = response as? HTTPURLResponse, urlResponse.statusCode != 200 { throw LemmyAPIError.badResponse(response: urlResponse, data: data) }
+        if let urlResponse = response as? HTTPURLResponse, urlResponse.statusCode != 200 { throw LemmyAPIError.badResponse(response: urlResponse, request: request, data: data) }
         
 		let decoder = JSONDecoder()
         decoder.dateDecodingStrategy = LemmyAPI.dateDecodingStrategy
