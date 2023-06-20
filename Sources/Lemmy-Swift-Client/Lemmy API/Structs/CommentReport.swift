@@ -12,13 +12,13 @@ public struct CommentReport: Codable {
 	public let creator_id: Int
 	public let id: Int
 	public let original_comment_text: String
-	public let published: String
+	public let published: Date
 	public let reason: String
 	public let resolved: Bool
 	public let resolver_id: Int?
-	public let updated: String?
+	public let updated: Date?
 
-	public init(comment_id: Int, creator_id: Int, id: Int, original_comment_text: String, published: String, reason: String, resolved: Bool, resolver_id: Int? = nil, updated: String? = nil) {
+	public init(comment_id: Int, creator_id: Int, id: Int, original_comment_text: String, published: Date, reason: String, resolved: Bool, resolver_id: Int? = nil, updated: Date? = nil) {
 		self.comment_id = comment_id
 		self.creator_id = creator_id
 		self.id = id

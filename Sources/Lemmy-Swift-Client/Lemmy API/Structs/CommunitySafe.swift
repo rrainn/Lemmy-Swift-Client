@@ -20,12 +20,12 @@ public struct CommunitySafe: Codable {
 	public let name: String
 	public let nsfw: Bool
 	public let posting_restricted_to_mods: Bool
-	public let published: String
+	public let published: Date
 	public let removed: Bool
 	public let title: String
-	public let updated: String?
+	public let updated: Date?
 
-	public init(actor_id: String, banner: String? = nil, deleted: Bool, description: String? = nil, hidden: Bool, icon: String? = nil, id: Int, instance_id: Int, local: Bool, name: String, nsfw: Bool, posting_restricted_to_mods: Bool, published: String, removed: Bool, title: String, updated: String? = nil) {
+	public init(actor_id: String, banner: String? = nil, deleted: Bool, description: String? = nil, hidden: Bool, icon: String? = nil, id: Int, instance_id: Int, local: Bool, name: String, nsfw: Bool, posting_restricted_to_mods: Bool, published: Date, removed: Bool, title: String, updated: Date? = nil) {
 		self.actor_id = actor_id
 		self.banner = banner
 		self.deleted = deleted

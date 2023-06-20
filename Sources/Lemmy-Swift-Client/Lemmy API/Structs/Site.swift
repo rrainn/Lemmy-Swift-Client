@@ -19,11 +19,11 @@ public struct Site: Codable {
 	public let name: String
 	public let private_key: String?
 	public let public_key: String
-	public let published: String
+	public let published: Date
 	public let sidebar: String?
-	public let updated: String?
+	public let updated: Date?
 
-	public init(actor_id: String, banner: String? = nil, description: String? = nil, icon: String? = nil, id: Int, inbox_url: String, instance_id: Int, last_refreshed_at: String, name: String, private_key: String? = nil, public_key: String, published: String, sidebar: String? = nil, updated: String? = nil) {
+	public init(actor_id: String, banner: String? = nil, description: String? = nil, icon: String? = nil, id: Int, inbox_url: String, instance_id: Int, last_refreshed_at: String, name: String, private_key: String? = nil, public_key: String, published: Date, sidebar: String? = nil, updated: Date? = nil) {
 		self.actor_id = actor_id
 		self.banner = banner
 		self.description = description

@@ -18,14 +18,14 @@ public struct LocalSiteRateLimit: Codable {
 	public let message_per_second: Int
 	public let post: Int
 	public let post_per_second: Int
-	public let published: String
+	public let published: Date
 	public let register: Int
 	public let register_per_second: Int
 	public let search: Int
 	public let search_per_second: Int
-	public let updated: String?
+	public let updated: Date?
 
-	public init(comment: Int, comment_per_second: Int, id: Int, image: Int, image_per_second: Int, local_site_id: Int, message: Int, message_per_second: Int, post: Int, post_per_second: Int, published: String, register: Int, register_per_second: Int, search: Int, search_per_second: Int, updated: String? = nil) {
+	public init(comment: Int, comment_per_second: Int, id: Int, image: Int, image_per_second: Int, local_site_id: Int, message: Int, message_per_second: Int, post: Int, post_per_second: Int, published: Date, register: Int, register_per_second: Int, search: Int, search_per_second: Int, updated: Date? = nil) {
 		self.comment = comment
 		self.comment_per_second = comment_per_second
 		self.id = id

@@ -25,16 +25,16 @@ public struct LocalSite: Codable {
 	public let id: Int
 	public let legal_information: String?
 	public let private_instance: Bool
-	public let published: String
+	public let published: Date
 	public let registration_mode: RegistrationMode
 	public let reports_email_admins: Bool
 	public let require_email_verification: Bool
 	public let site_id: Int
 	public let site_setup: Bool
 	public let slur_filter_regex: String?
-	public let updated: String?
+	public let updated: Date?
 
-	public init(actor_name_max_length: Int, application_email_admins: Bool, application_question: String? = nil, captcha_difficulty: String, captcha_enabled: Bool, community_creation_admin_only: Bool, default_post_listing_type: String, default_theme: String, enable_downvotes: Bool, enable_nsfw: Bool, federation_debug: Bool, federation_enabled: Bool, federation_worker_count: Int, hide_modlog_mod_names: Bool, id: Int, legal_information: String? = nil, private_instance: Bool, published: String, registration_mode: RegistrationMode, reports_email_admins: Bool, require_email_verification: Bool, site_id: Int, site_setup: Bool, slur_filter_regex: String? = nil, updated: String? = nil) {
+	public init(actor_name_max_length: Int, application_email_admins: Bool, application_question: String? = nil, captcha_difficulty: String, captcha_enabled: Bool, community_creation_admin_only: Bool, default_post_listing_type: String, default_theme: String, enable_downvotes: Bool, enable_nsfw: Bool, federation_debug: Bool, federation_enabled: Bool, federation_worker_count: Int, hide_modlog_mod_names: Bool, id: Int, legal_information: String? = nil, private_instance: Bool, published: Date, registration_mode: RegistrationMode, reports_email_admins: Bool, require_email_verification: Bool, site_id: Int, site_setup: Bool, slur_filter_regex: String? = nil, updated: Date? = nil) {
 		self.actor_name_max_length = actor_name_max_length
 		self.application_email_admins = application_email_admins
 		self.application_question = application_question
