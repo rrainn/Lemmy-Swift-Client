@@ -8,7 +8,7 @@
 import Foundation
 
 /// Different post sort types used in lemmy.
-public enum SortType: Int, Codable, CustomStringConvertible, CaseIterable {
+public enum SortType: String, Codable, CustomStringConvertible, CaseIterable {
 	/// Posts sorted by hot, but bumped by new comments up to 2 days.
 	case active = "Active"
 	/// Posts sorted by a decaying rank.
@@ -36,11 +36,11 @@ public enum SortType: Int, Codable, CustomStringConvertible, CaseIterable {
         return self.rawValue
     }
     
-    static func fromInt(_ intValue: Int) -> Self {
-        return Self.allCases[intValue]
+    public init(intValue: Int) {
+        self = Self.allCases[intValue]
     }
     
     var intValue: Int {
-        return Self.allCases.firstIndex(of: self)
+        return Self.allCases.firstIndex(of: self)!
     }
 }

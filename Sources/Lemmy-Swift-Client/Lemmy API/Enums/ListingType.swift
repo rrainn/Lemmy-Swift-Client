@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum ListingType: Int, Codable, CustomStringConvertible, CaseIterable {
+public enum ListingType: String, Codable, CustomStringConvertible, CaseIterable {
 	case all = "All"
 	case local = "Local"
 	case subscribed = "Subscribed"
@@ -17,11 +17,11 @@ public enum ListingType: Int, Codable, CustomStringConvertible, CaseIterable {
 		return self.rawValue
 	}
     
-    static func fromInt(_ intValue: Int) -> ListingType {
-        return Self.allCases[intValue]
+    public init(intValue: Int) {
+        self = Self.allCases[intValue]
     }
     
     var intValue: Int {
-        return Self.allCases.firstIndex(of: self)
+        return Self.allCases.firstIndex(of: self)!
     }
 }

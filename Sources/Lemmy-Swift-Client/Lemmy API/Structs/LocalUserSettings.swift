@@ -9,8 +9,8 @@ import Foundation
 
 public struct LocalUserSettings: Codable {
 	public let accepted_application: Bool
-	public let default_listing_type: ListingType
-	public let default_sort_type: SortType
+	public let default_listing_type: Int
+	public let default_sort_type: Int
 	public let email: String?
 	public let email_verified: Bool
 	public let id: Int
@@ -26,7 +26,7 @@ public struct LocalUserSettings: Codable {
 	public let theme: String
 	public let validator_time: String
 
-	public init(accepted_application: Bool, default_listing_type: ListingType, default_sort_type: SortType, email: String? = nil, email_verified: Bool, id: Int, interface_language: String, person_id: Int, send_notifications_to_email: Bool, show_avatars: Bool, show_bot_accounts: Bool, show_new_post_notifs: Bool, show_nsfw: Bool, show_read_posts: Bool, show_scores: Bool, theme: String, validator_time: String) {
+	public init(accepted_application: Bool, default_listing_type: Int, default_sort_type: Int, email: String? = nil, email_verified: Bool, id: Int, interface_language: String, person_id: Int, send_notifications_to_email: Bool, show_avatars: Bool, show_bot_accounts: Bool, show_new_post_notifs: Bool, show_nsfw: Bool, show_read_posts: Bool, show_scores: Bool, theme: String, validator_time: String) {
 		self.accepted_application = accepted_application
 		self.default_listing_type = default_listing_type
 		self.default_sort_type = default_sort_type
