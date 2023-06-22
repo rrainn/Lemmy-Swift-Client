@@ -4,10 +4,12 @@ import Foundation
 public class LemmyAPI {
 	private let baseUrl: URL
 	private let headers: [String: String]?
+	private let urlSession: URLSession
 
-	public init(baseUrl: URL, headers: [String: String]? = nil) {
+	public init(baseUrl: URL, headers: [String: String]? = nil, urlSession: URLSession = .shared) {
 		self.baseUrl = baseUrl
 		self.headers = headers
+		self.urlSession = urlSession
 	}
 
 	public func request<T: APIRequest>(_ apiRequest: T) async throws -> T.Response {
@@ -25,7 +27,7 @@ public class LemmyAPI {
 			request.httpBody = try encoder.encode(apiRequest)
 		}
 		request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-		let (data, _) = try await URLSession.shared.data(for: request)
+		let (data, _) = try await urlSession.data(for: request)
 		let decoder = JSONDecoder()
 		return try decoder.decode(T.Response.self, from: data)
 	}
