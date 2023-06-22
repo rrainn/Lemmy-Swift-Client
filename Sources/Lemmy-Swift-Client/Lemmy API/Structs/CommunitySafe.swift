@@ -1,10 +1,3 @@
-//
-//  CommunitySafe.swift
-//
-//
-//  Created by Charlie Fish on 6/10/23.
-//
-
 import Foundation
 
 public struct CommunitySafe: Codable {
@@ -25,7 +18,24 @@ public struct CommunitySafe: Codable {
 	public let title: String
 	public let updated: String?
 
-	public init(actor_id: String, banner: String? = nil, deleted: Bool, description: String? = nil, hidden: Bool, icon: String? = nil, id: Int, instance_id: Int, local: Bool, name: String, nsfw: Bool, posting_restricted_to_mods: Bool, published: String, removed: Bool, title: String, updated: String? = nil) {
+	public init(
+		actor_id: String,
+		banner: String? = nil,
+		deleted: Bool,
+		description: String? = nil,
+		hidden: Bool,
+		icon: String? = nil,
+		id: Int,
+		instance_id: Int,
+		local: Bool,
+		name: String,
+		nsfw: Bool,
+		posting_restricted_to_mods: Bool,
+		published: String,
+		removed: Bool,
+		title: String,
+		updated: String? = nil
+	) {
 		self.actor_id = actor_id
 		self.banner = banner
 		self.deleted = deleted

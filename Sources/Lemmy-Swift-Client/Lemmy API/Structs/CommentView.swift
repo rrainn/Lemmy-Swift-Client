@@ -1,10 +1,3 @@
-//
-//  CommentView.swift
-//
-//
-//  Created by Charlie Fish on 6/10/23.
-//
-
 import Foundation
 
 public struct CommentView: Codable {
@@ -19,7 +12,18 @@ public struct CommentView: Codable {
 	public let saved: Bool
 	public let subscribed: SubscribedType
 
-	public init(comment: Comment, community: CommunitySafe, counts: CommentAggregates, creator: PersonSafe, creator_banned_from_community: Bool, creator_blocked: Bool, my_vote: Int? = nil, post: Post, saved: Bool, subscribed: SubscribedType) {
+	public init(
+		comment: Comment,
+		community: CommunitySafe,
+		counts: CommentAggregates,
+		creator: PersonSafe,
+		creator_banned_from_community: Bool,
+		creator_blocked: Bool,
+		my_vote: Int? = nil,
+		post: Post,
+		saved: Bool,
+		subscribed: SubscribedType
+	) {
 		self.comment = comment
 		self.community = community
 		self.counts = counts

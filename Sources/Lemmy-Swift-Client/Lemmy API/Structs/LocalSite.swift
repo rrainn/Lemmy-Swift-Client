@@ -1,10 +1,3 @@
-//
-//  LocalSite.swift
-//
-//
-//  Created by Charlie Fish on 6/11/23.
-//
-
 import Foundation
 
 public struct LocalSite: Codable {
@@ -34,7 +27,33 @@ public struct LocalSite: Codable {
 	public let slur_filter_regex: String?
 	public let updated: String?
 
-	public init(actor_name_max_length: Int, application_email_admins: Bool, application_question: String? = nil, captcha_difficulty: String, captcha_enabled: Bool, community_creation_admin_only: Bool, default_post_listing_type: String, default_theme: String, enable_downvotes: Bool, enable_nsfw: Bool, federation_debug: Bool, federation_enabled: Bool, federation_worker_count: Int, hide_modlog_mod_names: Bool, id: Int, legal_information: String? = nil, private_instance: Bool, published: String, registration_mode: RegistrationMode, reports_email_admins: Bool, require_email_verification: Bool, site_id: Int, site_setup: Bool, slur_filter_regex: String? = nil, updated: String? = nil) {
+	public init(
+		actor_name_max_length: Int,
+		application_email_admins: Bool,
+		application_question: String? = nil,
+		captcha_difficulty: String,
+		captcha_enabled: Bool,
+		community_creation_admin_only: Bool,
+		default_post_listing_type: String,
+		default_theme: String,
+		enable_downvotes: Bool,
+		enable_nsfw: Bool,
+		federation_debug: Bool,
+		federation_enabled: Bool,
+		federation_worker_count: Int,
+		hide_modlog_mod_names: Bool,
+		id: Int,
+		legal_information: String? = nil,
+		private_instance: Bool,
+		published: String,
+		registration_mode: RegistrationMode,
+		reports_email_admins: Bool,
+		require_email_verification: Bool,
+		site_id: Int,
+		site_setup: Bool,
+		slur_filter_regex: String? = nil,
+		updated: String? = nil
+	) {
 		self.actor_name_max_length = actor_name_max_length
 		self.application_email_admins = application_email_admins
 		self.application_question = application_question
