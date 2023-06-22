@@ -18,6 +18,14 @@ public struct GetRepliesRequest: APIRequest {
 	public let page: Int?
 	public let sort: CommentSortType?
 	public let unread_only: Bool?
+
+	public init(auth: String, limit: Int? = nil, page: Int? = nil, sort: CommentSortType? = nil, unread_only: Bool? = nil) {
+		self.auth = auth
+		self.limit = limit
+		self.page = page
+		self.sort = sort
+		self.unread_only = unread_only
+	}
 }
 public struct GetRepliesResponse: APIResponse {
 	public let replies: [CommentReplyView]
