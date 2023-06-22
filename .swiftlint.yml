@@ -1,0 +1,15 @@
+excluded:
+  - .build
+disabled_rules:
+  - cyclomatic_complexity
+  - identifier_name
+  - redundant_optional_initialization
+  - type_body_length
+  - function_body_length
+  - multiple_closures_with_trailing_closure
+  - nesting
+enabled_rules:
+  - implicit_return
+line_length:
+    warning: 100
+    ignores_comments: true
