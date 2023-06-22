@@ -7,12 +7,20 @@ public final class LemmyAPI {
 
 	let session: Session
 
+	/// Initializes an instance of ``LemmyAPI``.
+	/// - Parameters:
+	///   - baseUrl: The base `URL` for the API including the API path (e.g. https://lemmy.ml/api/v3).
+	///   - headers: Additional headers to send with each request (default: `nil`).
+	///   - session: The `Session` implementation to send requests with (default: `URLSession.shared`).
 	public init(baseUrl: URL, headers: [String: String]? = nil, session: Session = URLSession.shared) {
 		self.baseUrl = baseUrl
 		self.headers = headers
 		self.session = session
 	}
 
+	/// Asynchronously sends an ``APIRequest`` and returns its ``APIRequest.Response`` or returns an error.
+	/// - Parameter apiRequest: The ``APIRequest`` to send.
+	/// - Returns: The response received as an ``APIRequest.Response``.
 	public func request<T: APIRequest>(_ apiRequest: T) async throws -> T.Response {
 		let urlRequest = try makeUrlRequest(for: apiRequest)
 		let (data, _) = try await session.data(for: urlRequest)
