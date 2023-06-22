@@ -23,10 +23,12 @@ public enum LemmyAPIError: Error, CustomStringConvertible, LocalizedError {
 public class LemmyAPI {
 	private let baseUrl: URL
 	private let headers: [String: String]?
+	private let urlSession: URLSession
 
-	public init(baseUrl: URL, headers: [String: String]? = nil) {
+	public init(baseUrl: URL, headers: [String: String]? = nil, urlSession: URLSession = .shared) {
 		self.baseUrl = baseUrl
 		self.headers = headers
+		self.urlSession = urlSession
 	}
     
     static var isoDateFormatter: ISO8601DateFormatter {
@@ -69,7 +71,7 @@ public class LemmyAPI {
 			request.httpBody = try encoder.encode(apiRequest)
 		}
 		request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-		let (data, response) = try await URLSession.shared.data(for: request)
+		let (data, response) = try await urlSession.data(for: request)
         if let urlResponse = response as? HTTPURLResponse, urlResponse.statusCode != 200 { throw LemmyAPIError.badResponse(response: urlResponse, request: request, data: data) }
         
 		let decoder = JSONDecoder()
