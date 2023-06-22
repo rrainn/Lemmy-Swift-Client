@@ -33,3 +33,4 @@
 --header strip
 
 --enable isEmpty
+--disable wrapSingleLineComments

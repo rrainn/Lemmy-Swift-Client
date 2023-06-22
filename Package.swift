@@ -13,8 +13,7 @@ let package = Package(
 		.macCatalyst(.v16)
 	],
 	products: [
-		// Products define the executables and libraries a package produces, making them visible to other
-		// packages.
+		// Products define the executables and libraries a package produces, making them visible to other packages.
 		.library(
 			name: "Lemmy-Swift-Client",
 			targets: ["Lemmy-Swift-Client"]
