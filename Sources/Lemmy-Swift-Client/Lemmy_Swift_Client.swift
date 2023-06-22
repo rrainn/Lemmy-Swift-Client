@@ -33,6 +33,11 @@ public final class LemmyAPI {
 		} else {
 			request.httpBody = try JSONEncoder().encode(apiRequest)
 		}
+
+		headers?.forEach { (header, value) in
+			request.setValue(value, forHTTPHeaderField: header)
+		}
+
 		request.setValue("application/json", forHTTPHeaderField: "Content-Type")
 
 		return request
