@@ -29,11 +29,11 @@ public class LemmyAPI {
 		self.headers = headers
 	}
     
-    static let isoDateFormatter: ISO8601DateFormatter = {
+    static var isoDateFormatter: ISO8601DateFormatter {
         let formatter = ISO8601DateFormatter()
         formatter.formatOptions = [.withFullDate, .withTime, .withColonSeparatorInTime, .withDashSeparatorInDate, .withFractionalSeconds]
         return formatter
-    }()
+    }
     
     static let dateDecodingStrategy: JSONDecoder.DateDecodingStrategy = .custom { decoder in
         let container = try decoder.singleValueContainer()

@@ -16,12 +16,4 @@ public enum ListingType: String, Codable, CustomStringConvertible, CaseIterable 
 	public var description: String {
 		return self.rawValue
 	}
-    
-    public init(intValue: Int) {
-        self = Self.allCases[intValue]
-    }
-    
-    var intValue: Int {
-        return Self.allCases.firstIndex(of: self)!
-    }
 }

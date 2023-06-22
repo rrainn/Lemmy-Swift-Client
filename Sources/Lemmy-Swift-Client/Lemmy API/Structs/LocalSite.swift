@@ -18,7 +18,7 @@ public struct LocalSite: Codable {
 	public let default_theme: String
 	public let enable_downvotes: Bool
 	public let enable_nsfw: Bool
-	public let federation_debug: Bool
+	public let federation_debug: Bool?
 	public let federation_enabled: Bool
 	public let federation_worker_count: Int
 	public let hide_modlog_mod_names: Bool
