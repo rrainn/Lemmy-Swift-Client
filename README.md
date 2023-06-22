@@ -53,6 +53,21 @@ Luckily this just scratches the surface of what you can do with the Lemmy Swift 
 
 Lemmy Swift Client is available under the MIT license. See the [LICENSE](https://github.com/rrainn/Lemmy-Swift-Client/blob/main/LICENSE).
 
+## Code Formatting + Linting
+
+This project uses [swiftformat](https://github.com/nicklockwood/SwiftFormat) for code formatting as well as [swiftlint](https://github.com/realm/SwiftLint) for linting. 
+Please make sure to format and lint your code before submitting a Pull Request.
+
+The repository provides simple `Makefile` targets to run either:
+
+```bash
+# Format
+make format
+
+# Lint
+make lint
+```
+
 ## Maintainers
 
 - [Charlie Fish](https://charlie.fish) ([Contact](https://charlie.fish/contact))
