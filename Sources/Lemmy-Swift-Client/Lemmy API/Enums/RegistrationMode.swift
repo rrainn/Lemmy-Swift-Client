@@ -8,8 +8,8 @@
 import Foundation
 
 public enum RegistrationMode: String, Codable, CustomStringConvertible {
-	case closed = "closed"
-	case open = "open"
+	case closed = "Closed"
+	case open = "Open"
 	case requireApplication = "RequireApplication"
 
 	public var description: String {
