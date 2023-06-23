@@ -55,7 +55,7 @@ Lemmy Swift Client is available under the MIT license. See the [LICENSE](https:/
 
 ## Code Formatting + Linting
 
-This project uses [swiftformat](https://github.com/nicklockwood/SwiftFormat) for code formatting as well as [swiftlint](https://github.com/realm/SwiftLint) for linting.
+This project uses [swiftformat](https://github.com/nicklockwood/SwiftFormat) for code formatting and linting.
 
 Please make sure to format and lint your code before submitting a Pull Request.
 
