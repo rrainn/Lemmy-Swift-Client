@@ -5,7 +5,7 @@ lint-fix:
 	swiftlint --fix
 
 format:
-	swiftformat --dryrun --verbose .
+	swiftformat --lint .
 
 format-fix:
 	swiftformat .
