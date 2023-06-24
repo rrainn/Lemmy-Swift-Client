@@ -1,3 +1,10 @@
+//
+//  BlockPerson.swift
+//
+//
+//  Created by Charlie Fish on 6/11/23.
+//
+
 import Foundation
 
 public struct BlockPersonRequest: APIRequest {
@@ -16,7 +23,6 @@ public struct BlockPersonRequest: APIRequest {
 		self.person_id = person_id
 	}
 }
-
 public struct BlockPersonResponse: APIResponse {
 	public let blocked: Bool
 	public let person_view: PersonViewSafe

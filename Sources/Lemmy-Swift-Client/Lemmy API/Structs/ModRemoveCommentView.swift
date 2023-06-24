@@ -1,3 +1,10 @@
+//
+//  ModRemoveCommentView.swift
+//
+//
+//  Created by Charlie Fish on 6/11/23.
+//
+
 import Foundation
 
 public struct ModRemoveCommentView: Codable {
@@ -8,14 +15,7 @@ public struct ModRemoveCommentView: Codable {
 	public let moderator: PersonSafe?
 	public let post: Post
 
-	public init(
-		comment: Comment,
-		commenter: PersonSafe,
-		community: CommunitySafe,
-		mod_remove_comment: ModRemoveComment,
-		moderator: PersonSafe? = nil,
-		post: Post
-	) {
+	public init(comment: Comment, commenter: PersonSafe, community: CommunitySafe, mod_remove_comment: ModRemoveComment, moderator: PersonSafe? = nil, post: Post) {
 		self.comment = comment
 		self.commenter = commenter
 		self.community = community

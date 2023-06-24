@@ -1,3 +1,10 @@
+//
+//  ModlogActionType.swift
+//
+//
+//  Created by Charlie Fish on 6/11/23.
+//
+
 import Foundation
 
 public enum ModlogActionType: String, Codable, CustomStringConvertible {
@@ -19,6 +26,6 @@ public enum ModlogActionType: String, Codable, CustomStringConvertible {
 	case modTransferCommunity = "ModTransferCommunity"
 
 	public var description: String {
-		rawValue
+		return self.rawValue
 	}
 }

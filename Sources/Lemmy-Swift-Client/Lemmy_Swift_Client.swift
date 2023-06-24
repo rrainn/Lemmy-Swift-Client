@@ -18,7 +18,7 @@ public class LemmyAPI {
 		let encoder = JSONEncoder()
 		if T.httpMethod == .get {
 			let mirror = Mirror(reflecting: apiRequest)
-			request.url = request.url?.appending(queryItems: mirror.children.compactMap { label, value in
+			request.url = request.url?.appending(queryItems: mirror.children.compactMap { (label, value) in
 				guard let label, let valueString = value as? CustomStringConvertible else { return nil }
 
 				return URLQueryItem(name: label, value: String(describing: valueString))

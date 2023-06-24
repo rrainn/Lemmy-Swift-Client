@@ -1,3 +1,10 @@
+//
+//  GetSiteMetadata.swift
+//
+//
+//  Created by Charlie Fish on 6/11/23.
+//
+
 import Foundation
 
 public struct GetSiteMetadataRequest: APIRequest {
@@ -12,7 +19,6 @@ public struct GetSiteMetadataRequest: APIRequest {
 		self.url = url
 	}
 }
-
 public struct GetSiteMetadataResponse: APIResponse {
 	public let metadata: SiteMetadata
 

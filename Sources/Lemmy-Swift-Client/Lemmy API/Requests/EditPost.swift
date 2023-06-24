@@ -1,3 +1,10 @@
+//
+//  EditPost.swift
+//
+//
+//  Created by Charlie Fish on 6/11/23.
+//
+
 import Foundation
 
 public struct EditPostRequest: APIRequest {
@@ -14,15 +21,7 @@ public struct EditPostRequest: APIRequest {
 	public let post_id: Int
 	public let url: String?
 
-	public init(
-		auth: String,
-		body: String? = nil,
-		language_id: Int? = nil,
-		name: String? = nil,
-		nsfw: Bool? = nil,
-		post_id: Int,
-		url: String? = nil
-	) {
+	public init(auth: String, body: String? = nil, language_id: Int? = nil, name: String? = nil, nsfw: Bool? = nil, post_id: Int, url: String? = nil) {
 		self.auth = auth
 		self.body = body
 		self.language_id = language_id

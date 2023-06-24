@@ -1,3 +1,10 @@
+//
+//  CreateComment.swift
+//
+//
+//  Created by Charlie Fish on 6/11/23.
+//
+
 import Foundation
 
 public struct CreateCommentRequest: APIRequest {
@@ -13,14 +20,7 @@ public struct CreateCommentRequest: APIRequest {
 	public let parent_id: Int?
 	public let post_id: Int
 
-	public init(
-		auth: String,
-		content: String,
-		form_id: String? = nil,
-		language_id: Int? = nil,
-		parent_id: Int? = nil,
-		post_id: Int
-	) {
+	public init(auth: String, content: String, form_id: String? = nil, language_id: Int? = nil, parent_id: Int? = nil, post_id: Int) {
 		self.auth = auth
 		self.content = content
 		self.form_id = form_id
@@ -29,7 +29,6 @@ public struct CreateCommentRequest: APIRequest {
 		self.post_id = post_id
 	}
 }
-
 public struct CommentResponse: APIResponse {
 	public let comment_view: CommentView
 	public let form_id: String?

@@ -1,3 +1,10 @@
+//
+//  EditCommunity.swift
+//
+//
+//  Created by Charlie Fish on 6/11/23.
+//
+
 import Foundation
 
 public struct EditCommunityRequest: APIRequest {
@@ -16,17 +23,7 @@ public struct EditCommunityRequest: APIRequest {
 	public let posting_restricted_to_mods: Bool?
 	public let title: String?
 
-	public init(
-		auth: String,
-		banner: String? = nil,
-		community_id: Int,
-		description: String? = nil,
-		discussion_languages: [Int]? = nil,
-		icon: String? = nil,
-		nsfw: Bool? = nil,
-		posting_restricted_to_mods: Bool? = nil,
-		title: String? = nil
-	) {
+	public init(auth: String, banner: String? = nil, community_id: Int, description: String? = nil, discussion_languages: [Int]? = nil, icon: String? = nil, nsfw: Bool? = nil, posting_restricted_to_mods: Bool? = nil, title: String? = nil) {
 		self.auth = auth
 		self.banner = banner
 		self.community_id = community_id

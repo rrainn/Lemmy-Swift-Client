@@ -1,3 +1,10 @@
+//
+//  Login.swift
+//
+//
+//  Created by Charlie Fish on 6/10/23.
+//
+
 import Foundation
 
 public struct LoginRequest: APIRequest {
@@ -14,14 +21,12 @@ public struct LoginRequest: APIRequest {
 		self.password = password
 	}
 }
-
 public struct LoginResponse: APIResponse {
 	/// The JSON Web Token for the user.
 	///
 	/// This token can be passed into `auth` parameters of other requests to make authorized requests.
 	///
-	/// If you are registering a new account, this property will be `nil` if email verification is
-	/// enabled, or if the server requires registration applications.
+	/// If you are registering a new account, this property will be `nil` if email verification is enabled, or if the server requires registration applications.
 	///
 	/// It will also be `nil` if the login is wrong.
 	public let jwt: String?

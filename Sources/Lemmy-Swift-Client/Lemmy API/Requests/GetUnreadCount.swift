@@ -1,3 +1,10 @@
+//
+//  GetUnreadCount.swift
+//
+//
+//  Created by Charlie Fish on 6/11/23.
+//
+
 import Foundation
 
 public struct GetUnreadCountRequest: APIRequest {
@@ -12,7 +19,6 @@ public struct GetUnreadCountRequest: APIRequest {
 		self.auth = auth
 	}
 }
-
 public struct GetUnreadCountResponse: APIResponse {
 	public let mentions: Int
 	public let private_messages: Int

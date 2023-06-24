@@ -1,3 +1,10 @@
+//
+//  CommunityAggregates.swift
+//
+//
+//  Created by Charlie Fish on 6/10/23.
+//
+
 import Foundation
 
 public struct CommunityAggregates: Codable {
@@ -11,17 +18,7 @@ public struct CommunityAggregates: Codable {
 	public let users_active_month: Int
 	public let users_active_week: Int
 
-	public init(
-		comments: Int,
-		community_id: Int,
-		id: Int,
-		posts: Int,
-		subscribers: Int,
-		users_active_day: Int,
-		users_active_half_year: Int,
-		users_active_month: Int,
-		users_active_week: Int
-	) {
+	public init(comments: Int, community_id: Int, id: Int, posts: Int, subscribers: Int, users_active_day: Int, users_active_half_year: Int, users_active_month: Int, users_active_week: Int) {
 		self.comments = comments
 		self.community_id = community_id
 		self.id = id

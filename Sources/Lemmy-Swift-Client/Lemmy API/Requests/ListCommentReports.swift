@@ -1,3 +1,10 @@
+//
+//  ListCommentReports.swift
+//
+//
+//  Created by Charlie Fish on 6/11/23.
+//
+
 import Foundation
 
 public struct ListCommentReportsRequest: APIRequest {
@@ -14,13 +21,7 @@ public struct ListCommentReportsRequest: APIRequest {
 	/// Only shows the unresolved reports.
 	public let unresolved_only: Bool?
 
-	public init(
-		auth: String,
-		community_id: Int? = nil,
-		limit: Int? = nil,
-		page: Int? = nil,
-		unresolved_only: Bool? = nil
-	) {
+	public init(auth: String, community_id: Int? = nil, limit: Int? = nil, page: Int? = nil, unresolved_only: Bool? = nil) {
 		self.auth = auth
 		self.community_id = community_id
 		self.limit = limit
@@ -28,7 +29,6 @@ public struct ListCommentReportsRequest: APIRequest {
 		self.unresolved_only = unresolved_only
 	}
 }
-
 public struct ListCommentReportsResponse: APIResponse {
 	public let comment_reports: [CommentReportView]
 

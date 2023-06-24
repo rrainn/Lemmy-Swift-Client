@@ -1,3 +1,10 @@
+//
+//  PrivateMessageReport.swift
+//
+//
+//  Created by Charlie Fish on 6/11/23.
+//
+
 import Foundation
 
 public struct PrivateMessageReport: Codable {
@@ -11,17 +18,7 @@ public struct PrivateMessageReport: Codable {
 	public let resolver_id: Int?
 	public let updated: String?
 
-	public init(
-		creator_id: Int,
-		id: Int,
-		original_pm_text: String,
-		private_message_id: Int,
-		published: String,
-		reason: String,
-		resolved: Bool,
-		resolver_id: Int? = nil,
-		updated: String? = nil
-	) {
+	public init(creator_id: Int, id: Int, original_pm_text: String, private_message_id: Int, published: String, reason: String, resolved: Bool, resolver_id: Int? = nil, updated: String? = nil) {
 		self.creator_id = creator_id
 		self.id = id
 		self.original_pm_text = original_pm_text

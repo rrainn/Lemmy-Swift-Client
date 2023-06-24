@@ -1,3 +1,10 @@
+//
+//  GetPosts.swift
+//
+//
+//  Created by Charlie Fish on 6/11/23.
+//
+
 import Foundation
 
 public struct GetPostsRequest: APIRequest {
@@ -12,8 +19,7 @@ public struct GetPostsRequest: APIRequest {
 	public let community_name: String?
 	/// The maximum number of posts to retrieve.
 	///
-	/// It is possible that less posts will be returned if the maximum is greater than the number of
-	/// posts available.
+	/// It is possible that less posts will be returned if the maximum is greater than the number of posts available.
 	///
 	/// The server will throw a `couldnt_get_posts` error if you pass in a limit greater than 50.
 	public let limit: Int?
@@ -22,16 +28,7 @@ public struct GetPostsRequest: APIRequest {
 	public let sort: SortType?
 	public let type_: ListingType?
 
-	public init(
-		auth: String? = nil,
-		community_id: Int? = nil,
-		community_name: String? = nil,
-		limit: Int? = nil,
-		page: Int? = nil,
-		saved_only: Bool? = nil,
-		sort: SortType? = nil,
-		type_: ListingType? = nil
-	) {
+	public init(auth: String? = nil, community_id: Int? = nil, community_name: String? = nil, limit: Int? = nil, page: Int? = nil, saved_only: Bool? = nil, sort: SortType? = nil, type_: ListingType? = nil) {
 		self.auth = auth
 		self.community_id = community_id
 		self.community_name = community_name
@@ -42,7 +39,6 @@ public struct GetPostsRequest: APIRequest {
 		self.type_ = type_
 	}
 }
-
 public struct GetPostsResponse: APIResponse {
 	public let posts: [PostView]
 

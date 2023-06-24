@@ -1,3 +1,10 @@
+//
+//  Search.swift
+//
+//
+//  Created by Charlie Fish on 6/10/23.
+//
+
 import Foundation
 
 public struct SearchRequest: APIRequest {
@@ -17,18 +24,7 @@ public struct SearchRequest: APIRequest {
 	public let sort: SortType?
 	public let type_: SearchType?
 
-	public init(
-		auth: String? = nil,
-		community_id: Int? = nil,
-		community_name: String? = nil,
-		creator_id: Int? = nil,
-		limit: Int? = nil,
-		listing_type: ListingType? = nil,
-		page: Int? = nil,
-		q: String,
-		sort: SortType? = nil,
-		type_: SearchType? = nil
-	) {
+	public init(auth: String? = nil, community_id: Int? = nil, community_name: String? = nil, creator_id: Int? = nil, limit: Int? = nil, listing_type: ListingType? = nil, page: Int? = nil, q: String, sort: SortType? = nil, type_: SearchType? = nil) {
 		self.auth = auth
 		self.community_id = community_id
 		self.community_name = community_name
@@ -41,7 +37,6 @@ public struct SearchRequest: APIRequest {
 		self.type_ = type_
 	}
 }
-
 public struct SearchResponse: APIResponse {
 	public let comments: [CommentView]
 	public let communities: [CommunityView]
@@ -49,13 +44,7 @@ public struct SearchResponse: APIResponse {
 	public let type_: String
 	public let users: [PersonViewSafe]
 
-	public init(
-		comments: [CommentView],
-		communities: [CommunityView],
-		posts: [PostView],
-		type_: String,
-		users: [PersonViewSafe]
-	) {
+	public init(comments: [CommentView], communities: [CommunityView], posts: [PostView], type_: String, users: [PersonViewSafe]) {
 		self.comments = comments
 		self.communities = communities
 		self.posts = posts

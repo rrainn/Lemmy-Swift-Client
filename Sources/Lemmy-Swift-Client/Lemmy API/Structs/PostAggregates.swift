@@ -1,3 +1,10 @@
+//
+//  PostAggregates.swift
+//
+//
+//  Created by Charlie Fish on 6/10/23.
+//
+
 import Foundation
 
 public struct PostAggregates: Codable {
@@ -13,18 +20,7 @@ public struct PostAggregates: Codable {
 	public let score: Int
 	public let upvotes: Int
 
-	public init(
-		comments: Int,
-		downvotes: Int,
-		featured_community: Bool,
-		featured_local: Bool,
-		id: Int,
-		newest_comment_time: String,
-		newest_comment_time_necro: String,
-		post_id: Int,
-		score: Int,
-		upvotes: Int
-	) {
+	public init(comments: Int, downvotes: Int, featured_community: Bool, featured_local: Bool, id: Int, newest_comment_time: String, newest_comment_time_necro: String, post_id: Int, score: Int, upvotes: Int) {
 		self.comments = comments
 		self.downvotes = downvotes
 		self.featured_community = featured_community

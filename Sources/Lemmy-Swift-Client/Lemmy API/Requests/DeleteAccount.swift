@@ -1,3 +1,10 @@
+//
+//  DeleteAccount.swift
+//
+//
+//  Created by Charlie Fish on 6/11/23.
+//
+
 import Foundation
 
 public struct DeleteAccountRequest: APIRequest {
@@ -14,7 +21,6 @@ public struct DeleteAccountRequest: APIRequest {
 		self.password = password
 	}
 }
-
 public struct DeleteAccountResponse: APIResponse {
 	public init() {}
 }

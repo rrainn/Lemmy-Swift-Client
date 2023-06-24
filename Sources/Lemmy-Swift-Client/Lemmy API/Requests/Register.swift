@@ -1,3 +1,10 @@
+//
+//  Register.swift
+//
+//
+//  Created by Charlie Fish on 6/11/23.
+//
+
 import Foundation
 
 public struct RegisterRequest: APIRequest {
@@ -16,17 +23,7 @@ public struct RegisterRequest: APIRequest {
 	public let show_nsfw: Bool
 	public let username: String
 
-	public init(
-		answer: String? = nil,
-		captcha_answer: String? = nil,
-		captcha_uuid: String? = nil,
-		email: String? = nil,
-		honeypot: String? = nil,
-		password: String,
-		password_verify: String,
-		show_nsfw: Bool,
-		username: String
-	) {
+	public init(answer: String? = nil, captcha_answer: String? = nil, captcha_uuid: String? = nil, email: String? = nil, honeypot: String? = nil, password: String, password_verify: String, show_nsfw: Bool, username: String) {
 		self.answer = answer
 		self.captcha_answer = captcha_answer
 		self.captcha_uuid = captcha_uuid

@@ -1,3 +1,10 @@
+//
+//  CommentReport.swift
+//
+//
+//  Created by Charlie Fish on 6/11/23.
+//
+
 import Foundation
 
 public struct CommentReport: Codable {
@@ -11,17 +18,7 @@ public struct CommentReport: Codable {
 	public let resolver_id: Int?
 	public let updated: String?
 
-	public init(
-		comment_id: Int,
-		creator_id: Int,
-		id: Int,
-		original_comment_text: String,
-		published: String,
-		reason: String,
-		resolved: Bool,
-		resolver_id: Int? = nil,
-		updated: String? = nil
-	) {
+	public init(comment_id: Int, creator_id: Int, id: Int, original_comment_text: String, published: String, reason: String, resolved: Bool, resolver_id: Int? = nil, updated: String? = nil) {
 		self.comment_id = comment_id
 		self.creator_id = creator_id
 		self.id = id

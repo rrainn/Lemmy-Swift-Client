@@ -1,3 +1,10 @@
+//
+//  ResolveObject.swift
+//
+//
+//  Created by Charlie Fish on 6/11/23.
+//
+
 import Foundation
 
 public struct ResolveObjectRequest: APIRequest {
@@ -14,19 +21,13 @@ public struct ResolveObjectRequest: APIRequest {
 		self.q = q
 	}
 }
-
 public struct ResolveObjectResponse: APIResponse {
 	public let comment: CommentView?
 	public let community: CommunityView?
 	public let person: PersonViewSafe?
 	public let post: PostView?
 
-	public init(
-		comment: CommentView? = nil,
-		community: CommunityView? = nil,
-		person: PersonViewSafe? = nil,
-		post: PostView? = nil
-	) {
+	public init(comment: CommentView? = nil, community: CommunityView? = nil, person: PersonViewSafe? = nil, post: PostView? = nil) {
 		self.comment = comment
 		self.community = community
 		self.person = person

@@ -1,3 +1,10 @@
+//
+//  API.swift
+//
+//
+//  Created by Charlie Fish on 6/10/23.
+//
+
 import Foundation
 
 public protocol APIRequest: Codable {
@@ -6,5 +13,5 @@ public protocol APIRequest: Codable {
 
 	associatedtype Response: APIResponse
 }
-
-public protocol APIResponse: Codable {}
+public protocol APIResponse: Codable {
+}

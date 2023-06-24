@@ -1,3 +1,10 @@
+//
+//  AddAdmin.swift
+//
+//
+//  Created by Charlie Fish on 6/11/23.
+//
+
 import Foundation
 
 public struct AddAdminRequest: APIRequest {
@@ -16,7 +23,6 @@ public struct AddAdminRequest: APIRequest {
 		self.person_id = person_id
 	}
 }
-
 public struct AddAdminResponse: APIResponse {
 	public let admins: [PersonViewSafe]
 

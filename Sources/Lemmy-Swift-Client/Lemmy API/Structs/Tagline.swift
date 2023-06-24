@@ -1,3 +1,10 @@
+//
+//  Tagline.swift
+//
+//
+//  Created by Charlie Fish on 6/11/23.
+//
+
 import Foundation
 
 public struct Tagline: Codable {
@@ -7,13 +14,7 @@ public struct Tagline: Codable {
 	public let published: String
 	public let updated: String?
 
-	public init(
-		content: String,
-		id: Int,
-		local_site_id: Int,
-		published: String,
-		updated: String? = nil
-	) {
+	public init(content: String, id: Int, local_site_id: Int, published: String, updated: String? = nil) {
 		self.content = content
 		self.id = id
 		self.local_site_id = local_site_id

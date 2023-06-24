@@ -1,3 +1,10 @@
+//
+//  ModTransferCommunity.swift
+//
+//
+//  Created by Charlie Fish on 6/11/23.
+//
+
 import Foundation
 
 public struct ModTransferCommunity: Codable {
@@ -8,14 +15,7 @@ public struct ModTransferCommunity: Codable {
 	public let removed: Bool?
 	public let when_: String
 
-	public init(
-		community_id: Int,
-		id: Int,
-		mod_person_id: Int,
-		other_person_id: Int,
-		removed: Bool? = nil,
-		when_: String
-	) {
+	public init(community_id: Int, id: Int, mod_person_id: Int, other_person_id: Int, removed: Bool? = nil, when_: String) {
 		self.community_id = community_id
 		self.id = id
 		self.mod_person_id = mod_person_id
