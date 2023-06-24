@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum ModlogActionType: String, Codable, CustomStringConvertible {
+public enum ModlogActionType: String, Codable, CustomStringConvertible, CaseIterable {
 	case adminPurgeComment = "AdminPurgeComment"
 	case adminPurgeCommunity = "AdminPurgeCommunity"
 	case adminPurgePerson = "AdminPurgePerson"

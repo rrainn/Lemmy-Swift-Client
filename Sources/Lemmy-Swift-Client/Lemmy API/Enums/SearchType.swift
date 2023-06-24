@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum SearchType: String, Codable, CustomStringConvertible {
+public enum SearchType: String, Codable, CustomStringConvertible, CaseIterable {
 	case all = "All"
 	case comments = "Comments"
 	case communities = "Communities"
