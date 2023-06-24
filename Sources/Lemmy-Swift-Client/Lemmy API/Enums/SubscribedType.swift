@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum SubscribedType: String, Codable, CustomStringConvertible {
+public enum SubscribedType: String, Codable, CustomStringConvertible, CaseIterable {
 	case notSubscribed = "NotSubscribed"
 	case pending = "Pending"
 	case subscribed = "Subscribed"
