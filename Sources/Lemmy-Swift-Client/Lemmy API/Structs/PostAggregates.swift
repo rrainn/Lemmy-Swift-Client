@@ -13,14 +13,16 @@ public struct PostAggregates: Codable {
 	public let featured_community: Bool
 	public let featured_local: Bool
 	public let id: Int
-	public let newest_comment_time: String
+	public let newest_comment_time: Date
 	/// Newest comment time, limited to 2 days, to prevent necrobumping.
-	public let newest_comment_time_necro: String
+	public let newest_comment_time_necro: Date
 	public let post_id: Int
 	public let score: Int
 	public let upvotes: Int
+    public let hot_rank: Int
+    public let hot_rank_active: Int
 
-	public init(comments: Int, downvotes: Int, featured_community: Bool, featured_local: Bool, id: Int, newest_comment_time: String, newest_comment_time_necro: String, post_id: Int, score: Int, upvotes: Int) {
+    public init(comments: Int, downvotes: Int, featured_community: Bool, featured_local: Bool, id: Int, newest_comment_time: Date, newest_comment_time_necro: Date, post_id: Int, score: Int, upvotes: Int, hot_rank: Int, hot_rank_active: Int) {
 		self.comments = comments
 		self.downvotes = downvotes
 		self.featured_community = featured_community
@@ -31,5 +33,7 @@ public struct PostAggregates: Codable {
 		self.post_id = post_id
 		self.score = score
 		self.upvotes = upvotes
+        self.hot_rank = hot_rank
+        self.hot_rank_active = hot_rank_active
 	}
 }
