@@ -56,7 +56,10 @@ public class LemmyAPI {
 		)
 	}
 
-	public func request<T: APIRequest>(_ apiRequest: T) async throws -> T.Response {
+	/// Do request to lemmy server and return URLSession result
+	public func baseRequest<T: APIRequest>(_ apiRequest: T) async throws
+		-> (T.Response, URLResponse, Data)
+	{
 		var request = URLRequest(url: baseUrl.appending(path: T.path))
 		request.httpMethod = T.httpMethod.rawValue
 		let encoder = JSONEncoder()
@@ -92,10 +95,17 @@ public class LemmyAPI {
 		let decoder = JSONDecoder()
 		decoder.dateDecodingStrategy = LemmyAPI.dateDecodingStrategy
 		do {
-			return try decoder.decode(T.Response.self, from: data)
+			let (data, response) = try await URLSession.shared.data(for: request)
+			let decodedResult = try decoder.decode(T.Response.self, from: data)
+			return (decodedResult, response, data)
 		} catch {
 			throw LemmyAPIError.decodeError(error, data: data, request: request)
 		}
+	}
+
+	public func request<T: APIRequest>(_ apiRequest: T) async throws -> T.Response {
+		let (result, _, _) = try await baseRequest(apiRequest)
+		return result
 	}
 }
 
