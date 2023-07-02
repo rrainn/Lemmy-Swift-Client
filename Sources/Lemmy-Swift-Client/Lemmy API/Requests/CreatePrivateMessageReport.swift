@@ -1,10 +1,3 @@
-//
-//  CreatePrivateMessageReport.swift
-//
-//
-//  Created by Charlie Fish on 6/11/23.
-//
-
 import Foundation
 
 public struct CreatePrivateMessageReportRequest: APIRequest {
@@ -23,6 +16,7 @@ public struct CreatePrivateMessageReportRequest: APIRequest {
 		self.reason = reason
 	}
 }
+
 public struct PrivateMessageReportResponse: APIResponse {
 	public let private_message_report_view: PrivateMessageReportView
 

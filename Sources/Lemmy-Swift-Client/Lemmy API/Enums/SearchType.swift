@@ -1,10 +1,3 @@
-//
-//  SearchType.swift
-//
-//
-//  Created by Charlie Fish on 6/10/23.
-//
-
 import Foundation
 
 public enum SearchType: String, Codable, CustomStringConvertible, CaseIterable {
@@ -16,6 +9,6 @@ public enum SearchType: String, Codable, CustomStringConvertible, CaseIterable {
 	case users = "Users"
 
 	public var description: String {
-		return self.rawValue
+		return rawValue
 	}
 }

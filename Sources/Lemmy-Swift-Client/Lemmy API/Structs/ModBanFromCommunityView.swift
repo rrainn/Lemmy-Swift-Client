@@ -1,10 +1,3 @@
-//
-//  ModBanFromCommunityView.swift
-//
-//
-//  Created by Charlie Fish on 6/11/23.
-//
-
 import Foundation
 
 public struct ModBanFromCommunityView: Codable {
@@ -13,7 +6,12 @@ public struct ModBanFromCommunityView: Codable {
 	public let mod_ban_from_community: ModBanFromCommunity
 	public let moderator: PersonSafe?
 
-	public init(banned_person: PersonSafe, community: CommunitySafe, mod_ban_from_community: ModBanFromCommunity, moderator: PersonSafe? = nil) {
+	public init(
+		banned_person: PersonSafe,
+		community: CommunitySafe,
+		mod_ban_from_community: ModBanFromCommunity,
+		moderator: PersonSafe? = nil
+	) {
 		self.banned_person = banned_person
 		self.community = community
 		self.mod_ban_from_community = mod_ban_from_community

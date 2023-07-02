@@ -1,10 +1,3 @@
-//
-//  ChangePassword.swift
-//
-//
-//  Created by Charlie Fish on 6/11/23.
-//
-
 import Foundation
 
 public struct ChangePasswordRequest: APIRequest {
@@ -18,7 +11,12 @@ public struct ChangePasswordRequest: APIRequest {
 	public let new_password_verify: String
 	public let old_password: String
 
-	public init(auth: String, new_password: String, new_password_verify: String, old_password: String) {
+	public init(
+		auth: String,
+		new_password: String,
+		new_password_verify: String,
+		old_password: String
+	) {
 		self.auth = auth
 		self.new_password = new_password
 		self.new_password_verify = new_password_verify

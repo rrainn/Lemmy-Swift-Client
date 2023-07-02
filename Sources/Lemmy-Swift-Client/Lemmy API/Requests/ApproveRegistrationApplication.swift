@@ -1,10 +1,3 @@
-//
-//  ApproveRegistrationApplication.swift
-//
-//
-//  Created by Charlie Fish on 6/11/23.
-//
-
 import Foundation
 
 public struct ApproveRegistrationApplicationRequest: APIRequest {
@@ -18,6 +11,7 @@ public struct ApproveRegistrationApplicationRequest: APIRequest {
 	public let deny_reason: String?
 	public let id: Int
 }
+
 public struct RegistrationApplicationResponse: APIResponse {
 	public let registration_application: RegistrationApplicationView
 
