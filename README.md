@@ -57,16 +57,22 @@ Lemmy Swift Client is available under the MIT license. See the [LICENSE](https:/
 
 This project uses [swiftformat](https://github.com/nicklockwood/SwiftFormat) for code formatting and linting.
 
-Please make sure to format and lint your code before submitting a Pull Request.
+Please make sure to lint your code before submitting a Pull Request.
+
+If you do not have `swiftformat` installed, you can install it with [Homebrew](https://brew.sh):
+
+```bash
+brew install swiftformat
+```
 
 The repository provides simple `Makefile` targets to run either:
 
 ```bash
-# Format
-make format
-
-# Lint
+# Lint (will not apply changes)
 make lint
+
+# Lint and apply correct formatting
+make lint-fix
 ```
 
 ## Maintainers

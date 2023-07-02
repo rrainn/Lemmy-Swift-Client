@@ -1,5 +1,5 @@
 lint:
 	swiftformat --lint .
 
-format:
+lint-fix:
 	swiftformat .
