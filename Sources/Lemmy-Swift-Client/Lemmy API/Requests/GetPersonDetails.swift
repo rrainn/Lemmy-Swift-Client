@@ -1,10 +1,3 @@
-//
-//  GetPersonDetails.swift
-//
-//
-//  Created by Charlie Fish on 6/11/23.
-//
-
 import Foundation
 
 public struct GetPersonDetailsRequest: APIRequest {
@@ -23,7 +16,16 @@ public struct GetPersonDetailsRequest: APIRequest {
 	/// To get details for a federated user, use `person@instance.tld`.
 	public let username: String?
 
-	public init(auth: String? = nil, community_id: Int? = nil, limit: Int? = nil, page: Int? = nil, person_id: Int? = nil, saved_only: Bool? = nil, sort: SortType? = nil, username: String? = nil) {
+	public init(
+		auth: String? = nil,
+		community_id: Int? = nil,
+		limit: Int? = nil,
+		page: Int? = nil,
+		person_id: Int? = nil,
+		saved_only: Bool? = nil,
+		sort: SortType? = nil,
+		username: String? = nil
+	) {
 		self.auth = auth
 		self.community_id = community_id
 		self.limit = limit
@@ -34,13 +36,19 @@ public struct GetPersonDetailsRequest: APIRequest {
 		self.username = username
 	}
 }
+
 public struct GetPersonDetailsResponse: APIResponse {
 	public let comments: [CommentView]
 	public let moderates: [CommunityModeratorView]
 	public let person_view: PersonViewSafe
 	public let posts: [PostView]
 
-	public init(comments: [CommentView], moderates: [CommunityModeratorView], person_view: PersonViewSafe, posts: [PostView]) {
+	public init(
+		comments: [CommentView],
+		moderates: [CommunityModeratorView],
+		person_view: PersonViewSafe,
+		posts: [PostView]
+	) {
 		self.comments = comments
 		self.moderates = moderates
 		self.person_view = person_view

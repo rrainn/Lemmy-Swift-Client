@@ -1,10 +1,3 @@
-//
-//  ModAdd.swift
-//
-//
-//  Created by Charlie Fish on 6/11/23.
-//
-
 import Foundation
 
 public struct ModAdd: Codable {
@@ -14,7 +7,13 @@ public struct ModAdd: Codable {
 	public let removed: Bool?
 	public let when_: String
 
-	public init(id: Int, mod_person_id: Int, other_person_id: Int, removed: Bool? = nil, when_: String) {
+	public init(
+		id: Int,
+		mod_person_id: Int,
+		other_person_id: Int,
+		removed: Bool? = nil,
+		when_: String
+	) {
 		self.id = id
 		self.mod_person_id = mod_person_id
 		self.other_person_id = other_person_id

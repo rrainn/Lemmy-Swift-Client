@@ -1,10 +1,3 @@
-//
-//  SortType.swift
-//
-//
-//  Created by Charlie Fish on 6/10/23.
-//
-
 import Foundation
 
 /// Different post sort types used in lemmy.
@@ -33,6 +26,6 @@ public enum SortType: String, Codable, CustomStringConvertible, CaseIterable {
 	case topYear = "TopYear"
 
 	public var description: String {
-		return self.rawValue
+		return rawValue
 	}
 }

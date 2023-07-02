@@ -1,10 +1,3 @@
-//
-//  ListRegistrationApplications.swift
-//
-//
-//  Created by Charlie Fish on 6/11/23.
-//
-
 import Foundation
 
 public struct ListRegistrationApplicationsRequest: APIRequest {
@@ -26,6 +19,7 @@ public struct ListRegistrationApplicationsRequest: APIRequest {
 		self.unread_only = unread_only
 	}
 }
+
 public struct ListRegistrationApplicationsResponse: APIResponse {
 	public let registration_applications: [RegistrationApplicationView]
 

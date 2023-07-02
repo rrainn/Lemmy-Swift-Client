@@ -1,10 +1,3 @@
-//
-//  SaveUserSettings.swift
-//
-//
-//  Created by Charlie Fish on 6/11/23.
-//
-
 import Foundation
 
 public struct SaveUserSettingsRequest: APIRequest {
@@ -34,7 +27,28 @@ public struct SaveUserSettingsRequest: APIRequest {
 	public let show_scores: Bool?
 	public let theme: String?
 
-	public init(auth: String, avatar: String? = nil, banner: String? = nil, bio: String? = nil, bot_account: Bool? = nil, default_listing_type: Int? = nil, default_sort_type: Int? = nil, discussion_languages: [Int]? = nil, display_name: String? = nil, email: String? = nil, interface_language: String? = nil, matrix_user_id: String? = nil, send_notifications_to_email: Bool? = nil, show_avatars: Bool? = nil, show_bot_accounts: Bool? = nil, show_new_post_notifs: Bool? = nil, show_nsfw: Bool? = nil, show_read_posts: Bool? = nil, show_scores: Bool? = nil, theme: String? = nil) {
+	public init(
+		auth: String,
+		avatar: String? = nil,
+		banner: String? = nil,
+		bio: String? = nil,
+		bot_account: Bool? = nil,
+		default_listing_type: Int? = nil,
+		default_sort_type: Int? = nil,
+		discussion_languages: [Int]? = nil,
+		display_name: String? = nil,
+		email: String? = nil,
+		interface_language: String? = nil,
+		matrix_user_id: String? = nil,
+		send_notifications_to_email: Bool? = nil,
+		show_avatars: Bool? = nil,
+		show_bot_accounts: Bool? = nil,
+		show_new_post_notifs: Bool? = nil,
+		show_nsfw: Bool? = nil,
+		show_read_posts: Bool? = nil,
+		show_scores: Bool? = nil,
+		theme: String? = nil
+	) {
 		self.auth = auth
 		self.avatar = avatar
 		self.banner = banner

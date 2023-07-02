@@ -1,10 +1,3 @@
-//
-//  SiteAggregates.swift
-//
-//
-//  Created by Charlie Fish on 6/11/23.
-//
-
 import Foundation
 
 public struct SiteAggregates: Codable {
@@ -19,7 +12,18 @@ public struct SiteAggregates: Codable {
 	public let users_active_month: Int
 	public let users_active_week: Int
 
-	public init(comments: Int, communities: Int, id: Int, posts: Int, site_id: Int, users: Int, users_active_day: Int, users_active_half_year: Int, users_active_month: Int, users_active_week: Int) {
+	public init(
+		comments: Int,
+		communities: Int,
+		id: Int,
+		posts: Int,
+		site_id: Int,
+		users: Int,
+		users_active_day: Int,
+		users_active_half_year: Int,
+		users_active_month: Int,
+		users_active_week: Int
+	) {
 		self.comments = comments
 		self.communities = communities
 		self.id = id

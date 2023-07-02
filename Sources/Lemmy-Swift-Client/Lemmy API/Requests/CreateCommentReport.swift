@@ -1,10 +1,3 @@
-//
-//  CreateCommentReport.swift
-//
-//
-//  Created by Charlie Fish on 6/11/23.
-//
-
 import Foundation
 
 public struct CreateCommentReportRequest: APIRequest {
@@ -23,6 +16,7 @@ public struct CreateCommentReportRequest: APIRequest {
 		self.reason = reason
 	}
 }
+
 public struct CommentReportResponse: APIResponse {
 	public let comment_report_view: CommentReportView
 

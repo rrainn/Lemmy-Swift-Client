@@ -1,10 +1,3 @@
-//
-//  PersonMentionView.swift
-//
-//
-//  Created by Charlie Fish on 6/11/23.
-//
-
 import Foundation
 
 public struct PersonMentionView: Codable {
@@ -21,7 +14,20 @@ public struct PersonMentionView: Codable {
 	public let saved: Bool
 	public let subscribed: SubscribedType
 
-	public init(comment: Comment, community: CommunitySafe, counts: CommentAggregates, creator: PersonSafe, creator_banned_from_community: Bool, creator_blocked: Bool, my_vote: Int? = nil, person_mention: PersonMention, post: Post, recipient: PersonSafe, saved: Bool, subscribed: SubscribedType) {
+	public init(
+		comment: Comment,
+		community: CommunitySafe,
+		counts: CommentAggregates,
+		creator: PersonSafe,
+		creator_banned_from_community: Bool,
+		creator_blocked: Bool,
+		my_vote: Int? = nil,
+		person_mention: PersonMention,
+		post: Post,
+		recipient: PersonSafe,
+		saved: Bool,
+		subscribed: SubscribedType
+	) {
 		self.comment = comment
 		self.community = community
 		self.counts = counts
