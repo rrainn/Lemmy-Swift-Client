@@ -1,10 +1,3 @@
-//
-//  CommentReply.swift
-//
-//
-//  Created by Charlie Fish on 6/11/23.
-//
-
 import Foundation
 
 public struct CommentReply: Codable {
@@ -13,4 +6,12 @@ public struct CommentReply: Codable {
 	public let published: String
 	public let read: Bool
 	public let recipient_id: Int
+
+	public init(comment_id: Int, id: Int, published: String, read: Bool, recipient_id: Int) {
+		self.comment_id = comment_id
+		self.id = id
+		self.published = published
+		self.read = read
+		self.recipient_id = recipient_id
+	}
 }

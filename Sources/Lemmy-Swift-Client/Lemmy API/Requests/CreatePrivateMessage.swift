@@ -1,10 +1,3 @@
-//
-//  CreatePrivateMessage.swift
-//
-//
-//  Created by Charlie Fish on 6/11/23.
-//
-
 import Foundation
 
 public struct CreatePrivateMessageRequest: APIRequest {
@@ -23,6 +16,11 @@ public struct CreatePrivateMessageRequest: APIRequest {
 		self.recipient_id = recipient_id
 	}
 }
+
 public struct PrivateMessageResponse: APIResponse {
 	public let private_message_view: PrivateMessageView
+
+	public init(private_message_view: PrivateMessageView) {
+		self.private_message_view = private_message_view
+	}
 }

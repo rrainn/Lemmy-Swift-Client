@@ -1,10 +1,3 @@
-//
-//  BlockCommunity.swift
-//
-//
-//  Created by Charlie Fish on 6/11/23.
-//
-
 import Foundation
 
 public struct BlockCommunityRequest: APIRequest {
@@ -23,7 +16,13 @@ public struct BlockCommunityRequest: APIRequest {
 		self.community_id = community_id
 	}
 }
+
 public struct BlockCommunityResponse: APIResponse {
 	public let blocked: Bool
 	public let community_view: CommunityView
+
+	public init(blocked: Bool, community_view: CommunityView) {
+		self.blocked = blocked
+		self.community_view = community_view
+	}
 }

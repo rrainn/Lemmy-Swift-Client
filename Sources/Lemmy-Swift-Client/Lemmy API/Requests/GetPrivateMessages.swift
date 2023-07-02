@@ -1,10 +1,3 @@
-//
-//  GetPrivateMessages.swift
-//
-//
-//  Created by Charlie Fish on 6/11/23.
-//
-
 import Foundation
 
 public struct GetPrivateMessagesRequest: APIRequest {
@@ -25,6 +18,11 @@ public struct GetPrivateMessagesRequest: APIRequest {
 		self.unread_only = unread_only
 	}
 }
+
 public struct PrivateMessagesResponse: APIResponse {
 	public let private_messages: [PrivateMessageView]
+
+	public init(private_messages: [PrivateMessageView]) {
+		self.private_messages = private_messages
+	}
 }

@@ -2,12 +2,14 @@ import Foundation
 
 /// An instance of the Lemmy API.
 public class LemmyAPI {
-	private let baseUrl: URL
+	public let baseUrl: URL
 	private let headers: [String: String]?
+	private let urlSession: URLSession
 
-	public init(baseUrl: URL, headers: [String: String]? = nil) {
+	public init(baseUrl: URL, headers: [String: String]? = nil, urlSession: URLSession = .shared) {
 		self.baseUrl = baseUrl
 		self.headers = headers
+		self.urlSession = urlSession
 	}
 
     /// Do request to lemmy server and return URLSession result

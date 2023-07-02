@@ -1,10 +1,3 @@
-//
-//  GetPersonMentions.swift
-//
-//
-//  Created by Charlie Fish on 6/11/23.
-//
-
 import Foundation
 
 public struct GetPersonMentionsRequest: APIRequest {
@@ -19,7 +12,13 @@ public struct GetPersonMentionsRequest: APIRequest {
 	public let sort: CommentSortType?
 	public let unread_only: Bool?
 
-	public init(auth: String, limit: Int? = nil, page: Int? = nil, sort: CommentSortType? = nil, unread_only: Bool? = nil) {
+	public init(
+		auth: String,
+		limit: Int? = nil,
+		page: Int? = nil,
+		sort: CommentSortType? = nil,
+		unread_only: Bool? = nil
+	) {
 		self.auth = auth
 		self.limit = limit
 		self.page = page
@@ -27,7 +26,11 @@ public struct GetPersonMentionsRequest: APIRequest {
 		self.unread_only = unread_only
 	}
 }
+
 public struct GetPersonMentionsResponse: APIResponse {
 	public let mentions: [PersonMentionView]
-}
 
+	public init(mentions: [PersonMentionView]) {
+		self.mentions = mentions
+	}
+}

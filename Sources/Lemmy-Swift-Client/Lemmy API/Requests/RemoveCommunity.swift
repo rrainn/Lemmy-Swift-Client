@@ -1,10 +1,3 @@
-//
-//  RemoveCommunity.swift
-//
-//
-//  Created by Charlie Fish on 6/11/23.
-//
-
 import Foundation
 
 public struct RemoveCommunityRequest: APIRequest {
@@ -20,7 +13,13 @@ public struct RemoveCommunityRequest: APIRequest {
 	public let reason: String?
 	public let removed: Bool
 
-	public init(auth: String, community_id: Int, expires: Int? = nil, reason: String? = nil, removed: Bool) {
+	public init(
+		auth: String,
+		community_id: Int,
+		expires: Int? = nil,
+		reason: String? = nil,
+		removed: Bool
+	) {
 		self.auth = auth
 		self.community_id = community_id
 		self.expires = expires

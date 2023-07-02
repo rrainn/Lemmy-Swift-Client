@@ -1,10 +1,3 @@
-//
-//  CreatePost.swift
-//
-//
-//  Created by Charlie Fish on 6/11/23.
-//
-
 import Foundation
 
 public struct CreatePostRequest: APIRequest {
@@ -22,7 +15,16 @@ public struct CreatePostRequest: APIRequest {
 	public let nsfw: Bool?
 	public let url: String?
 
-	public init(auth: String, body: String? = nil, community_id: Int, honeypot: String? = nil, language_id: Int? = nil, name: String, nsfw: Bool? = nil, url: String? = nil) {
+	public init(
+		auth: String,
+		body: String? = nil,
+		community_id: Int,
+		honeypot: String? = nil,
+		language_id: Int? = nil,
+		name: String,
+		nsfw: Bool? = nil,
+		url: String? = nil
+	) {
 		self.auth = auth
 		self.body = body
 		self.community_id = community_id
@@ -33,6 +35,11 @@ public struct CreatePostRequest: APIRequest {
 		self.url = url
 	}
 }
+
 public struct PostResponse: APIResponse {
 	public let post_view: PostView
+
+	public init(post_view: PostView) {
+		self.post_view = post_view
+	}
 }

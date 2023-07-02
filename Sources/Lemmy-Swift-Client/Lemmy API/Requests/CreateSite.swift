@@ -1,10 +1,3 @@
-//
-//  CreateSite.swift
-//
-//
-//  Created by Charlie Fish on 6/11/23.
-//
-
 import Foundation
 
 public struct CreateSiteRequest: APIRequest {
@@ -56,7 +49,50 @@ public struct CreateSiteRequest: APIRequest {
 	public let slur_filter_regex: String?
 	public let taglines: [String]?
 
-	public init(actor_name_max_length: Int? = nil, allowed_instances: [String]? = nil, application_email_admins: Bool? = nil, application_question: String? = nil, auth: String, banner: String? = nil, blocked_instances: [String]? = nil, captcha_difficulty: String? = nil, captcha_enabled: Bool? = nil, community_creation_admin_only: Bool? = nil, default_post_listing_type: String? = nil, default_theme: String? = nil, description: String? = nil, discussion_languages: [Int]? = nil, enable_downvotes: Bool? = nil, enable_nsfw: Bool? = nil, federation_debug: Bool? = nil, federation_enabled: Bool? = nil, federation_worker_count: Int? = nil, hide_modlog_mod_names: Bool? = nil, icon: String? = nil, legal_information: String? = nil, name: String, private_instance: Bool? = nil, rate_limit_comment: Int? = nil, rate_limit_comment_per_second: Int? = nil, rate_limit_image: Int? = nil, rate_limit_image_per_second: Int? = nil, rate_limit_message: Int? = nil, rate_limit_message_per_second: Int? = nil, rate_limit_post: Int? = nil, rate_limit_post_per_second: Int? = nil, rate_limit_register: Int? = nil, rate_limit_register_per_second: Int? = nil, rate_limit_search: Int? = nil, rate_limit_search_per_second: Int? = nil, registration_mode: RegistrationMode? = nil, reports_email_admins: Bool? = nil, require_email_verification: Bool? = nil, sidebar: String? = nil, slur_filter_regex: String? = nil, taglines: [String]? = nil) {
+	public init(
+		actor_name_max_length: Int? = nil,
+		allowed_instances: [String]? = nil,
+		application_email_admins: Bool? = nil,
+		application_question: String? = nil,
+		auth: String,
+		banner: String? = nil,
+		blocked_instances: [String]? = nil,
+		captcha_difficulty: String? = nil,
+		captcha_enabled: Bool? = nil,
+		community_creation_admin_only: Bool? = nil,
+		default_post_listing_type: String? = nil,
+		default_theme: String? = nil,
+		description: String? = nil,
+		discussion_languages: [Int]? = nil,
+		enable_downvotes: Bool? = nil,
+		enable_nsfw: Bool? = nil,
+		federation_debug: Bool? = nil,
+		federation_enabled: Bool? = nil,
+		federation_worker_count: Int? = nil,
+		hide_modlog_mod_names: Bool? = nil,
+		icon: String? = nil,
+		legal_information: String? = nil,
+		name: String,
+		private_instance: Bool? = nil,
+		rate_limit_comment: Int? = nil,
+		rate_limit_comment_per_second: Int? = nil,
+		rate_limit_image: Int? = nil,
+		rate_limit_image_per_second: Int? = nil,
+		rate_limit_message: Int? = nil,
+		rate_limit_message_per_second: Int? = nil,
+		rate_limit_post: Int? = nil,
+		rate_limit_post_per_second: Int? = nil,
+		rate_limit_register: Int? = nil,
+		rate_limit_register_per_second: Int? = nil,
+		rate_limit_search: Int? = nil,
+		rate_limit_search_per_second: Int? = nil,
+		registration_mode: RegistrationMode? = nil,
+		reports_email_admins: Bool? = nil,
+		require_email_verification: Bool? = nil,
+		sidebar: String? = nil,
+		slur_filter_regex: String? = nil,
+		taglines: [String]? = nil
+	) {
 		self.actor_name_max_length = actor_name_max_length
 		self.allowed_instances = allowed_instances
 		self.application_email_admins = application_email_admins
@@ -101,6 +137,11 @@ public struct CreateSiteRequest: APIRequest {
 		self.taglines = taglines
 	}
 }
+
 public struct SiteResponse: APIResponse {
 	public let site_view: SiteView
+
+	public init(site_view: SiteView) {
+		self.site_view = site_view
+	}
 }

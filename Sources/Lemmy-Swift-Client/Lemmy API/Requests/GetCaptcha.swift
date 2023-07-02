@@ -1,10 +1,3 @@
-//
-//  GetCaptcha.swift
-//
-//
-//  Created by Charlie Fish on 6/11/23.
-//
-
 import Foundation
 
 public struct GetCaptchaRequest: APIRequest {
@@ -15,7 +8,12 @@ public struct GetCaptchaRequest: APIRequest {
 
 	public init() {}
 }
+
 public struct GetCaptchaResponse: APIResponse {
 	/// Will be nil if captchas are disabled.
 	public let ok: CaptchaResponse?
+
+	public init(ok: CaptchaResponse? = nil) {
+		self.ok = ok
+	}
 }

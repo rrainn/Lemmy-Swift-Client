@@ -1,10 +1,3 @@
-//
-//  GetComments.swift
-//
-//
-//  Created by Charlie Fish on 6/11/23.
-//
-
 import Foundation
 
 public struct GetCommentsRequest: APIRequest {
@@ -25,7 +18,19 @@ public struct GetCommentsRequest: APIRequest {
 	public let sort: CommentSortType?
 	public let type_: ListingType?
 
-	public init(auth: String? = nil, community_id: Int? = nil, community_name: String? = nil, limit: Int? = nil, max_depth: Int? = nil, page: Int? = nil, parent_id: Int? = nil, post_id: Int? = nil, saved_only: Bool? = nil, sort: CommentSortType? = nil, type_: ListingType? = nil) {
+	public init(
+		auth: String? = nil,
+		community_id: Int? = nil,
+		community_name: String? = nil,
+		limit: Int? = nil,
+		max_depth: Int? = nil,
+		page: Int? = nil,
+		parent_id: Int? = nil,
+		post_id: Int? = nil,
+		saved_only: Bool? = nil,
+		sort: CommentSortType? = nil,
+		type_: ListingType? = nil
+	) {
 		self.auth = auth
 		self.community_id = community_id
 		self.community_name = community_name
@@ -39,6 +44,11 @@ public struct GetCommentsRequest: APIRequest {
 		self.type_ = type_
 	}
 }
+
 public struct GetCommentsResponse: APIResponse {
 	public let comments: [CommentView]
+
+	public init(comments: [CommentView]) {
+		self.comments = comments
+	}
 }
