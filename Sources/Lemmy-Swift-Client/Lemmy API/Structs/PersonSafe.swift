@@ -19,7 +19,7 @@ public struct PersonSafe: Codable {
 	public let deleted: Bool
 	public let display_name: String?
 	public let id: Int
-	public let inbox_url: String
+	public let inbox_url: String?
 	public let instance_id: Int
 	public let local: Bool
 	public let matrix_user_id: String?
@@ -28,7 +28,7 @@ public struct PersonSafe: Codable {
 	public let shared_inbox_url: String?
 	public let updated: String?
 
-	public init(actor_id: String, admin: Bool, avatar: String? = nil, ban_expires: String? = nil, banned: Bool, banner: String? = nil, bio: String? = nil, bot_account: Bool, deleted: Bool, display_name: String? = nil, id: Int, inbox_url: String, instance_id: Int, local: Bool, matrix_user_id: String? = nil, name: String, published: String, shared_inbox_url: String? = nil, updated: String? = nil) {
+	public init(actor_id: String, admin: Bool, avatar: String? = nil, ban_expires: String? = nil, banned: Bool, banner: String? = nil, bio: String? = nil, bot_account: Bool, deleted: Bool, display_name: String? = nil, id: Int, inbox_url: String?, instance_id: Int, local: Bool, matrix_user_id: String? = nil, name: String, published: String, shared_inbox_url: String? = nil, updated: String? = nil) {
 		self.actor_id = actor_id
 		self.admin = admin
 		self.avatar = avatar
