@@ -2,7 +2,7 @@ import Foundation
 
 /// An instance of the Lemmy API.
 public class LemmyAPI {
-	private let baseUrl: URL
+	public let baseUrl: URL
 	private let headers: [String: String]?
 	private let urlSession: URLSession
 
