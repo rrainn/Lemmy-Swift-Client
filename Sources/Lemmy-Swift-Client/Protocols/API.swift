@@ -7,7 +7,7 @@
 
 import Foundation
 
-public protocol APIRequest: Codable {
+public protocol APIRequest: Codable, Hashable {
 	static var httpMethod: HTTPMethod { get }
 	static var path: String { get }
 
