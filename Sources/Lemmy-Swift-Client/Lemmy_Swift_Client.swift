@@ -12,24 +12,35 @@ public class LemmyAPI {
 		self.urlSession = urlSession
 	}
 
-	public func request<T: APIRequest>(_ apiRequest: T) async throws -> T.Response {
+	/// Do request to lemmy server and return URLSession result
+	public func baseRequest<T: APIRequest>(_ apiRequest: T) async throws
+		-> (T.Response, URLResponse, Data)
+	{
 		var request = URLRequest(url: baseUrl.appending(path: T.path))
 		request.httpMethod = T.httpMethod.rawValue
 		let encoder = JSONEncoder()
 		if T.httpMethod == .get {
 			let mirror = Mirror(reflecting: apiRequest)
-			request.url = request.url?.appending(queryItems: mirror.children.compactMap { label, value in
-				guard let label, let valueString = value as? CustomStringConvertible else { return nil }
+			request.url = request.url?
+				.appending(queryItems: mirror.children.compactMap { label, value in
+					guard let label,
+					      let valueString = value as? CustomStringConvertible else { return nil }
 
-				return URLQueryItem(name: label, value: String(describing: valueString))
-			})
+					return URLQueryItem(name: label, value: String(describing: valueString))
+				})
 		} else {
 			request.httpBody = try encoder.encode(apiRequest)
 		}
 		request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-		let (data, _) = try await urlSession.data(for: request)
+		let (data, response) = try await URLSession.shared.data(for: request)
 		let decoder = JSONDecoder()
-		return try decoder.decode(T.Response.self, from: data)
+		let decodedResult = try decoder.decode(T.Response.self, from: data)
+		return (decodedResult, response, data)
+	}
+
+	public func request<T: APIRequest>(_ apiRequest: T) async throws -> T.Response {
+		let (result, _, _) = try await baseRequest(apiRequest)
+		return result
 	}
 }
 
