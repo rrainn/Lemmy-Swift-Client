@@ -1,10 +1,3 @@
-//
-//  LocalSiteRateLimit.swift
-//
-//
-//  Created by Charlie Fish on 6/11/23.
-//
-
 import Foundation
 
 public struct LocalSiteRateLimit: Codable {
@@ -25,7 +18,24 @@ public struct LocalSiteRateLimit: Codable {
 	public let search_per_second: Int
 	public let updated: Date?
 
-	public init(comment: Int, comment_per_second: Int, id: Int, image: Int, image_per_second: Int, local_site_id: Int, message: Int, message_per_second: Int, post: Int, post_per_second: Int, published: Date, register: Int, register_per_second: Int, search: Int, search_per_second: Int, updated: Date? = nil) {
+	public init(
+		comment: Int,
+		comment_per_second: Int,
+		id: Int,
+		image: Int,
+		image_per_second: Int,
+		local_site_id: Int,
+		message: Int,
+		message_per_second: Int,
+		post: Int,
+		post_per_second: Int,
+		published: Date,
+		register: Int,
+		register_per_second: Int,
+		search: Int,
+		search_per_second: Int,
+		updated: Date? = nil
+	) {
 		self.comment = comment
 		self.comment_per_second = comment_per_second
 		self.id = id

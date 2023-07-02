@@ -1,10 +1,3 @@
-//
-//  MarkPersonMentionAsRead.swift
-//
-//
-//  Created by Charlie Fish on 6/11/23.
-//
-
 import Foundation
 
 public struct MarkPersonMentionAsReadRequest: APIRequest {
@@ -23,6 +16,7 @@ public struct MarkPersonMentionAsReadRequest: APIRequest {
 		self.read = read
 	}
 }
+
 public struct PersonMentionResponse: APIResponse {
 	public let person_mention_view: PersonMentionView
 

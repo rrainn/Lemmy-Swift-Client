@@ -1,10 +1,3 @@
-//
-//  SiteMetadata.swift
-//
-//
-//  Created by Charlie Fish on 6/11/23.
-//
-
 import Foundation
 
 public struct SiteMetadata: Codable {
@@ -13,7 +6,12 @@ public struct SiteMetadata: Codable {
 	public let image: String?
 	public let title: String?
 
-	public init(description: String? = nil, html: String? = nil, image: String? = nil, title: String? = nil) {
+	public init(
+		description: String? = nil,
+		html: String? = nil,
+		image: String? = nil,
+		title: String? = nil
+	) {
 		self.description = description
 		self.html = html
 		self.image = image

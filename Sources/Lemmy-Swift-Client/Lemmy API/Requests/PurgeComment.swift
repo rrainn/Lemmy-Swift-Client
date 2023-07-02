@@ -1,10 +1,3 @@
-//
-//  PurgeComment.swift
-//
-//
-//  Created by Charlie Fish on 6/11/23.
-//
-
 import Foundation
 
 public struct PurgeCommentRequest: APIRequest {
@@ -23,6 +16,7 @@ public struct PurgeCommentRequest: APIRequest {
 		self.reason = reason
 	}
 }
+
 public struct PurgeItemResponse: APIResponse {
 	public let success: Bool
 

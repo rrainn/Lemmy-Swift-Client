@@ -1,10 +1,3 @@
-//
-//  Post.swift
-//
-//
-//  Created by Charlie Fish on 6/10/23.
-//
-
 import Foundation
 
 public struct Post: Codable {
@@ -30,7 +23,29 @@ public struct Post: Codable {
 	public let updated: Date?
 	public let url: String?
 
-	public init(ap_id: String, body: String? = nil, community_id: Int, creator_id: Int, deleted: Bool, embed_description: String? = nil, embed_title: String? = nil, embed_video_url: String? = nil, featured_community: Bool, featured_local: Bool, id: Int, language_id: Int, local: Bool, locked: Bool, name: String, nsfw: Bool, published: Date, removed: Bool, thumbnail_url: String? = nil, updated: Date? = nil, url: String? = nil) {
+	public init(
+		ap_id: String,
+		body: String? = nil,
+		community_id: Int,
+		creator_id: Int,
+		deleted: Bool,
+		embed_description: String? = nil,
+		embed_title: String? = nil,
+		embed_video_url: String? = nil,
+		featured_community: Bool,
+		featured_local: Bool,
+		id: Int,
+		language_id: Int,
+		local: Bool,
+		locked: Bool,
+		name: String,
+		nsfw: Bool,
+		published: Date,
+		removed: Bool,
+		thumbnail_url: String? = nil,
+		updated: Date? = nil,
+		url: String? = nil
+	) {
 		self.ap_id = ap_id
 		self.body = body
 		self.community_id = community_id
@@ -54,4 +69,3 @@ public struct Post: Codable {
 		self.url = url
 	}
 }
-

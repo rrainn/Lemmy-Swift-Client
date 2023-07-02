@@ -1,10 +1,3 @@
-//
-//  PrivateMessage.swift
-//
-//
-//  Created by Charlie Fish on 6/11/23.
-//
-
 import Foundation
 
 public struct PrivateMessage: Codable {
@@ -19,7 +12,18 @@ public struct PrivateMessage: Codable {
 	public let recipient_id: Int
 	public let updated: Date?
 
-	public init(ap_id: String, content: String, creator_id: Int, deleted: Bool, id: Int, local: Bool, published: Date, read: Bool, recipient_id: Int, updated: Date? = nil) {
+	public init(
+		ap_id: String,
+		content: String,
+		creator_id: Int,
+		deleted: Bool,
+		id: Int,
+		local: Bool,
+		published: Date,
+		read: Bool,
+		recipient_id: Int,
+		updated: Date? = nil
+	) {
 		self.ap_id = ap_id
 		self.content = content
 		self.creator_id = creator_id

@@ -1,18 +1,11 @@
-//
-//  RegistrationMode.swift
-//
-//
-//  Created by Charlie Fish on 6/11/23.
-//
-
 import Foundation
 
-public enum RegistrationMode: String, Codable, CustomStringConvertible {
+public enum RegistrationMode: String, Codable, CustomStringConvertible, CaseIterable {
 	case closed = "Closed"
 	case open = "Open"
 	case requireApplication = "RequireApplication"
 
 	public var description: String {
-		return self.rawValue
+		return rawValue
 	}
 }

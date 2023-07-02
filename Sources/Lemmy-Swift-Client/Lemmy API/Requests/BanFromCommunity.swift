@@ -1,10 +1,3 @@
-//
-//  BanFromCommunity.swift
-//
-//
-//  Created by Charlie Fish on 6/11/23.
-//
-
 import Foundation
 
 public struct BanFromCommunityRequest: APIRequest {
@@ -23,7 +16,15 @@ public struct BanFromCommunityRequest: APIRequest {
 	/// Removes/Restores their comments and posts for that community.
 	public let remove_data: Bool?
 
-	public init(auth: String, ban: Bool, community_id: Int, expires: Int? = nil, person_id: Int, reason: String? = nil, remove_data: Bool? = nil) {
+	public init(
+		auth: String,
+		ban: Bool,
+		community_id: Int,
+		expires: Int? = nil,
+		person_id: Int,
+		reason: String? = nil,
+		remove_data: Bool? = nil
+	) {
 		self.auth = auth
 		self.ban = ban
 		self.community_id = community_id
@@ -33,6 +34,7 @@ public struct BanFromCommunityRequest: APIRequest {
 		self.remove_data = remove_data
 	}
 }
+
 public struct BanFromCommunityResponse: APIResponse {
 	public let banned: Bool
 	public let person_view: PersonViewSafe

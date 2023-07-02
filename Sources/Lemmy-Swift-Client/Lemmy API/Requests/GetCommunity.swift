@@ -1,10 +1,3 @@
-//
-//  GetCommunity.swift
-//
-//
-//  Created by Charlie Fish on 6/11/23.
-//
-
 import Foundation
 
 public struct GetCommunityRequest: APIRequest {
@@ -23,6 +16,7 @@ public struct GetCommunityRequest: APIRequest {
 		self.name = name
 	}
 }
+
 public struct GetCommunityResponse: APIResponse {
 	public let community_view: CommunityView
 	public let default_post_language: Int?
@@ -31,7 +25,14 @@ public struct GetCommunityResponse: APIResponse {
 	public let online: Int?
 	public let site: Site?
 
-	public init(community_view: CommunityView, default_post_language: Int? = nil, discussion_languages: [Int], moderators: [CommunityModeratorView], online: Int?, site: Site? = nil) {
+	public init(
+		community_view: CommunityView,
+		default_post_language: Int? = nil,
+		discussion_languages: [Int],
+		moderators: [CommunityModeratorView],
+		online: Int?,
+		site: Site? = nil
+	) {
 		self.community_view = community_view
 		self.default_post_language = default_post_language
 		self.discussion_languages = discussion_languages

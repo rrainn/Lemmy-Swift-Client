@@ -1,10 +1,3 @@
-//
-//  GetSite.swift
-//
-//
-//  Created by Charlie Fish on 6/11/23.
-//
-
 import Foundation
 
 public struct GetSiteRequest: APIRequest {
@@ -19,6 +12,7 @@ public struct GetSiteRequest: APIRequest {
 		self.auth = auth
 	}
 }
+
 public struct GetSiteResponse: APIResponse {
 	public let admins: [PersonViewSafe]
 	public let all_languages: [Language]
@@ -30,7 +24,17 @@ public struct GetSiteResponse: APIResponse {
 	public let taglines: [Tagline]?
 	public let version: String
 
-	public init(admins: [PersonViewSafe], all_languages: [Language], discussion_languages: [Int], federated_instances: FederatedInstances? = nil, my_user: MyUserInfo? = nil, online: Int?, site_view: SiteView, taglines: [Tagline]? = nil, version: String) {
+	public init(
+		admins: [PersonViewSafe],
+		all_languages: [Language],
+		discussion_languages: [Int],
+		federated_instances: FederatedInstances? = nil,
+		my_user: MyUserInfo? = nil,
+		online: Int?,
+		site_view: SiteView,
+		taglines: [Tagline]? = nil,
+		version: String
+	) {
 		self.admins = admins
 		self.all_languages = all_languages
 		self.discussion_languages = discussion_languages

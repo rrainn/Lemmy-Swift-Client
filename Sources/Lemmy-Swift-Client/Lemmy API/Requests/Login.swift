@@ -1,10 +1,3 @@
-//
-//  Login.swift
-//
-//
-//  Created by Charlie Fish on 6/10/23.
-//
-
 import Foundation
 
 public struct LoginRequest: APIRequest {
@@ -21,6 +14,7 @@ public struct LoginRequest: APIRequest {
 		self.password = password
 	}
 }
+
 public struct LoginResponse: APIResponse {
 	/// The JSON Web Token for the user.
 	///

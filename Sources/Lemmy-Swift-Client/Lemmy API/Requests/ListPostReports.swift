@@ -1,10 +1,3 @@
-//
-//  ListPostReports.swift
-//
-//
-//  Created by Charlie Fish on 6/11/23.
-//
-
 import Foundation
 
 public struct ListPostReportsRequest: APIRequest {
@@ -21,7 +14,13 @@ public struct ListPostReportsRequest: APIRequest {
 	/// Only shows the unresolved reports.
 	public let unresovled_only: Bool?
 
-	public init(auth: String, community_id: Int? = nil, limit: Int? = nil, page: Int? = nil, unresovled_only: Bool? = nil) {
+	public init(
+		auth: String,
+		community_id: Int? = nil,
+		limit: Int? = nil,
+		page: Int? = nil,
+		unresovled_only: Bool? = nil
+	) {
 		self.auth = auth
 		self.community_id = community_id
 		self.limit = limit
@@ -29,6 +28,7 @@ public struct ListPostReportsRequest: APIRequest {
 		self.unresovled_only = unresovled_only
 	}
 }
+
 public struct ListPostReportsResponse: APIResponse {
 	public let post_reports: [PostReportView]
 

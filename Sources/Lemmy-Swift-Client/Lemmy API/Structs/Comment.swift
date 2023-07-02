@@ -1,10 +1,3 @@
-//
-//  Comment.swift
-//
-//
-//  Created by Charlie Fish on 6/10/23.
-//
-
 import Foundation
 
 public struct Comment: Codable {
@@ -22,7 +15,21 @@ public struct Comment: Codable {
 	public let removed: Bool
 	public let updated: Date?
 
-	public init(ap_id: String, content: String, creator_id: Int, deleted: Bool, distinguished: Bool, id: Int, language_id: Int, local: Bool, path: String, post_id: Int, published: Date, removed: Bool, updated: Date? = nil) {
+	public init(
+		ap_id: String,
+		content: String,
+		creator_id: Int,
+		deleted: Bool,
+		distinguished: Bool,
+		id: Int,
+		language_id: Int,
+		local: Bool,
+		path: String,
+		post_id: Int,
+		published: Date,
+		removed: Bool,
+		updated: Date? = nil
+	) {
 		self.ap_id = ap_id
 		self.content = content
 		self.creator_id = creator_id

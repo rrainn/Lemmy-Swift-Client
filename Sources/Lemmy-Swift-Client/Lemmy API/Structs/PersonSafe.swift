@@ -1,10 +1,3 @@
-//
-//  PersonSafe.swift
-//
-//
-//  Created by Charlie Fish on 6/10/23.
-//
-
 import Foundation
 
 public struct PersonSafe: Codable {
@@ -28,7 +21,27 @@ public struct PersonSafe: Codable {
 	public let shared_inbox_url: String?
 	public let updated: Date?
 
-	public init(actor_id: String, admin: Bool, avatar: String? = nil, ban_expires: String? = nil, banned: Bool, banner: String? = nil, bio: String? = nil, bot_account: Bool, deleted: Bool, display_name: String? = nil, id: Int, inbox_url: String?, instance_id: Int, local: Bool, matrix_user_id: String? = nil, name: String, published: Date, shared_inbox_url: String? = nil, updated: Date? = nil) {
+	public init(
+		actor_id: String,
+		admin: Bool,
+		avatar: String? = nil,
+		ban_expires: String? = nil,
+		banned: Bool,
+		banner: String? = nil,
+		bio: String? = nil,
+		bot_account: Bool,
+		deleted: Bool,
+		display_name: String? = nil,
+		id: Int,
+		inbox_url: String?,
+		instance_id: Int,
+		local: Bool,
+		matrix_user_id: String? = nil,
+		name: String,
+		published: Date,
+		shared_inbox_url: String? = nil,
+		updated: Date? = nil
+	) {
 		self.actor_id = actor_id
 		self.admin = admin
 		self.avatar = avatar

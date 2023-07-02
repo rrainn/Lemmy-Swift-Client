@@ -1,10 +1,3 @@
-//
-//  ListPrivateMessageReports.swift
-//
-//
-//  Created by Charlie Fish on 6/11/23.
-//
-
 import Foundation
 
 public struct ListPrivateMessageReportsRequest: APIRequest {
@@ -25,6 +18,7 @@ public struct ListPrivateMessageReportsRequest: APIRequest {
 		self.unresolved_only = unresolved_only
 	}
 }
+
 public struct ListPrivateMessageReportsResponse: APIResponse {
 	public let private_message_reports: [PrivateMessageReportView]
 

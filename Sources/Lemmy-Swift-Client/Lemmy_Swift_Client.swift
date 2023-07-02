@@ -21,7 +21,7 @@ public enum LemmyAPIError: Error, CustomStringConvertible, LocalizedError {
 
 /// An instance of the Lemmy API.
 public class LemmyAPI {
-	private let baseUrl: URL
+	public let baseUrl: URL
 	private let headers: [String: String]?
 	private let urlSession: URLSession
 
@@ -53,7 +53,7 @@ public class LemmyAPI {
 		let encoder = JSONEncoder()
 		if T.httpMethod == .get {
 			let mirror = Mirror(reflecting: apiRequest)
-			request.url = request.url?.appending(queryItems: mirror.children.compactMap { (label, value) in
+			request.url = request.url?.appending(queryItems: mirror.children.compactMap { label, value in
 				guard let label else { return nil }
 				
 				if let date = value as? Date {

@@ -1,10 +1,3 @@
-//
-//  VerifyEmail.swift
-//
-//
-//  Created by Charlie Fish on 6/11/23.
-//
-
 import Foundation
 
 public struct VerifyEmailRequest: APIRequest {
@@ -19,6 +12,7 @@ public struct VerifyEmailRequest: APIRequest {
 		self.token = token
 	}
 }
+
 public struct VerifyEmailResponse: APIResponse {
 	public init() {}
 }
