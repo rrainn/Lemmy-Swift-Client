@@ -1,15 +1,15 @@
 import Foundation
 
 public struct RegistrationApplicationView: Codable {
-	public let admin: PersonSafe?
-	public let creator: PersonSafe
-	public let creator_local_user: LocalUserSettings
+	public let admin: Person?
+	public let creator: Person
+	public let creator_local_user: LocalUser
 	public let registration_application: RegistrationApplication
 
 	public init(
-		admin: PersonSafe? = nil,
-		creator: PersonSafe,
-		creator_local_user: LocalUserSettings,
+		admin: Person? = nil,
+		creator: Person,
+		creator_local_user: LocalUser,
 		registration_application: RegistrationApplication
 	) {
 		self.admin = admin

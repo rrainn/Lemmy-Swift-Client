@@ -1,9 +1,9 @@
 import Foundation
 
-public struct LocalUserSettings: Codable {
+public struct LocalUser: Codable {
 	public let accepted_application: Bool
-	public let default_listing_type: Int
-	public let default_sort_type: Int
+	public let default_listing_type: ListingType
+	public let default_sort_type: SortType
 	public let email: String?
 	public let email_verified: Bool
 	public let id: Int
@@ -21,8 +21,8 @@ public struct LocalUserSettings: Codable {
 
 	public init(
 		accepted_application: Bool,
-		default_listing_type: Int,
-		default_sort_type: Int,
+		default_listing_type: ListingType,
+		default_sort_type: SortType,
 		email: String? = nil,
 		email_verified: Bool,
 		id: Int,

@@ -5,12 +5,12 @@ public struct CommentReplyView: Codable {
 	public let comment_reply: CommentReply
 	public let community: CommunitySafe
 	public let counts: CommentAggregates
-	public let creator: PersonSafe
+	public let creator: Person
 	public let creator_banned_from_community: Bool
 	public let creator_blocked: Bool
 	public let my_vote: Int?
 	public let post: Post
-	public let recipient: PersonSafe
+	public let recipient: Person
 	public let saved: Bool
 	public let subscribed: SubscribedType
 
@@ -19,12 +19,12 @@ public struct CommentReplyView: Codable {
 		comment_reply: CommentReply,
 		community: CommunitySafe,
 		counts: CommentAggregates,
-		creator: PersonSafe,
+		creator: Person,
 		creator_banned_from_community: Bool,
 		creator_blocked: Bool,
 		my_vote: Int? = nil,
 		post: Post,
-		recipient: PersonSafe,
+		recipient: Person,
 		saved: Bool,
 		subscribed: SubscribedType
 	) {
