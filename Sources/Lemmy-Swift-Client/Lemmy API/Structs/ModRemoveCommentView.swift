@@ -2,18 +2,18 @@ import Foundation
 
 public struct ModRemoveCommentView: Codable {
 	public let comment: Comment
-	public let commenter: PersonSafe
+	public let commenter: Person
 	public let community: CommunitySafe
 	public let mod_remove_comment: ModRemoveComment
-	public let moderator: PersonSafe?
+	public let moderator: Person?
 	public let post: Post
 
 	public init(
 		comment: Comment,
-		commenter: PersonSafe,
+		commenter: Person,
 		community: CommunitySafe,
 		mod_remove_comment: ModRemoveComment,
-		moderator: PersonSafe? = nil,
+		moderator: Person? = nil,
 		post: Post
 	) {
 		self.comment = comment

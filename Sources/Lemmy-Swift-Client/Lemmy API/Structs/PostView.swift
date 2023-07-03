@@ -3,7 +3,7 @@ import Foundation
 public struct PostView: Codable {
 	public let community: CommunitySafe
 	public let counts: PostAggregates
-	public let creator: PersonSafe
+	public let creator: Person
 	public let creator_banned_from_community: Bool
 	public let creator_blocked: Bool
 	public let my_vote: Int?
@@ -16,7 +16,7 @@ public struct PostView: Codable {
 	public init(
 		community: CommunitySafe,
 		counts: PostAggregates,
-		creator: PersonSafe,
+		creator: Person,
 		creator_banned_from_community: Bool,
 		creator_blocked: Bool,
 		my_vote: Int? = nil,

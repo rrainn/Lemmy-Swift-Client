@@ -11,8 +11,8 @@ public struct SaveUserSettingsRequest: APIRequest {
 	public let banner: String?
 	public let bio: String?
 	public let bot_account: Bool?
-	public let default_listing_type: Int?
-	public let default_sort_type: Int?
+	public let default_listing_type: ListingType?
+	public let default_sort_type: SortType?
 	public let discussion_languages: [Int]?
 	public let display_name: String?
 	public let email: String?
@@ -33,8 +33,8 @@ public struct SaveUserSettingsRequest: APIRequest {
 		banner: String? = nil,
 		bio: String? = nil,
 		bot_account: Bool? = nil,
-		default_listing_type: Int? = nil,
-		default_sort_type: Int? = nil,
+		default_listing_type: ListingType? = nil,
+		default_sort_type: SortType? = nil,
 		discussion_languages: [Int]? = nil,
 		display_name: String? = nil,
 		email: String? = nil,

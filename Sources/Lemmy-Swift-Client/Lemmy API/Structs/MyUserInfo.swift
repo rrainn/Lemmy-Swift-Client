@@ -4,7 +4,7 @@ public struct MyUserInfo: Codable {
 	public let community_blocks: [CommunityBlockView]
 	public let discussion_languages: [Int]
 	public let follows: [CommunityFolowerView]
-	public let local_user_view: LocalUserSettingsView
+	public let local_user_view: LocalUserView
 	public let moderates: [CommunityModeratorView]
 	public let person_blocks: [PersonBlockView]
 
@@ -12,7 +12,7 @@ public struct MyUserInfo: Codable {
 		community_blocks: [CommunityBlockView],
 		discussion_languages: [Int],
 		follows: [CommunityFolowerView],
-		local_user_view: LocalUserSettingsView,
+		local_user_view: LocalUserView,
 		moderates: [CommunityModeratorView],
 		person_blocks: [PersonBlockView]
 	) {
