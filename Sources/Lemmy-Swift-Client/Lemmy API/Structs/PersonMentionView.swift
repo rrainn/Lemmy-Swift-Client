@@ -1,6 +1,6 @@
 import Foundation
 
-public struct PersonMentionView: Codable {
+public struct PersonMentionView: Codable, Hashable {
 	public let comment: Comment
 	public let community: CommunitySafe
 	public let counts: CommentAggregates

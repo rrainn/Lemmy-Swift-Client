@@ -1,6 +1,6 @@
 import Foundation
 
-public struct PrivateMessageView: Codable {
+public struct PrivateMessageView: Codable, Hashable {
 	public let creator: PersonSafe
 	public let private_message: PrivateMessage
 	public let recipient: PersonSafe

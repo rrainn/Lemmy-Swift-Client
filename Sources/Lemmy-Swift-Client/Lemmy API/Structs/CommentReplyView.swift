@@ -1,6 +1,6 @@
 import Foundation
 
-public struct CommentReplyView: Codable {
+public struct CommentReplyView: Codable, Hashable {
 	public let comment: Comment
 	public let comment_reply: CommentReply
 	public let community: CommunitySafe

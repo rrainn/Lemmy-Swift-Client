@@ -1,6 +1,6 @@
 import Foundation
 
-public struct PersonViewSafe: Codable {
+public struct PersonViewSafe: Codable, Hashable {
 	public let counts: PersonAggregates
 	public let person: PersonSafe
 

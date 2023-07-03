@@ -1,6 +1,6 @@
 import Foundation
 
-public struct CommunityFolowerView: Codable {
+public struct CommunityFolowerView: Codable, Hashable {
 	public let community: CommunitySafe
 	public let follower: PersonSafe
 

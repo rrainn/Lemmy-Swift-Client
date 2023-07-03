@@ -1,6 +1,6 @@
 import Foundation
 
-public struct AdminPurgeCommentView: Codable {
+public struct AdminPurgeCommentView: Codable, Hashable {
 	public let admin: PersonSafe?
 	public let admin_purge_comment: AdminPurgeComment
 	public let post: Post

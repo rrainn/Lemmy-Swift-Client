@@ -1,6 +1,6 @@
 import Foundation
 
-public struct ModTransferCommunityView: Codable {
+public struct ModTransferCommunityView: Codable, Hashable {
 	public let community: CommunitySafe
 	public let mod_transfer_community: ModTransferCommunity
 	public let modded_person: PersonSafe

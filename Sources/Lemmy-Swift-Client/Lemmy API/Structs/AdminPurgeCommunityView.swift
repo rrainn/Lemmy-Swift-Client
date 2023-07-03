@@ -1,6 +1,6 @@
 import Foundation
 
-public struct AdminPurgeCommunityView: Codable {
+public struct AdminPurgeCommunityView: Codable, Hashable {
 	public let admin: PersonSafe?
 	public let admin_purge_community: AdminPurgeCommunity
 

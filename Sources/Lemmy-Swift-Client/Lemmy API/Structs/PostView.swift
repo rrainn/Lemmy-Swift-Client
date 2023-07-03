@@ -1,6 +1,6 @@
 import Foundation
 
-public struct PostView: Codable {
+public struct PostView: Codable, Hashable {
 	public let community: CommunitySafe
 	public let counts: PostAggregates
 	public let creator: PersonSafe
