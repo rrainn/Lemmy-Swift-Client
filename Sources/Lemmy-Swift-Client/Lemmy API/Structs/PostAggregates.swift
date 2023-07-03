@@ -12,6 +12,8 @@ public struct PostAggregates: Codable {
 	public let post_id: Int
 	public let score: Int
 	public let upvotes: Int
+	public let hot_rank: Int
+	public let hot_rank_active: Int
 
 	public init(
 		comments: Int,
@@ -23,7 +25,9 @@ public struct PostAggregates: Codable {
 		newest_comment_time_necro: String,
 		post_id: Int,
 		score: Int,
-		upvotes: Int
+		upvotes: Int,
+		hot_rank: Int,
+		hot_rank_active: Int
 	) {
 		self.comments = comments
 		self.downvotes = downvotes
@@ -35,5 +39,7 @@ public struct PostAggregates: Codable {
 		self.post_id = post_id
 		self.score = score
 		self.upvotes = upvotes
+		self.hot_rank = hot_rank
+		self.hot_rank_active = hot_rank_active
 	}
 }
