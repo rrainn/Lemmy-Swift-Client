@@ -21,7 +21,7 @@ public class LemmyAPI {
 			request.url = request.url?
 				.appending(queryItems: mirror.children.compactMap { label, value in
 					guard let label,
-						  let valueString = value as? CustomStringConvertible else { return nil }
+					      let valueString = value as? CustomStringConvertible else { return nil }
 
 					return URLQueryItem(name: label, value: String(describing: valueString))
 				})
