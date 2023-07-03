@@ -1,6 +1,6 @@
 import Foundation
 
-public struct PersonSafe: Codable {
+public struct PersonSafe: Codable, Identifiable, Hashable {
 	public let actor_id: String
 	public let admin: Bool
 	public let avatar: String?

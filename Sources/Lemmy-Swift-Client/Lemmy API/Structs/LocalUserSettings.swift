@@ -1,6 +1,6 @@
 import Foundation
 
-public struct LocalUserSettings: Codable {
+public struct LocalUserSettings: Codable, Identifiable, Hashable {
 	public let accepted_application: Bool
 	public let default_listing_type: Int
 	public let default_sort_type: Int

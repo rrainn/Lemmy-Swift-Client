@@ -1,6 +1,6 @@
 import Foundation
 
-public struct PostReport: Codable {
+public struct PostReport: Codable, Identifiable, Hashable {
 	public let creator_id: Int
 	public let id: Int
 	public let original_post_body: String?

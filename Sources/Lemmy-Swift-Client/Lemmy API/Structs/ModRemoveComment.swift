@@ -1,6 +1,6 @@
 import Foundation
 
-public struct ModRemoveComment: Codable {
+public struct ModRemoveComment: Codable, Identifiable, Hashable {
 	public let comment_id: Int
 	public let id: Int
 	public let mod_person_id: Int

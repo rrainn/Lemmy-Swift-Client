@@ -1,6 +1,6 @@
 import Foundation
 
-public struct CaptchaResponse: Codable {
+public struct CaptchaResponse: Codable, Hashable {
 	/// A Base64 encoded png.
 	public let png: String
 	/// A UUID to match the one given on request.

@@ -1,6 +1,6 @@
 import Foundation
 
-public struct Post: Codable {
+public struct Post: Codable, Identifiable, Hashable {
 	public let ap_id: String
 	public let body: String?
 	public let community_id: Int
