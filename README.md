@@ -15,7 +15,7 @@ We use Swift Package Manager to make it easy to install and use the Lemmy Swift 
 
 ```swift
 dependencies: [
-	.package(url: "https://github.com/rrainn/Lemmy-Swift-Client.git", .upToNextMajor(from: "1.0.0"))
+	.package(url: "https://github.com/rrainn/Lemmy-Swift-Client.git", .upToNextMajor(from: "3.0.0"))
 ]
 ```
 
