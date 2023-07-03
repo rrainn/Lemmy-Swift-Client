@@ -10,6 +10,8 @@ public struct CommunityAggregates: Codable {
 	public let users_active_half_year: Int
 	public let users_active_month: Int
 	public let users_active_week: Int
+	public let published: String
+	public let hot_rank: Int
 
 	public init(
 		comments: Int,
@@ -20,7 +22,9 @@ public struct CommunityAggregates: Codable {
 		users_active_day: Int,
 		users_active_half_year: Int,
 		users_active_month: Int,
-		users_active_week: Int
+		users_active_week: Int,
+		published: String,
+		hot_rank: Int
 	) {
 		self.comments = comments
 		self.community_id = community_id
@@ -31,5 +35,7 @@ public struct CommunityAggregates: Codable {
 		self.users_active_half_year = users_active_half_year
 		self.users_active_month = users_active_month
 		self.users_active_week = users_active_week
+		self.published = published
+		self.hot_rank = hot_rank
 	}
 }
