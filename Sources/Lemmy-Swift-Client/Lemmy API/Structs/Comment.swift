@@ -1,6 +1,6 @@
 import Foundation
 
-public struct Comment: Codable , Identifiable, Hashable{
+public struct Comment: Codable, Identifiable, Hashable {
 	public let ap_id: String
 	public let content: String
 	public let creator_id: Int
