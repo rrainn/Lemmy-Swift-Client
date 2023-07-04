@@ -3,13 +3,13 @@ import Foundation
 public struct ModLockPostView: Codable, Hashable {
 	public let community: CommunitySafe
 	public let mod_lock_post: ModLockPost
-	public let moderator: PersonSafe?
+	public let moderator: Person?
 	public let post: Post
 
 	public init(
 		community: CommunitySafe,
 		mod_lock_post: ModLockPost,
-		moderator: PersonSafe? = nil,
+		moderator: Person? = nil,
 		post: Post
 	) {
 		self.community = community

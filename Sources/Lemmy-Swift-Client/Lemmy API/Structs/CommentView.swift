@@ -4,7 +4,7 @@ public struct CommentView: Codable, Hashable {
 	public let comment: Comment
 	public let community: CommunitySafe
 	public let counts: CommentAggregates
-	public let creator: PersonSafe
+	public let creator: Person
 	public let creator_banned_from_community: Bool
 	public let creator_blocked: Bool
 	public let my_vote: Int?
@@ -16,7 +16,7 @@ public struct CommentView: Codable, Hashable {
 		comment: Comment,
 		community: CommunitySafe,
 		counts: CommentAggregates,
-		creator: PersonSafe,
+		creator: Person,
 		creator_banned_from_community: Bool,
 		creator_blocked: Bool,
 		my_vote: Int? = nil,

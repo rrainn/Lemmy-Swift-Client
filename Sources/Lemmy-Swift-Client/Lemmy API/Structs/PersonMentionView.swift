@@ -4,13 +4,13 @@ public struct PersonMentionView: Codable, Hashable {
 	public let comment: Comment
 	public let community: CommunitySafe
 	public let counts: CommentAggregates
-	public let creator: PersonSafe
+	public let creator: Person
 	public let creator_banned_from_community: Bool
 	public let creator_blocked: Bool
 	public let my_vote: Int?
 	public let person_mention: PersonMention
 	public let post: Post
-	public let recipient: PersonSafe
+	public let recipient: Person
 	public let saved: Bool
 	public let subscribed: SubscribedType
 
@@ -18,13 +18,13 @@ public struct PersonMentionView: Codable, Hashable {
 		comment: Comment,
 		community: CommunitySafe,
 		counts: CommentAggregates,
-		creator: PersonSafe,
+		creator: Person,
 		creator_banned_from_community: Bool,
 		creator_blocked: Bool,
 		my_vote: Int? = nil,
 		person_mention: PersonMention,
 		post: Post,
-		recipient: PersonSafe,
+		recipient: Person,
 		saved: Bool,
 		subscribed: SubscribedType
 	) {
