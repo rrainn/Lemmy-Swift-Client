@@ -1,6 +1,6 @@
 import Foundation
 
-public struct ModRemoveCommunity: Codable {
+public struct ModRemoveCommunity: Codable, Identifiable, Hashable {
 	public let community_id: Int
 	public let expires: String?
 	public let id: Int

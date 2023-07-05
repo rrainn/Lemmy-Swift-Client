@@ -1,6 +1,6 @@
 import Foundation
 
-public struct PersonAggregates: Codable {
+public struct PersonAggregates: Codable, Identifiable, Hashable {
 	public let comment_count: Int
 	public let comment_score: Int
 	public let id: Int

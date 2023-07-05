@@ -1,6 +1,6 @@
 import Foundation
 
-public struct ModBan: Codable {
+public struct ModBan: Codable, Identifiable, Hashable {
 	public let banned: Bool
 	public let expires: String
 	public let id: Int

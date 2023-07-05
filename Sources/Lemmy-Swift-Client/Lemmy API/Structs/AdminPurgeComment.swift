@@ -1,6 +1,6 @@
 import Foundation
 
-public struct AdminPurgeComment: Codable {
+public struct AdminPurgeComment: Codable, Identifiable, Hashable {
 	public let admin_person_id: Int
 	public let id: Int
 	public let post_id: Int

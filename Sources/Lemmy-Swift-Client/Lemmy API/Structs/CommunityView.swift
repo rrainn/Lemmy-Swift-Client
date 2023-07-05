@@ -1,6 +1,6 @@
 import Foundation
 
-public struct CommunityView: Codable {
+public struct CommunityView: Codable, Hashable {
 	public let blocked: Bool
 	public let community: CommunitySafe
 	public let counts: CommunityAggregates

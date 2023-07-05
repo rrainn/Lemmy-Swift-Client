@@ -1,6 +1,6 @@
 import Foundation
 
-public struct CommunityBlockView: Codable {
+public struct CommunityBlockView: Codable, Hashable {
 	public let community: CommunitySafe
 	public let person: Person
 

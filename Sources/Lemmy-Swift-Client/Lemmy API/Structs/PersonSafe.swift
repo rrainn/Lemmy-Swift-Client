@@ -1,6 +1,6 @@
 import Foundation
 
-public struct Person: Codable {
+public struct Person: Codable, Identifiable, Hashable {
 	public let actor_id: String
 	public let admin: Bool
 	public let avatar: String?

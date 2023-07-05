@@ -1,6 +1,6 @@
 import Foundation
 
-public struct LocalSite: Codable {
+public struct LocalSite: Codable, Identifiable, Hashable {
 	public let actor_name_max_length: Int
 	public let application_email_admins: Bool
 	public let application_question: String?

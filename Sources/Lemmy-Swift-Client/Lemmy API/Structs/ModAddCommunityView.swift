@@ -1,6 +1,6 @@
 import Foundation
 
-public struct ModAddCommunityView: Codable {
+public struct ModAddCommunityView: Codable, Hashable {
 	public let community: CommunitySafe
 	public let mod_add_community: ModAddCommunity
 	public let modded_person: Person

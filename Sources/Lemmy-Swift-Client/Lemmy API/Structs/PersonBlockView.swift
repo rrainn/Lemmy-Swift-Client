@@ -1,6 +1,6 @@
 import Foundation
 
-public struct PersonBlockView: Codable {
+public struct PersonBlockView: Codable, Hashable {
 	public let person: Person
 	public let target: Person
 
