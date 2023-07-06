@@ -1,6 +1,6 @@
 import Foundation
 
-public struct Site: Codable {
+public struct Site: Codable, Identifiable, Hashable {
 	public let actor_id: String
 	public let banner: String?
 	public let description: String?

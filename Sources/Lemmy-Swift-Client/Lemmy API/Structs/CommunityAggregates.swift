@@ -1,6 +1,6 @@
 import Foundation
 
-public struct CommunityAggregates: Codable {
+public struct CommunityAggregates: Codable, Identifiable, Hashable {
 	public let comments: Int
 	public let community_id: Int
 	public let id: Int

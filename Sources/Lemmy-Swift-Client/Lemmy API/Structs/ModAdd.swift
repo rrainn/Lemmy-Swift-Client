@@ -1,6 +1,6 @@
 import Foundation
 
-public struct ModAdd: Codable {
+public struct ModAdd: Codable, Identifiable, Hashable {
 	public let id: Int
 	public let mod_person_id: Int
 	public let other_person_id: Int

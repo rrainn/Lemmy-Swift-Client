@@ -1,6 +1,6 @@
 import Foundation
 
-public struct CommentReply: Codable {
+public struct CommentReply: Codable, Identifiable, Hashable {
 	public let comment_id: Int
 	public let id: Int
 	public let published: String

@@ -1,6 +1,6 @@
 import Foundation
 
-public struct CommunitySafe: Codable {
+public struct CommunitySafe: Codable, Identifiable, Hashable {
 	public let actor_id: String
 	public let banner: String?
 	public let deleted: Bool

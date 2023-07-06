@@ -1,6 +1,6 @@
 import Foundation
 
-public struct SiteView: Codable {
+public struct SiteView: Codable, Hashable {
 	public let counts: SiteAggregates
 	public let local_site: LocalSite
 	public let local_site_rate_limit: LocalSiteRateLimit

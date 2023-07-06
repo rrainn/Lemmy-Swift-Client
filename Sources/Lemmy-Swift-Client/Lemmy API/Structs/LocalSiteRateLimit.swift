@@ -1,6 +1,6 @@
 import Foundation
 
-public struct LocalSiteRateLimit: Codable {
+public struct LocalSiteRateLimit: Codable, Identifiable, Hashable {
 	public let comment: Int
 	public let comment_per_second: Int
 	public let id: Int

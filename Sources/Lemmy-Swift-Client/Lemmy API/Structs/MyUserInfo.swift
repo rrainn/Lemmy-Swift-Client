@@ -1,6 +1,6 @@
 import Foundation
 
-public struct MyUserInfo: Codable {
+public struct MyUserInfo: Codable, Hashable {
 	public let community_blocks: [CommunityBlockView]
 	public let discussion_languages: [Int]
 	public let follows: [CommunityFolowerView]

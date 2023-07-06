@@ -1,6 +1,6 @@
 import Foundation
 
-public struct CommentView: Codable {
+public struct CommentView: Codable, Hashable {
 	public let comment: Comment
 	public let community: CommunitySafe
 	public let counts: CommentAggregates

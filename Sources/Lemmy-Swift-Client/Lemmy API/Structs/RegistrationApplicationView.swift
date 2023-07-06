@@ -1,6 +1,6 @@
 import Foundation
 
-public struct RegistrationApplicationView: Codable {
+public struct RegistrationApplicationView: Codable, Hashable {
 	public let admin: Person?
 	public let creator: Person
 	public let creator_local_user: LocalUser
