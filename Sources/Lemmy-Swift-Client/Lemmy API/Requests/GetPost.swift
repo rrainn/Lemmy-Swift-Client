@@ -20,13 +20,13 @@ public struct GetPostRequest: APIRequest {
 public struct GetPostResponse: APIResponse {
 	public let community_view: CommunityView
 	public let moderators: [CommunityModeratorView]
-	public let online: Int
+	public let online: Int?
 	public let post_view: PostView
 
 	public init(
 		community_view: CommunityView,
 		moderators: [CommunityModeratorView],
-		online: Int,
+		online: Int? = nil,
 		post_view: PostView
 	) {
 		self.community_view = community_view
