@@ -18,6 +18,7 @@ public struct LocalSite: Codable, Identifiable, Hashable {
 	public let slur_filter_regex: String?
 	public let actor_name_max_length: Int
 	public let federation_enabled: Bool
+	public let federation_worker_count: Int
 	public let captcha_enabled: Bool
 	public let captcha_difficulty: String
 	public let published: String
@@ -43,6 +44,7 @@ public struct LocalSite: Codable, Identifiable, Hashable {
 		slur_filter_regex: String? = nil,
 		actor_name_max_length: Int,
 		federation_enabled: Bool,
+		federation_worker_count: Int,
 		captcha_enabled: Bool,
 		captcha_difficulty: String,
 		published: String,
@@ -67,6 +69,7 @@ public struct LocalSite: Codable, Identifiable, Hashable {
 		self.slur_filter_regex = slur_filter_regex
 		self.actor_name_max_length = actor_name_max_length
 		self.federation_enabled = federation_enabled
+		self.federation_worker_count = federation_worker_count
 		self.captcha_enabled = captcha_enabled
 		self.captcha_difficulty = captcha_difficulty
 		self.published = published

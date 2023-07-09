@@ -13,7 +13,6 @@ public struct Person: Codable, Identifiable, Hashable {
 	public let local: Bool
 	public let banner: String?
 	public let deleted: Bool
-	public let inbox_url: String
 	public let matrix_user_id: String?
 	public let admin: Bool
 	public let bot_account: Bool
@@ -33,7 +32,6 @@ public struct Person: Codable, Identifiable, Hashable {
 		local: Bool,
 		banner: String? = nil,
 		deleted: Bool,
-		inbox_url: String,
 		matrix_user_id: String? = nil,
 		admin: Bool,
 		bot_account: Bool,
@@ -52,7 +50,6 @@ public struct Person: Codable, Identifiable, Hashable {
 		self.local = local
 		self.banner = banner
 		self.deleted = deleted
-		self.inbox_url = inbox_url
 		self.matrix_user_id = matrix_user_id
 		self.admin = admin
 		self.bot_account = bot_account

@@ -27,7 +27,6 @@ public struct SaveUserSettingsRequest: APIRequest {
 	public let discussion_languages: [LanguageId]?
 	public let generate_totp_2fa: Bool?
 	public let auth: String
-	public let open_links_in_new_tab: Bool?
 
 	public init(
 		show_nsfw: Bool? = nil,
@@ -50,8 +49,7 @@ public struct SaveUserSettingsRequest: APIRequest {
 		show_new_post_notifs: Bool? = nil,
 		discussion_languages: [LanguageId]? = nil,
 		generate_totp_2fa: Bool? = nil,
-		auth: String,
-		open_links_in_new_tab: Bool? = nil
+		auth: String
 	) {
 		self.show_nsfw = show_nsfw
 		self.show_scores = show_scores
@@ -74,6 +72,5 @@ public struct SaveUserSettingsRequest: APIRequest {
 		self.discussion_languages = discussion_languages
 		self.generate_totp_2fa = generate_totp_2fa
 		self.auth = auth
-		self.open_links_in_new_tab = open_links_in_new_tab
 	}
 }

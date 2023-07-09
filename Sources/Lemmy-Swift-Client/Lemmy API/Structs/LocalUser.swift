@@ -19,7 +19,6 @@ public struct LocalUser: Codable, Identifiable, Hashable {
 	public let email_verified: Bool
 	public let accepted_application: Bool
 	public let totp_2fa_url: String?
-	public let open_links_in_new_tab: Bool
 
 	public init(
 		id: LocalUserId,
@@ -39,8 +38,7 @@ public struct LocalUser: Codable, Identifiable, Hashable {
 		show_new_post_notifs: Bool,
 		email_verified: Bool,
 		accepted_application: Bool,
-		totp_2fa_url: String? = nil,
-		open_links_in_new_tab: Bool
+		totp_2fa_url: String? = nil
 	) {
 		self.id = id
 		self.person_id = person_id
@@ -60,6 +58,5 @@ public struct LocalUser: Codable, Identifiable, Hashable {
 		self.email_verified = email_verified
 		self.accepted_application = accepted_application
 		self.totp_2fa_url = totp_2fa_url
-		self.open_links_in_new_tab = open_links_in_new_tab
 	}
 }

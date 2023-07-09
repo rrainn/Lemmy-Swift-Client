@@ -39,6 +39,7 @@ public struct CreateSiteRequest: APIRequest {
 	public let rate_limit_search_per_second: Int?
 	public let federation_enabled: Bool?
 	public let federation_debug: Bool?
+	public let federation_worker_count: Int?
 	public let captcha_enabled: Bool?
 	public let captcha_difficulty: String?
 	public let allowed_instances: [String]?
@@ -81,6 +82,7 @@ public struct CreateSiteRequest: APIRequest {
 		rate_limit_search_per_second: Int? = nil,
 		federation_enabled: Bool? = nil,
 		federation_debug: Bool? = nil,
+		federation_worker_count: Int? = nil,
 		captcha_enabled: Bool? = nil,
 		captcha_difficulty: String? = nil,
 		allowed_instances: [String]? = nil,
@@ -122,6 +124,7 @@ public struct CreateSiteRequest: APIRequest {
 		self.rate_limit_search_per_second = rate_limit_search_per_second
 		self.federation_enabled = federation_enabled
 		self.federation_debug = federation_debug
+		self.federation_worker_count = federation_worker_count
 		self.captcha_enabled = captcha_enabled
 		self.captcha_difficulty = captcha_difficulty
 		self.allowed_instances = allowed_instances

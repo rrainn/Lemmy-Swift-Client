@@ -14,8 +14,6 @@ public struct Community: Codable, Identifiable, Hashable {
 	public let local: Bool
 	public let icon: String?
 	public let banner: String?
-	public let followers_url: String
-	public let inbox_url: String
 	public let hidden: Bool
 	public let posting_restricted_to_mods: Bool
 	public let instance_id: InstanceId
@@ -34,8 +32,6 @@ public struct Community: Codable, Identifiable, Hashable {
 		local: Bool,
 		icon: String? = nil,
 		banner: String? = nil,
-		followers_url: String,
-		inbox_url: String,
 		hidden: Bool,
 		posting_restricted_to_mods: Bool,
 		instance_id: InstanceId
@@ -53,8 +49,6 @@ public struct Community: Codable, Identifiable, Hashable {
 		self.local = local
 		self.icon = icon
 		self.banner = banner
-		self.followers_url = followers_url
-		self.inbox_url = inbox_url
 		self.hidden = hidden
 		self.posting_restricted_to_mods = posting_restricted_to_mods
 		self.instance_id = instance_id
