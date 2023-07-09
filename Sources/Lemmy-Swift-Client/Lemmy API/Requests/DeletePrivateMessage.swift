@@ -6,13 +6,17 @@ public struct DeletePrivateMessageRequest: APIRequest {
 	public static let httpMethod: HTTPMethod = .post
 	public static let path: String = "/private_message/delete"
 
-	public let auth: String
+	public let private_message_id: PrivateMessageId
 	public let deleted: Bool
-	public let private_message_id: Int
+	public let auth: String
 
-	public init(auth: String, deleted: Bool, private_message_id: Int) {
-		self.auth = auth
-		self.deleted = deleted
+	public init(
+		private_message_id: PrivateMessageId,
+		deleted: Bool,
+		auth: String
+	) {
 		self.private_message_id = private_message_id
+		self.deleted = deleted
+		self.auth = auth
 	}
 }

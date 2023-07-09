@@ -1,26 +1,26 @@
 import Foundation
 
 public struct ModRemoveCommentView: Codable, Hashable {
-	public let comment: Comment
-	public let commenter: Person
-	public let community: CommunitySafe
 	public let mod_remove_comment: ModRemoveComment
 	public let moderator: Person?
+	public let comment: Comment
+	public let commenter: Person
 	public let post: Post
+	public let community: Community
 
 	public init(
-		comment: Comment,
-		commenter: Person,
-		community: CommunitySafe,
 		mod_remove_comment: ModRemoveComment,
 		moderator: Person? = nil,
-		post: Post
+		comment: Comment,
+		commenter: Person,
+		post: Post,
+		community: Community
 	) {
-		self.comment = comment
-		self.commenter = commenter
-		self.community = community
 		self.mod_remove_comment = mod_remove_comment
 		self.moderator = moderator
+		self.comment = comment
+		self.commenter = commenter
 		self.post = post
+		self.community = community
 	}
 }

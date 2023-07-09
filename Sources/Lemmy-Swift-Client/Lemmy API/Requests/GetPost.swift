@@ -6,32 +6,36 @@ public struct GetPostRequest: APIRequest {
 	public static let httpMethod: HTTPMethod = .get
 	public static let path: String = "/post"
 
+	public let id: PostId?
+	public let comment_id: CommentId?
 	public let auth: String?
-	public let comment_id: Int?
-	public let id: Int?
 
-	public init(auth: String? = nil, comment_id: Int? = nil, id: Int? = nil) {
-		self.auth = auth
-		self.comment_id = comment_id
+	public init(
+		id: PostId? = nil,
+		comment_id: CommentId? = nil,
+		auth: String? = nil
+	) {
 		self.id = id
+		self.comment_id = comment_id
+		self.auth = auth
 	}
 }
 
 public struct GetPostResponse: APIResponse {
+	public let post_view: PostView
 	public let community_view: CommunityView
 	public let moderators: [CommunityModeratorView]
-	public let online: Int?
-	public let post_view: PostView
+	public let cross_posts: [PostView]
 
 	public init(
+		post_view: PostView,
 		community_view: CommunityView,
 		moderators: [CommunityModeratorView],
-		online: Int? = nil,
-		post_view: PostView
+		cross_posts: [PostView]
 	) {
+		self.post_view = post_view
 		self.community_view = community_view
 		self.moderators = moderators
-		self.online = online
-		self.post_view = post_view
+		self.cross_posts = cross_posts
 	}
 }

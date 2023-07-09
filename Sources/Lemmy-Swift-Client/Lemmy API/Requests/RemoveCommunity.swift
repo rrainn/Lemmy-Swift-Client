@@ -6,24 +6,23 @@ public struct RemoveCommunityRequest: APIRequest {
 	public static let httpMethod: HTTPMethod = .post
 	public static let path: String = "/community/remove"
 
-	public let auth: String
-	public let community_id: Int
-	/// The expire time in Unix seconds.
-	public let expires: Int?
-	public let reason: String?
+	public let community_id: CommunityId
 	public let removed: Bool
+	public let reason: String?
+	public let expires: Int?
+	public let auth: String
 
 	public init(
-		auth: String,
-		community_id: Int,
-		expires: Int? = nil,
+		community_id: CommunityId,
+		removed: Bool,
 		reason: String? = nil,
-		removed: Bool
+		expires: Int? = nil,
+		auth: String
 	) {
-		self.auth = auth
 		self.community_id = community_id
-		self.expires = expires
-		self.reason = reason
 		self.removed = removed
+		self.reason = reason
+		self.expires = expires
+		self.auth = auth
 	}
 }

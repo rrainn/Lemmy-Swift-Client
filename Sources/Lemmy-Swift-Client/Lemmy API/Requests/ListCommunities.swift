@@ -6,31 +6,36 @@ public struct ListCommunitiesRequest: APIRequest {
 	public static let httpMethod: HTTPMethod = .get
 	public static let path: String = "/community/list"
 
-	public let auth: String?
-	public let limit: Int?
-	public let page: Int?
-	public let sort: SortType?
 	public let type_: ListingType?
+	public let sort: SortType?
+	public let show_nsfw: Bool?
+	public let page: Int?
+	public let limit: Int?
+	public let auth: String?
 
 	public init(
-		auth: String? = nil,
-		limit: Int? = nil,
-		page: Int? = nil,
+		type_: ListingType? = nil,
 		sort: SortType? = nil,
-		type_: ListingType? = nil
+		show_nsfw: Bool? = nil,
+		page: Int? = nil,
+		limit: Int? = nil,
+		auth: String? = nil
 	) {
-		self.auth = auth
-		self.limit = limit
-		self.page = page
-		self.sort = sort
 		self.type_ = type_
+		self.sort = sort
+		self.show_nsfw = show_nsfw
+		self.page = page
+		self.limit = limit
+		self.auth = auth
 	}
 }
 
 public struct ListCommunitiesResponse: APIResponse {
 	public let communities: [CommunityView]
 
-	public init(communities: [CommunityView]) {
+	public init(
+		communities: [CommunityView]
+	) {
 		self.communities = communities
 	}
 }

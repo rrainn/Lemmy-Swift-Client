@@ -1,20 +1,20 @@
 import Foundation
 
 public struct RegistrationApplicationView: Codable, Hashable {
-	public let admin: Person?
-	public let creator: Person
-	public let creator_local_user: LocalUser
 	public let registration_application: RegistrationApplication
+	public let creator_local_user: LocalUser
+	public let creator: Person
+	public let admin: Person?
 
 	public init(
-		admin: Person? = nil,
-		creator: Person,
+		registration_application: RegistrationApplication,
 		creator_local_user: LocalUser,
-		registration_application: RegistrationApplication
+		creator: Person,
+		admin: Person? = nil
 	) {
-		self.admin = admin
-		self.creator = creator
-		self.creator_local_user = creator_local_user
 		self.registration_application = registration_application
+		self.creator_local_user = creator_local_user
+		self.creator = creator
+		self.admin = admin
 	}
 }

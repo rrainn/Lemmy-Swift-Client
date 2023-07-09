@@ -6,21 +6,17 @@ public struct PurgeCommentRequest: APIRequest {
 	public static let httpMethod: HTTPMethod = .post
 	public static let path: String = "/admin/purge/comment"
 
-	public let auth: String
-	public let comment_id: Int
+	public let comment_id: CommentId
 	public let reason: String?
+	public let auth: String
 
-	public init(auth: String, comment_id: Int, reason: String? = nil) {
-		self.auth = auth
+	public init(
+		comment_id: CommentId,
+		reason: String? = nil,
+		auth: String
+	) {
 		self.comment_id = comment_id
 		self.reason = reason
-	}
-}
-
-public struct PurgeItemResponse: APIResponse {
-	public let success: Bool
-
-	public init(success: Bool) {
-		self.success = success
+		self.auth = auth
 	}
 }

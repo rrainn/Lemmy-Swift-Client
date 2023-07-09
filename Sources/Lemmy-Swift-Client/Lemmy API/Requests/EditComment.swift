@@ -6,27 +6,23 @@ public struct EditCommentRequest: APIRequest {
 	public static let httpMethod: HTTPMethod = .put
 	public static let path: String = "/comment"
 
-	public let auth: String
-	public let comment_id: Int
+	public let comment_id: CommentId
 	public let content: String?
-	/// "Distinguishes" a comment, or speak officially. Only doable by community mods or admins.
-	public let distinguished: Bool?
+	public let language_id: LanguageId?
 	public let form_id: String?
-	public let language_id: Int?
+	public let auth: String
 
 	public init(
-		auth: String,
-		comment_id: Int,
+		comment_id: CommentId,
 		content: String? = nil,
-		distinguished: Bool? = nil,
+		language_id: LanguageId? = nil,
 		form_id: String? = nil,
-		language_id: Int? = nil
+		auth: String
 	) {
-		self.auth = auth
 		self.comment_id = comment_id
 		self.content = content
-		self.distinguished = distinguished
-		self.form_id = form_id
 		self.language_id = language_id
+		self.form_id = form_id
+		self.auth = auth
 	}
 }

@@ -8,7 +8,9 @@ public struct GetSiteMetadataRequest: APIRequest {
 
 	public let url: String
 
-	public init(url: String) {
+	public init(
+		url: String
+	) {
 		self.url = url
 	}
 }
@@ -16,7 +18,9 @@ public struct GetSiteMetadataRequest: APIRequest {
 public struct GetSiteMetadataResponse: APIResponse {
 	public let metadata: SiteMetadata
 
-	public init(metadata: SiteMetadata) {
+	public init(
+		metadata: SiteMetadata
+	) {
 		self.metadata = metadata
 	}
 }

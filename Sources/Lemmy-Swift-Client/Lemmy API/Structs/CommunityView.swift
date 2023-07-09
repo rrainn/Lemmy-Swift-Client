@@ -1,20 +1,20 @@
 import Foundation
 
 public struct CommunityView: Codable, Hashable {
-	public let blocked: Bool
-	public let community: CommunitySafe
-	public let counts: CommunityAggregates
+	public let community: Community
 	public let subscribed: SubscribedType
+	public let blocked: Bool
+	public let counts: CommunityAggregates
 
 	public init(
+		community: Community,
+		subscribed: SubscribedType,
 		blocked: Bool,
-		community: CommunitySafe,
-		counts: CommunityAggregates,
-		subscribed: SubscribedType
+		counts: CommunityAggregates
 	) {
-		self.blocked = blocked
 		self.community = community
-		self.counts = counts
 		self.subscribed = subscribed
+		self.blocked = blocked
+		self.counts = counts
 	}
 }

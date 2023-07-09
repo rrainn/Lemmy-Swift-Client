@@ -6,14 +6,14 @@ public struct GetCommentRequest: APIRequest {
 	public static let httpMethod: HTTPMethod = .get
 	public static let path: String = "/comment"
 
+	public let id: CommentId
 	public let auth: String?
-	public let id: Int
 
 	public init(
-		auth: String? = nil,
-		id: Int
+		id: CommentId,
+		auth: String? = nil
 	) {
-		self.auth = auth
 		self.id = id
+		self.auth = auth
 	}
 }

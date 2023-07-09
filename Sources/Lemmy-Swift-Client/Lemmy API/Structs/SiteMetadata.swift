@@ -1,20 +1,20 @@
 import Foundation
 
 public struct SiteMetadata: Codable, Hashable {
-	public let description: String?
-	public let html: String?
-	public let image: String?
 	public let title: String?
+	public let description: String?
+	public let image: String?
+	public let embed_video_url: String?
 
 	public init(
+		title: String? = nil,
 		description: String? = nil,
-		html: String? = nil,
 		image: String? = nil,
-		title: String? = nil
+		embed_video_url: String? = nil
 	) {
-		self.description = description
-		self.html = html
-		self.image = image
 		self.title = title
+		self.description = description
+		self.image = image
+		self.embed_video_url = embed_video_url
 	}
 }

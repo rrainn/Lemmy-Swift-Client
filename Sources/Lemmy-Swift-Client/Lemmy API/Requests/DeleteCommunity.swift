@@ -6,13 +6,17 @@ public struct DeleteCommunityRequest: APIRequest {
 	public static let httpMethod: HTTPMethod = .post
 	public static let path: String = "/community/delete"
 
-	public let auth: String
-	public let community_id: Int
+	public let community_id: CommunityId
 	public let deleted: Bool
+	public let auth: String
 
-	public init(auth: String, community_id: Int, deleted: Bool) {
-		self.auth = auth
+	public init(
+		community_id: CommunityId,
+		deleted: Bool,
+		auth: String
+	) {
 		self.community_id = community_id
 		self.deleted = deleted
+		self.auth = auth
 	}
 }

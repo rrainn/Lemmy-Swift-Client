@@ -6,13 +6,17 @@ public struct MarkPrivateMessageAsReadRequest: APIRequest {
 	public static let httpMethod: HTTPMethod = .post
 	public static let path: String = "/private_message/mark_as_read"
 
-	public let auth: String
-	public let private_message_id: Int
+	public let private_message_id: PrivateMessageId
 	public let read: Bool
+	public let auth: String
 
-	public init(auth: String, private_message_id: Int, read: Bool) {
-		self.auth = auth
+	public init(
+		private_message_id: PrivateMessageId,
+		read: Bool,
+		auth: String
+	) {
 		self.private_message_id = private_message_id
 		self.read = read
+		self.auth = auth
 	}
 }

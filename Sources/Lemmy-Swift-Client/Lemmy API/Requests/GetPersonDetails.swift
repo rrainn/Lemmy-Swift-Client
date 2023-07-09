@@ -6,52 +6,51 @@ public struct GetPersonDetailsRequest: APIRequest {
 	public static let httpMethod: HTTPMethod = .get
 	public static let path: String = "/user"
 
-	public let auth: String?
-	public let community_id: Int?
-	public let limit: Int?
-	public let page: Int?
-	public let person_id: Int?
-	public let saved_only: Bool?
-	public let sort: SortType?
-	/// To get details for a federated user, use `person@instance.tld`.
+	public let person_id: PersonId?
 	public let username: String?
+	public let sort: SortType?
+	public let page: Int?
+	public let limit: Int?
+	public let community_id: CommunityId?
+	public let saved_only: Bool?
+	public let auth: String?
 
 	public init(
-		auth: String? = nil,
-		community_id: Int? = nil,
-		limit: Int? = nil,
-		page: Int? = nil,
-		person_id: Int? = nil,
-		saved_only: Bool? = nil,
+		person_id: PersonId? = nil,
+		username: String? = nil,
 		sort: SortType? = nil,
-		username: String? = nil
+		page: Int? = nil,
+		limit: Int? = nil,
+		community_id: CommunityId? = nil,
+		saved_only: Bool? = nil,
+		auth: String? = nil
 	) {
-		self.auth = auth
-		self.community_id = community_id
-		self.limit = limit
-		self.page = page
 		self.person_id = person_id
-		self.saved_only = saved_only
-		self.sort = sort
 		self.username = username
+		self.sort = sort
+		self.page = page
+		self.limit = limit
+		self.community_id = community_id
+		self.saved_only = saved_only
+		self.auth = auth
 	}
 }
 
 public struct GetPersonDetailsResponse: APIResponse {
+	public let person_view: PersonView
 	public let comments: [CommentView]
-	public let moderates: [CommunityModeratorView]
-	public let person_view: PersonViewSafe
 	public let posts: [PostView]
+	public let moderates: [CommunityModeratorView]
 
 	public init(
+		person_view: PersonView,
 		comments: [CommentView],
-		moderates: [CommunityModeratorView],
-		person_view: PersonViewSafe,
-		posts: [PostView]
+		posts: [PostView],
+		moderates: [CommunityModeratorView]
 	) {
-		self.comments = comments
-		self.moderates = moderates
 		self.person_view = person_view
+		self.comments = comments
 		self.posts = posts
+		self.moderates = moderates
 	}
 }

@@ -8,7 +8,9 @@ public struct PasswordResetRequest: APIRequest {
 
 	public let email: String
 
-	public init(email: String) {
+	public init(
+		email: String
+	) {
 		self.email = email
 	}
 }

@@ -6,14 +6,21 @@ public struct GetCaptchaRequest: APIRequest {
 	public static let httpMethod: HTTPMethod = .get
 	public static let path: String = "/user/get_captcha"
 
-	public init() {}
+	public let auth: String?
+
+	public init(
+		auth: String? = nil
+	) {
+		self.auth = auth
+	}
 }
 
 public struct GetCaptchaResponse: APIResponse {
-	/// Will be nil if captchas are disabled.
 	public let ok: CaptchaResponse?
 
-	public init(ok: CaptchaResponse? = nil) {
+	public init(
+		ok: CaptchaResponse? = nil
+	) {
 		self.ok = ok
 	}
 }

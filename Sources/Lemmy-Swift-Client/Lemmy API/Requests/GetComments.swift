@@ -6,49 +6,51 @@ public struct GetCommentsRequest: APIRequest {
 	public static let httpMethod: HTTPMethod = .get
 	public static let path: String = "/comment/list"
 
-	public let auth: String?
-	public let community_id: Int?
-	public let community_name: String?
-	public let limit: Int?
+	public let type_: ListingType?
+	public let sort: CommentSortType?
 	public let max_depth: Int?
 	public let page: Int?
-	public let parent_id: Int?
-	public let post_id: Int?
+	public let limit: Int?
+	public let community_id: CommunityId?
+	public let community_name: String?
+	public let post_id: PostId?
+	public let parent_id: CommentId?
 	public let saved_only: Bool?
-	public let sort: CommentSortType?
-	public let type_: ListingType?
+	public let auth: String?
 
 	public init(
-		auth: String? = nil,
-		community_id: Int? = nil,
-		community_name: String? = nil,
-		limit: Int? = nil,
+		type_: ListingType? = nil,
+		sort: CommentSortType? = nil,
 		max_depth: Int? = nil,
 		page: Int? = nil,
-		parent_id: Int? = nil,
-		post_id: Int? = nil,
+		limit: Int? = nil,
+		community_id: CommunityId? = nil,
+		community_name: String? = nil,
+		post_id: PostId? = nil,
+		parent_id: CommentId? = nil,
 		saved_only: Bool? = nil,
-		sort: CommentSortType? = nil,
-		type_: ListingType? = nil
+		auth: String? = nil
 	) {
-		self.auth = auth
-		self.community_id = community_id
-		self.community_name = community_name
-		self.limit = limit
+		self.type_ = type_
+		self.sort = sort
 		self.max_depth = max_depth
 		self.page = page
-		self.parent_id = parent_id
+		self.limit = limit
+		self.community_id = community_id
+		self.community_name = community_name
 		self.post_id = post_id
+		self.parent_id = parent_id
 		self.saved_only = saved_only
-		self.sort = sort
-		self.type_ = type_
+		self.auth = auth
 	}
 }
 
 public struct GetCommentsResponse: APIResponse {
 	public let comments: [CommentView]
 
-	public init(comments: [CommentView]) {
+	public init(
+		comments: [CommentView]
+	) {
 		self.comments = comments
 	}
 }

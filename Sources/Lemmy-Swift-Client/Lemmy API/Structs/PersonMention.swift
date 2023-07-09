@@ -1,17 +1,23 @@
 import Foundation
 
 public struct PersonMention: Codable, Identifiable, Hashable {
-	public let comment_id: Int
-	public let id: Int
-	public let published: String
+	public let id: PersonMentionId
+	public let recipient_id: PersonId
+	public let comment_id: CommentId
 	public let read: Bool
-	public let recipient_id: Int
+	public let published: String
 
-	public init(comment_id: Int, id: Int, published: String, read: Bool, recipient_id: Int) {
-		self.comment_id = comment_id
+	public init(
+		id: PersonMentionId,
+		recipient_id: PersonId,
+		comment_id: CommentId,
+		read: Bool,
+		published: String
+	) {
 		self.id = id
-		self.published = published
-		self.read = read
 		self.recipient_id = recipient_id
+		self.comment_id = comment_id
+		self.read = read
+		self.published = published
 	}
 }

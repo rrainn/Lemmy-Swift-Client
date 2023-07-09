@@ -6,38 +6,36 @@ public struct GetCommunityRequest: APIRequest {
 	public static let httpMethod: HTTPMethod = .get
 	public static let path: String = "/community"
 
-	public let auth: String?
-	public let id: Int?
+	public let id: CommunityId?
 	public let name: String?
+	public let auth: String?
 
-	public init(auth: String? = nil, id: Int? = nil, name: String? = nil) {
-		self.auth = auth
+	public init(
+		id: CommunityId? = nil,
+		name: String? = nil,
+		auth: String? = nil
+	) {
 		self.id = id
 		self.name = name
+		self.auth = auth
 	}
 }
 
 public struct GetCommunityResponse: APIResponse {
 	public let community_view: CommunityView
-	public let default_post_language: Int?
-	public let discussion_languages: [Int]
-	public let moderators: [CommunityModeratorView]
-	public let online: Int?
 	public let site: Site?
+	public let moderators: [CommunityModeratorView]
+	public let discussion_languages: [LanguageId]
 
 	public init(
 		community_view: CommunityView,
-		default_post_language: Int? = nil,
-		discussion_languages: [Int],
+		site: Site? = nil,
 		moderators: [CommunityModeratorView],
-		online: Int? = nil,
-		site: Site? = nil
+		discussion_languages: [LanguageId]
 	) {
 		self.community_view = community_view
-		self.default_post_language = default_post_language
-		self.discussion_languages = discussion_languages
-		self.moderators = moderators
-		self.online = online
 		self.site = site
+		self.moderators = moderators
+		self.discussion_languages = discussion_languages
 	}
 }

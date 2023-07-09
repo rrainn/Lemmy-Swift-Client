@@ -6,38 +6,42 @@ public struct CreateCommentRequest: APIRequest {
 	public static let httpMethod: HTTPMethod = .post
 	public static let path: String = "/comment"
 
-	public let auth: String
 	public let content: String
+	public let post_id: PostId
+	public let parent_id: CommentId?
+	public let language_id: LanguageId?
 	public let form_id: String?
-	public let language_id: Int?
-	public let parent_id: Int?
-	public let post_id: Int
+	public let auth: String
 
 	public init(
-		auth: String,
 		content: String,
+		post_id: PostId,
+		parent_id: CommentId? = nil,
+		language_id: LanguageId? = nil,
 		form_id: String? = nil,
-		language_id: Int? = nil,
-		parent_id: Int? = nil,
-		post_id: Int
+		auth: String
 	) {
-		self.auth = auth
 		self.content = content
-		self.form_id = form_id
-		self.language_id = language_id
-		self.parent_id = parent_id
 		self.post_id = post_id
+		self.parent_id = parent_id
+		self.language_id = language_id
+		self.form_id = form_id
+		self.auth = auth
 	}
 }
 
 public struct CommentResponse: APIResponse {
 	public let comment_view: CommentView
+	public let recipient_ids: [LocalUserId]
 	public let form_id: String?
-	public let recipient_ids: [Int]
 
-	public init(comment_view: CommentView, form_id: String? = nil, recipient_ids: [Int]) {
+	public init(
+		comment_view: CommentView,
+		recipient_ids: [LocalUserId],
+		form_id: String? = nil
+	) {
 		self.comment_view = comment_view
-		self.form_id = form_id
 		self.recipient_ids = recipient_ids
+		self.form_id = form_id
 	}
 }

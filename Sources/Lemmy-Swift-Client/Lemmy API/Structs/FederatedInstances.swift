@@ -1,13 +1,17 @@
 import Foundation
 
 public struct FederatedInstances: Codable, Hashable {
-	public let allowed: [String]?
-	public let blocked: [String]?
-	public let linked: [String]
+	public let linked: [Instance]
+	public let allowed: [Instance]
+	public let blocked: [Instance]
 
-	public init(allowed: [String]? = nil, blocked: [String]? = nil, linked: [String]) {
+	public init(
+		linked: [Instance],
+		allowed: [Instance],
+		blocked: [Instance]
+	) {
+		self.linked = linked
 		self.allowed = allowed
 		self.blocked = blocked
-		self.linked = linked
 	}
 }

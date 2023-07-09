@@ -8,15 +8,19 @@ public struct GetBannedPersonsRequest: APIRequest {
 
 	public let auth: String
 
-	public init(auth: String) {
+	public init(
+		auth: String
+	) {
 		self.auth = auth
 	}
 }
 
 public struct BannedPersonsResponse: APIResponse {
-	public let banned: [PersonViewSafe]
+	public let banned: [PersonView]
 
-	public init(banned: [PersonViewSafe]) {
+	public init(
+		banned: [PersonView]
+	) {
 		self.banned = banned
 	}
 }

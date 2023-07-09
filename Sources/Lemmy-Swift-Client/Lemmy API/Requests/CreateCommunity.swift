@@ -6,44 +6,47 @@ public struct CreateCommunityRequest: APIRequest {
 	public static let httpMethod: HTTPMethod = .post
 	public static let path: String = "/community"
 
-	public let auth: String
-	public let banner: String?
-	public let description: String?
-	public let discussion_languages: [Int]?
-	public let icon: String?
 	public let name: String
+	public let title: String
+	public let description: String?
+	public let icon: String?
+	public let banner: String?
 	public let nsfw: Bool?
 	public let posting_restricted_to_mods: Bool?
-	public let title: String
+	public let discussion_languages: [LanguageId]?
+	public let auth: String
 
 	public init(
-		auth: String,
-		banner: String? = nil,
-		description: String? = nil,
-		discussion_languages: [Int]? = nil,
-		icon: String? = nil,
 		name: String,
+		title: String,
+		description: String? = nil,
+		icon: String? = nil,
+		banner: String? = nil,
 		nsfw: Bool? = nil,
 		posting_restricted_to_mods: Bool? = nil,
-		title: String
+		discussion_languages: [LanguageId]? = nil,
+		auth: String
 	) {
-		self.auth = auth
-		self.banner = banner
-		self.description = description
-		self.discussion_languages = discussion_languages
-		self.icon = icon
 		self.name = name
+		self.title = title
+		self.description = description
+		self.icon = icon
+		self.banner = banner
 		self.nsfw = nsfw
 		self.posting_restricted_to_mods = posting_restricted_to_mods
-		self.title = title
+		self.discussion_languages = discussion_languages
+		self.auth = auth
 	}
 }
 
 public struct CommunityResponse: APIResponse {
 	public let community_view: CommunityView
-	public let discussion_languages: [Int]
+	public let discussion_languages: [LanguageId]
 
-	public init(community_view: CommunityView, discussion_languages: [Int]) {
+	public init(
+		community_view: CommunityView,
+		discussion_languages: [LanguageId]
+	) {
 		self.community_view = community_view
 		self.discussion_languages = discussion_languages
 	}

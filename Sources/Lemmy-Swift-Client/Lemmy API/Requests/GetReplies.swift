@@ -6,31 +6,33 @@ public struct GetRepliesRequest: APIRequest {
 	public static let httpMethod: HTTPMethod = .get
 	public static let path: String = "/user/replies"
 
-	public let auth: String
-	public let limit: Int?
-	public let page: Int?
 	public let sort: CommentSortType?
+	public let page: Int?
+	public let limit: Int?
 	public let unread_only: Bool?
+	public let auth: String
 
 	public init(
-		auth: String,
-		limit: Int? = nil,
-		page: Int? = nil,
 		sort: CommentSortType? = nil,
-		unread_only: Bool? = nil
+		page: Int? = nil,
+		limit: Int? = nil,
+		unread_only: Bool? = nil,
+		auth: String
 	) {
-		self.auth = auth
-		self.limit = limit
-		self.page = page
 		self.sort = sort
+		self.page = page
+		self.limit = limit
 		self.unread_only = unread_only
+		self.auth = auth
 	}
 }
 
 public struct GetRepliesResponse: APIResponse {
 	public let replies: [CommentReplyView]
 
-	public init(replies: [CommentReplyView]) {
+	public init(
+		replies: [CommentReplyView]
+	) {
 		self.replies = replies
 	}
 }

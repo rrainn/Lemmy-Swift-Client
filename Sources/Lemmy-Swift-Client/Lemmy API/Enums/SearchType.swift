@@ -3,10 +3,10 @@ import Foundation
 public enum SearchType: String, Codable, CustomStringConvertible, CaseIterable {
 	case all = "All"
 	case comments = "Comments"
-	case communities = "Communities"
 	case posts = "Posts"
-	case url = "Url"
+	case communities = "Communities"
 	case users = "Users"
+	case url = "Url"
 
 	public var description: String {
 		return rawValue

@@ -6,21 +6,27 @@ public struct AddAdminRequest: APIRequest {
 	public static let httpMethod: HTTPMethod = .post
 	public static let path: String = "/admin/add"
 
+	public let person_id: PersonId
 	public let added: Bool
 	public let auth: String
-	public let person_id: Int
 
-	public init(added: Bool, auth: String, person_id: Int) {
+	public init(
+		person_id: PersonId,
+		added: Bool,
+		auth: String
+	) {
+		self.person_id = person_id
 		self.added = added
 		self.auth = auth
-		self.person_id = person_id
 	}
 }
 
 public struct AddAdminResponse: APIResponse {
-	public let admins: [PersonViewSafe]
+	public let admins: [PersonView]
 
-	public init(admins: [PersonViewSafe]) {
+	public init(
+		admins: [PersonView]
+	) {
 		self.admins = admins
 	}
 }

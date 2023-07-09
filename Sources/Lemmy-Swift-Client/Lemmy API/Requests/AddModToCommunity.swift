@@ -6,23 +6,30 @@ public struct AddModToCommunityRequest: APIRequest {
 	public static let httpMethod: HTTPMethod = .post
 	public static let path: String = "/community/mod"
 
+	public let community_id: CommunityId
+	public let person_id: PersonId
 	public let added: Bool
 	public let auth: String
-	public let community_id: Int
-	public let person_id: Int
 
-	public init(added: Bool, auth: String, community_id: Int, person_id: Int) {
-		self.added = added
-		self.auth = auth
+	public init(
+		community_id: CommunityId,
+		person_id: PersonId,
+		added: Bool,
+		auth: String
+	) {
 		self.community_id = community_id
 		self.person_id = person_id
+		self.added = added
+		self.auth = auth
 	}
 }
 
 public struct AddModToCommunityResponse: APIResponse {
 	public let moderators: [CommunityModeratorView]
 
-	public init(moderators: [CommunityModeratorView]) {
+	public init(
+		moderators: [CommunityModeratorView]
+	) {
 		self.moderators = moderators
 	}
 }

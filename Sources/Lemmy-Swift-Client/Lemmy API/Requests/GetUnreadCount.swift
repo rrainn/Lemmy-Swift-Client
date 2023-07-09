@@ -8,19 +8,25 @@ public struct GetUnreadCountRequest: APIRequest {
 
 	public let auth: String
 
-	public init(auth: String) {
+	public init(
+		auth: String
+	) {
 		self.auth = auth
 	}
 }
 
 public struct GetUnreadCountResponse: APIResponse {
+	public let replies: Int
 	public let mentions: Int
 	public let private_messages: Int
-	public let replies: Int
 
-	public init(mentions: Int, private_messages: Int, replies: Int) {
+	public init(
+		replies: Int,
+		mentions: Int,
+		private_messages: Int
+	) {
+		self.replies = replies
 		self.mentions = mentions
 		self.private_messages = private_messages
-		self.replies = replies
 	}
 }

@@ -1,23 +1,20 @@
 import Foundation
 
 public struct SiteView: Codable, Hashable {
-	public let counts: SiteAggregates
+	public let site: Site
 	public let local_site: LocalSite
 	public let local_site_rate_limit: LocalSiteRateLimit
-	public let site: Site
-	public let taglines: [Tagline]?
+	public let counts: SiteAggregates
 
 	public init(
-		counts: SiteAggregates,
+		site: Site,
 		local_site: LocalSite,
 		local_site_rate_limit: LocalSiteRateLimit,
-		site: Site,
-		taglines: [Tagline]? = nil
+		counts: SiteAggregates
 	) {
-		self.counts = counts
+		self.site = site
 		self.local_site = local_site
 		self.local_site_rate_limit = local_site_rate_limit
-		self.site = site
-		self.taglines = taglines
+		self.counts = counts
 	}
 }

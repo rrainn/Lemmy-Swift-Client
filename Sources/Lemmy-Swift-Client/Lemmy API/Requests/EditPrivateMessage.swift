@@ -6,13 +6,17 @@ public struct EditPrivateMessageRequest: APIRequest {
 	public static let httpMethod: HTTPMethod = .put
 	public static let path: String = "/private_message"
 
-	public let auth: String
+	public let private_message_id: PrivateMessageId
 	public let content: String
-	public let private_message_id: Int
+	public let auth: String
 
-	public init(auth: String, content: String, private_message_id: Int) {
-		self.auth = auth
-		self.content = content
+	public init(
+		private_message_id: PrivateMessageId,
+		content: String,
+		auth: String
+	) {
 		self.private_message_id = private_message_id
+		self.content = content
+		self.auth = auth
 	}
 }

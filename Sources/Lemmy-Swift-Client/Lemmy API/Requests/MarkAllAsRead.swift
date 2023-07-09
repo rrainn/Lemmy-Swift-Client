@@ -8,7 +8,9 @@ public struct MarkAllAsReadRequest: APIRequest {
 
 	public let auth: String
 
-	public init(auth: String) {
+	public init(
+		auth: String
+	) {
 		self.auth = auth
 	}
 }

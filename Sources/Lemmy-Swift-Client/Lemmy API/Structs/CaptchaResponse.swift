@@ -1,16 +1,17 @@
 import Foundation
 
 public struct CaptchaResponse: Codable, Hashable {
-	/// A Base64 encoded png.
 	public let png: String
-	/// A UUID to match the one given on request.
+	public let wav: String
 	public let uuid: String
-	/// A Base64 encoded wav file.
-	public let wav: String?
 
-	public init(png: String, uuid: String, wav: String? = nil) {
+	public init(
+		png: String,
+		wav: String,
+		uuid: String
+	) {
 		self.png = png
-		self.uuid = uuid
 		self.wav = wav
+		self.uuid = uuid
 	}
 }

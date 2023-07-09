@@ -1,22 +1,22 @@
 import Foundation
 
 public enum ModlogActionType: String, Codable, CustomStringConvertible, CaseIterable {
-	case adminPurgeComment = "AdminPurgeComment"
-	case adminPurgeCommunity = "AdminPurgeCommunity"
-	case adminPurgePerson = "AdminPurgePerson"
-	case adminPurgePost = "AdminPurgePost"
 	case all = "All"
-	case modAdd = "ModAdd"
-	case modAddCommunity = "ModAddCommunity"
-	case modBan = "ModBan"
-	case modBanFromCommunity = "ModBanFromCommunity"
-	case modFeaturePost = "ModFeaturePost"
-	case modHideCommunity = "ModHideCommunity"
-	case modLockPost = "ModLockPost"
-	case modRemoveComment = "ModRemoveComment"
-	case modRemoveComunity = "ModRemoveCommunity"
 	case modRemovePost = "ModRemovePost"
+	case modLockPost = "ModLockPost"
+	case modFeaturePost = "ModFeaturePost"
+	case modRemoveComment = "ModRemoveComment"
+	case modRemoveCommunity = "ModRemoveCommunity"
+	case modBanFromCommunity = "ModBanFromCommunity"
+	case modAddCommunity = "ModAddCommunity"
 	case modTransferCommunity = "ModTransferCommunity"
+	case modAdd = "ModAdd"
+	case modBan = "ModBan"
+	case modHideCommunity = "ModHideCommunity"
+	case adminPurgePerson = "AdminPurgePerson"
+	case adminPurgeCommunity = "AdminPurgeCommunity"
+	case adminPurgePost = "AdminPurgePost"
+	case adminPurgeComment = "AdminPurgeComment"
 
 	public var description: String {
 		return rawValue

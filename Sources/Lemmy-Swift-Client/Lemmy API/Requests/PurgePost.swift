@@ -6,13 +6,17 @@ public struct PurgePostRequest: APIRequest {
 	public static let httpMethod: HTTPMethod = .post
 	public static let path: String = "/admin/purge/post"
 
-	public let auth: String
-	public let post_id: Int
+	public let post_id: PostId
 	public let reason: String?
+	public let auth: String
 
-	public init(auth: String, post_id: Int, reason: String? = nil) {
-		self.auth = auth
+	public init(
+		post_id: PostId,
+		reason: String? = nil,
+		auth: String
+	) {
 		self.post_id = post_id
 		self.reason = reason
+		self.auth = auth
 	}
 }

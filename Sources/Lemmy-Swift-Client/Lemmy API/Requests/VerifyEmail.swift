@@ -8,7 +8,9 @@ public struct VerifyEmailRequest: APIRequest {
 
 	public let token: String
 
-	public init(token: String) {
+	public init(
+		token: String
+	) {
 		self.token = token
 	}
 }

@@ -1,19 +1,22 @@
 import Foundation
 
-public struct LikePostRequest: APIRequest {
+public struct CreatePostLikeRequest: APIRequest {
 	public typealias Response = PostResponse
 
 	public static let httpMethod: HTTPMethod = .post
 	public static let path: String = "/post/like"
 
-	public let auth: String
-	public let post_id: Int
-	/// Must be 0, -1, or 1. Anything else will be rejected.
+	public let post_id: PostId
 	public let score: Int
+	public let auth: String
 
-	public init(auth: String, post_id: Int, score: Int) {
-		self.auth = auth
+	public init(
+		post_id: PostId,
+		score: Int,
+		auth: String
+	) {
 		self.post_id = post_id
 		self.score = score
+		self.auth = auth
 	}
 }
