@@ -59,7 +59,8 @@ public class LemmyAPI {
 		let request = try urlRequest(apiRequest)
 		let (data, response) = try await urlSession.data(for: request)
 		if let urlResponse = response as? HTTPURLResponse,
-		   urlResponse.statusCode != 200 {
+		   urlResponse.statusCode != 200
+		{
 			throw LemmyAPIError.badResponse(
 				response: urlResponse,
 				request: request,
