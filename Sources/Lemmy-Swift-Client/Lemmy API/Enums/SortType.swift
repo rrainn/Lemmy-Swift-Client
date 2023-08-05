@@ -15,6 +15,9 @@ public enum SortType: String, Codable, CustomStringConvertible, CaseIterable {
 	case topHour = "TopHour"
 	case topSixHour = "TopSixHour"
 	case topTwelveHour = "TopTwelveHour"
+	case topThreeMonths = "TopThreeMonths"
+	case topSixMonths = "TopSixMonths"
+	case topNineMonths = "TopNineMonths"
 
 	public var description: String {
 		return rawValue
