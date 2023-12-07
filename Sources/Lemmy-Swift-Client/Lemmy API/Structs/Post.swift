@@ -22,7 +22,7 @@ public struct Post: Codable, Identifiable, Hashable {
 	public let language_id: LanguageId
 	public let featured_community: Bool?
 	public let featured_local: Bool
-    
+
 	public init(
 		id: PostId,
 		name: String,
