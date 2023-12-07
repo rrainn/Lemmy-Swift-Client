@@ -11,7 +11,7 @@ public struct PostView: Codable, Hashable {
 	public let read: Bool
 	public let creator_blocked: Bool
 	public let my_vote: Int?
-    public let featured_community: Bool
+	public let featured_community: Bool
 	public let unread_comments: Int
 
 	public init(
@@ -24,7 +24,7 @@ public struct PostView: Codable, Hashable {
 		saved: Bool,
 		read: Bool,
 		creator_blocked: Bool,
-        featured_community: Bool,
+		featured_community: Bool,
 		my_vote: Int? = nil,
 		unread_comments: Int
 	) {
@@ -38,7 +38,7 @@ public struct PostView: Codable, Hashable {
 		self.read = read
 		self.creator_blocked = creator_blocked
 		self.my_vote = my_vote
-        self.featured_community = featured_community
+		self.featured_community = featured_community
 		self.unread_comments = unread_comments
 	}
 }
