@@ -1,6 +1,10 @@
 import Foundation
 
 public struct PostAggregates: Codable, Identifiable, Hashable {
+	public var id: Int {
+		return post_id
+	}
+
 	public let post_id: PostId
 	public let comments: Int
 	public let score: Int

@@ -70,7 +70,7 @@ public class LemmyAPI {
 
 		// Decode Response
 		let decoder = JSONDecoder()
-        
+
 		do {
 			let decodedResult = try decoder.decode(T.Response.self, from: data)
 			return (decodedResult, response, data)
