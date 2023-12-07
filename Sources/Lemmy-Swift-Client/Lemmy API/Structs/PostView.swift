@@ -11,7 +11,6 @@ public struct PostView: Codable, Hashable {
 	public let read: Bool
 	public let creator_blocked: Bool
 	public let my_vote: Int?
-	public let featured_community: Bool
 	public let unread_comments: Int
 
 	public init(
