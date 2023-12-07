@@ -1,7 +1,6 @@
 import Foundation
 
 public struct PostAggregates: Codable, Identifiable, Hashable {
-	public let id: Int
 	public let post_id: PostId
 	public let comments: Int
 	public let score: Int
@@ -16,7 +15,6 @@ public struct PostAggregates: Codable, Identifiable, Hashable {
 	public let hot_rank_active: Int
 
 	public init(
-		id: Int,
 		post_id: PostId,
 		comments: Int,
 		score: Int,
@@ -30,7 +28,6 @@ public struct PostAggregates: Codable, Identifiable, Hashable {
 		hot_rank: Int,
 		hot_rank_active: Int
 	) {
-		self.id = id
 		self.post_id = post_id
 		self.comments = comments
 		self.score = score
