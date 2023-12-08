@@ -141,18 +141,15 @@ function lowercaseFirstLetter(str) {
 }
 
 function snakeToCamel(str) {
-    let converted = str.toLowerCase().replace(/([-_][a-z])/g, group =>
-                group
-                .toUpperCase()
-                .replace('-', '')
-                .replace('_', '')
-                );
+	let converted = str.toLowerCase().replace(/([-_][a-z])/g, group => {
+		group.toUpperCase().replace('-', '').replace('_', '')
+	});
 
-    if (converted.slice(-1) === "_") {
-        return converted.slice(0, -1);
-    }
-
-    return converted
+	if (converted.slice(-1) === "_") {
+		return converted.slice(0, -1);
+	}
+	
+	return converted
 } 
 
 function tsToSwiftType(tsType) {
