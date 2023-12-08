@@ -5,7 +5,7 @@ A Swift client for [Lemmy](https://join-lemmy.org).
 ## Features
 
 - Fully Swift type safe
-- `async`/`await` compatible
+- `async`/`await` and `Combine` compatible
 - Supports [all Lemmy API endpoints](https://join-lemmy.org/api/classes/LemmyHttp.html)
 - Uses Codable for easy JSON serialization/deserialization
 
