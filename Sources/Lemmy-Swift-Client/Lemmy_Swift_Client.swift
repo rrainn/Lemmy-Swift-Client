@@ -1,3 +1,4 @@
+import Combine
 import Foundation
 
 public enum LemmyAPIError: Error, CustomStringConvertible, LocalizedError {
@@ -70,6 +71,8 @@ public class LemmyAPI {
 
 		// Decode Response
 		let decoder = JSONDecoder()
+		decoder.keyDecodingStrategy = .convertFromSnakeCase
+
 		do {
 			let decodedResult = try decoder.decode(T.Response.self, from: data)
 			return (decodedResult, response, data)
@@ -81,6 +84,33 @@ public class LemmyAPI {
 	public func request<T: APIRequest>(_ apiRequest: T) async throws -> T.Response {
 		let (result, _, _) = try await baseRequest(apiRequest)
 		return result
+	}
+
+	public func requestPublisher<T: APIRequest>(_ apiRequest: T)
+		-> AnyPublisher<T.Response, Error>
+	{
+		guard let request = try? urlRequest(apiRequest)
+		else {
+			return Fail(error: NSError(domain: "Could not complete the request", code: 400))
+				.eraseToAnyPublisher()
+		}
+
+		let decoder = JSONDecoder()
+		decoder.keyDecodingStrategy = .convertFromSnakeCase
+
+		return URLSession
+			.shared
+			.dataTaskPublisher(for: request)
+			.tryMap { element -> Data in
+				guard let httpResponse = element.response as? HTTPURLResponse,
+				      httpResponse.statusCode == 200
+				else {
+					throw URLError(.badServerResponse)
+				}
+				return element.data
+			}
+			.decode(type: T.Response.self, decoder: decoder)
+			.eraseToAnyPublisher()
 	}
 }
 

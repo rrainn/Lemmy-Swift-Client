@@ -2,25 +2,25 @@ import Foundation
 
 public struct ModRemovePost: Codable, Identifiable, Hashable {
 	public let id: Int
-	public let mod_person_id: PersonId
-	public let post_id: PostId
+	public let modPersonId: PersonId
+	public let postId: PostId
 	public let reason: String?
 	public let removed: Bool
-	public let when_: String
+	public let when: String
 
 	public init(
 		id: Int,
-		mod_person_id: PersonId,
-		post_id: PostId,
+		modPersonId: PersonId,
+		postId: PostId,
 		reason: String? = nil,
 		removed: Bool,
-		when_: String
+		when: String
 	) {
 		self.id = id
-		self.mod_person_id = mod_person_id
-		self.post_id = post_id
+		self.modPersonId = modPersonId
+		self.postId = postId
 		self.reason = reason
 		self.removed = removed
-		self.when_ = when_
+		self.when = when
 	}
 }

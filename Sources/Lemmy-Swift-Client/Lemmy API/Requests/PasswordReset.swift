@@ -1,7 +1,7 @@
 import Foundation
 
 public struct PasswordResetRequest: APIRequest {
-	public typealias Response = PasswordResetResponse
+	public typealias Response = SuccessResponse
 
 	public static let httpMethod: HTTPMethod = .post
 	public static let path: String = "/user/password_reset"
@@ -13,8 +13,4 @@ public struct PasswordResetRequest: APIRequest {
 	) {
 		self.email = email
 	}
-}
-
-public struct PasswordResetResponse: APIResponse {
-	public init() {}
 }

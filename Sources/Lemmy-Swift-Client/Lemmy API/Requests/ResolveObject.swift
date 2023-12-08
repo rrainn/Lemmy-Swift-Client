@@ -7,14 +7,11 @@ public struct ResolveObjectRequest: APIRequest {
 	public static let path: String = "/resolve_object"
 
 	public let q: String
-	public let auth: String
 
 	public init(
-		q: String,
-		auth: String
+		q: String
 	) {
 		self.q = q
-		self.auth = auth
 	}
 }
 

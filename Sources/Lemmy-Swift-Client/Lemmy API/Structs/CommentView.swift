@@ -6,11 +6,13 @@ public struct CommentView: Codable, Hashable {
 	public let post: Post
 	public let community: Community
 	public let counts: CommentAggregates
-	public let creator_banned_from_community: Bool
+	public let creatorBannedFromCommunity: Bool
+	public let creatorIsModerator: Bool
+	public let creatorIsAdmin: Bool
 	public let subscribed: SubscribedType
 	public let saved: Bool
-	public let creator_blocked: Bool
-	public let my_vote: Int?
+	public let creatorBlocked: Bool
+	public let myVote: Int?
 
 	public init(
 		comment: Comment,
@@ -18,21 +20,25 @@ public struct CommentView: Codable, Hashable {
 		post: Post,
 		community: Community,
 		counts: CommentAggregates,
-		creator_banned_from_community: Bool,
+		creatorBannedFromCommunity: Bool,
+		creatorIsModerator: Bool,
+		creatorIsAdmin: Bool,
 		subscribed: SubscribedType,
 		saved: Bool,
-		creator_blocked: Bool,
-		my_vote: Int? = nil
+		creatorBlocked: Bool,
+		myVote: Int? = nil
 	) {
 		self.comment = comment
 		self.creator = creator
 		self.post = post
 		self.community = community
 		self.counts = counts
-		self.creator_banned_from_community = creator_banned_from_community
+		self.creatorBannedFromCommunity = creatorBannedFromCommunity
+		self.creatorIsModerator = creatorIsModerator
+		self.creatorIsAdmin = creatorIsAdmin
 		self.subscribed = subscribed
 		self.saved = saved
-		self.creator_blocked = creator_blocked
-		self.my_vote = my_vote
+		self.creatorBlocked = creatorBlocked
+		self.myVote = myVote
 	}
 }

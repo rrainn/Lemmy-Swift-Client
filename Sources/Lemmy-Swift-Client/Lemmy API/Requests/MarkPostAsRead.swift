@@ -1,22 +1,22 @@
 import Foundation
 
 public struct MarkPostAsReadRequest: APIRequest {
-	public typealias Response = PostResponse
+	public typealias Response = SuccessResponse
 
 	public static let httpMethod: HTTPMethod = .post
 	public static let path: String = "/post/mark_as_read"
 
-	public let post_id: PostId
+	public let postId: PostId?
+	public let postIds: [PostId]?
 	public let read: Bool
-	public let auth: String
 
 	public init(
-		post_id: PostId,
-		read: Bool,
-		auth: String
+		postId: PostId? = nil,
+		postIds: [PostId]? = nil,
+		read: Bool
 	) {
-		self.post_id = post_id
+		self.postId = postId
+		self.postIds = postIds
 		self.read = read
-		self.auth = auth
 	}
 }

@@ -1,16 +1,16 @@
 import Foundation
 
 public struct PrivateMessageView: Codable, Hashable {
-	public let private_message: PrivateMessage
+	public let privateMessage: PrivateMessage
 	public let creator: Person
 	public let recipient: Person
 
 	public init(
-		private_message: PrivateMessage,
+		privateMessage: PrivateMessage,
 		creator: Person,
 		recipient: Person
 	) {
-		self.private_message = private_message
+		self.privateMessage = privateMessage
 		self.creator = creator
 		self.recipient = recipient
 	}

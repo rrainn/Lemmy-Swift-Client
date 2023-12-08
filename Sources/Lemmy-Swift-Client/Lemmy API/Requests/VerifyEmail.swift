@@ -1,7 +1,7 @@
 import Foundation
 
 public struct VerifyEmailRequest: APIRequest {
-	public typealias Response = VerifyEmailResponse
+	public typealias Response = SuccessResponse
 
 	public static let httpMethod: HTTPMethod = .post
 	public static let path: String = "/user/verify_email"
@@ -13,8 +13,4 @@ public struct VerifyEmailRequest: APIRequest {
 	) {
 		self.token = token
 	}
-}
-
-public struct VerifyEmailResponse: APIResponse {
-	public init() {}
 }

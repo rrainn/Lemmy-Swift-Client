@@ -99,14 +99,14 @@ const fs = require("fs").promises;
 					isOptional = true;
 				}
 				const type = tsToSwiftType(propertyName[2]) ?? propertyName[2];
-				result += `\tpublic let ${name}: ${type}${isOptional ? "?" : ""}\n`;
+				result += `\tpublic let ${snakeToCamel(name)}: ${type}${isOptional ? "?" : ""}\n`;
 				parsedProperties.push({ name, type, isOptional });
 			}
 			result += `
 	public init(
-		${parsedProperties.map((a) => `${a.name}: ${a.type}${a.isOptional ? "?" : ""}${a.isOptional ? " = nil" : ""}`).join(",\n\t\t")}
+		${parsedProperties.map((a) => `${snakeToCamel(a.name)}: ${a.type}${a.isOptional ? "?" : ""}${a.isOptional ? " = nil" : ""}`).join(",\n\t\t")}
 	) {
-		${parsedProperties.map((a) => `self.${a.name} = ${a.name}`).join("\n\t\t")}
+		${parsedProperties.map((a) => `self.${snakeToCamel(a.name)} = ${snakeToCamel(a.name)}`).join("\n\t\t")}
 	}
 `;
 			result += "}\n";
@@ -140,8 +140,23 @@ function lowercaseFirstLetter(str) {
 	return str.charAt(0).toLowerCase() + str.slice(1);
 }
 
+function snakeToCamel(str) {
+    let converted = str.toLowerCase().replace(/([-_][a-z])/g, group =>
+                group
+                .toUpperCase()
+                .replace('-', '')
+                .replace('_', '')
+                );
+
+    if (converted.slice(-1) === "_") {
+        return converted.slice(0, -1);
+    }
+
+    return converted
+} 
+
 function tsToSwiftType(tsType) {
-	switch (tsType) {
+	switch (tsType.trim()) {
 		case "string":
 			return "String";
 		case "number":

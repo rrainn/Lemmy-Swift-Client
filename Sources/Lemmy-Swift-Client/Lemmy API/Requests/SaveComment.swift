@@ -6,17 +6,14 @@ public struct SaveCommentRequest: APIRequest {
 	public static let httpMethod: HTTPMethod = .put
 	public static let path: String = "/comment/save"
 
-	public let comment_id: CommentId
+	public let commentId: CommentId
 	public let save: Bool
-	public let auth: String
 
 	public init(
-		comment_id: CommentId,
-		save: Bool,
-		auth: String
+		commentId: CommentId,
+		save: Bool
 	) {
-		self.comment_id = comment_id
+		self.commentId = commentId
 		self.save = save
-		self.auth = auth
 	}
 }

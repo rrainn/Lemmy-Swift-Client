@@ -2,22 +2,22 @@ import Foundation
 
 public struct ModLockPost: Codable, Identifiable, Hashable {
 	public let id: Int
-	public let mod_person_id: PersonId
-	public let post_id: PostId
+	public let modPersonId: PersonId
+	public let postId: PostId
 	public let locked: Bool
-	public let when_: String
+	public let when: String
 
 	public init(
 		id: Int,
-		mod_person_id: PersonId,
-		post_id: PostId,
+		modPersonId: PersonId,
+		postId: PostId,
 		locked: Bool,
-		when_: String
+		when: String
 	) {
 		self.id = id
-		self.mod_person_id = mod_person_id
-		self.post_id = post_id
+		self.modPersonId = modPersonId
+		self.postId = postId
 		self.locked = locked
-		self.when_ = when_
+		self.when = when
 	}
 }

@@ -2,29 +2,29 @@ import Foundation
 
 public struct CustomEmoji: Codable, Identifiable, Hashable {
 	public let id: CustomEmojiId
-	public let local_site_id: LocalSiteId
+	public let localSiteId: LocalSiteId
 	public let shortcode: String
-	public let image_url: String
-	public let alt_text: String
+	public let imageUrl: String
+	public let altText: String
 	public let category: String
 	public let published: String
 	public let updated: String?
 
 	public init(
 		id: CustomEmojiId,
-		local_site_id: LocalSiteId,
+		localSiteId: LocalSiteId,
 		shortcode: String,
-		image_url: String,
-		alt_text: String,
+		imageUrl: String,
+		altText: String,
 		category: String,
 		published: String,
 		updated: String? = nil
 	) {
 		self.id = id
-		self.local_site_id = local_site_id
+		self.localSiteId = localSiteId
 		self.shortcode = shortcode
-		self.image_url = image_url
-		self.alt_text = alt_text
+		self.imageUrl = imageUrl
+		self.altText = altText
 		self.category = category
 		self.published = published
 		self.updated = updated
