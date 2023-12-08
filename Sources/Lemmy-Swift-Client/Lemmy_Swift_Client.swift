@@ -34,6 +34,7 @@ public class LemmyAPI {
 
 	public func urlRequest<T: APIRequest>(_ apiRequest: T) throws -> URLRequest {
 		var request = URLRequest(url: baseUrl.appending(path: T.path))
+        request.cachePolicy = .reloadIgnoringLocalAndRemoteCacheData
 		request.httpMethod = T.httpMethod.rawValue
 		let encoder = JSONEncoder()
 		if T.httpMethod == .get {
@@ -97,10 +98,10 @@ public class LemmyAPI {
 
 		let decoder = JSONDecoder()
 		decoder.keyDecodingStrategy = .convertFromSnakeCase
-
+        
 		return URLSession
 			.shared
-			.dataTaskPublisher(for: request)
+            .dataTaskPublisher(for: request)
 			.tryMap { element -> Data in
 				guard let httpResponse = element.response as? HTTPURLResponse,
 				      httpResponse.statusCode == 200
