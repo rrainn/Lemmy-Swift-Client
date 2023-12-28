@@ -2,19 +2,19 @@ import Foundation
 
 public struct AdminPurgePerson: Codable, Identifiable, Hashable {
 	public let id: Int
-	public let admin_person_id: PersonId
+	public let adminPersonId: PersonId
 	public let reason: String?
-	public let when_: String
+	public let when: String
 
 	public init(
 		id: Int,
-		admin_person_id: PersonId,
+		adminPersonId: PersonId,
 		reason: String? = nil,
-		when_: String
+		when: String
 	) {
 		self.id = id
-		self.admin_person_id = admin_person_id
+		self.adminPersonId = adminPersonId
 		self.reason = reason
-		self.when_ = when_
+		self.when = when
 	}
 }

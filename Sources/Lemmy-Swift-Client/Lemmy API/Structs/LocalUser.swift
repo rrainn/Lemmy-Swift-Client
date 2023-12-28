@@ -2,61 +2,82 @@ import Foundation
 
 public struct LocalUser: Codable, Identifiable, Hashable {
 	public let id: LocalUserId
-	public let person_id: PersonId
+	public let personId: PersonId
 	public let email: String?
-	public let show_nsfw: Bool
+	public let showNsfw: Bool
 	public let theme: String
-	public let default_sort_type: SortType
-	public let default_listing_type: ListingType
-	public let interface_language: String
-	public let show_avatars: Bool
-	public let send_notifications_to_email: Bool
-	public let validator_time: String
-	public let show_scores: Bool
-	public let show_bot_accounts: Bool
-	public let show_read_posts: Bool
-	public let show_new_post_notifs: Bool
-	public let email_verified: Bool
-	public let accepted_application: Bool
-	public let totp_2fa_url: String?
+	public let defaultSortType: SortType
+	public let defaultListingType: ListingType
+	public let interfaceLanguage: String
+	public let showAvatars: Bool
+	public let sendNotificationsToEmail: Bool
+	public let showScores: Bool
+	public let showBotAccounts: Bool
+	public let showReadPosts: Bool
+	public let emailVerified: Bool
+	public let acceptedApplication: Bool
+	public let openLinksInNewTab: Bool
+	public let blurNsfw: Bool
+	public let autoExpand: Bool
+	public let infiniteScrollEnabled: Bool
+	public let admin: Bool
+	public let postListingMode: PostListingMode
+	public let totp_2faEnabled: Bool
+	public let enableKeyboardNavigation: Bool
+	public let enableAnimatedImages: Bool
+	public let collapseBotComments: Bool
 
 	public init(
 		id: LocalUserId,
-		person_id: PersonId,
+		personId: PersonId,
 		email: String? = nil,
-		show_nsfw: Bool,
+		showNsfw: Bool,
 		theme: String,
-		default_sort_type: SortType,
-		default_listing_type: ListingType,
-		interface_language: String,
-		show_avatars: Bool,
-		send_notifications_to_email: Bool,
-		validator_time: String,
-		show_scores: Bool,
-		show_bot_accounts: Bool,
-		show_read_posts: Bool,
-		show_new_post_notifs: Bool,
-		email_verified: Bool,
-		accepted_application: Bool,
-		totp_2fa_url: String? = nil
+		defaultSortType: SortType,
+		defaultListingType: ListingType,
+		interfaceLanguage: String,
+		showAvatars: Bool,
+		sendNotificationsToEmail: Bool,
+		showScores: Bool,
+		showBotAccounts: Bool,
+		showReadPosts: Bool,
+		emailVerified: Bool,
+		acceptedApplication: Bool,
+		openLinksInNewTab: Bool,
+		blurNsfw: Bool,
+		autoExpand: Bool,
+		infiniteScrollEnabled: Bool,
+		admin: Bool,
+		postListingMode: PostListingMode,
+		totp_2faEnabled: Bool,
+		enableKeyboardNavigation: Bool,
+		enableAnimatedImages: Bool,
+		collapseBotComments: Bool
 	) {
 		self.id = id
-		self.person_id = person_id
+		self.personId = personId
 		self.email = email
-		self.show_nsfw = show_nsfw
+		self.showNsfw = showNsfw
 		self.theme = theme
-		self.default_sort_type = default_sort_type
-		self.default_listing_type = default_listing_type
-		self.interface_language = interface_language
-		self.show_avatars = show_avatars
-		self.send_notifications_to_email = send_notifications_to_email
-		self.validator_time = validator_time
-		self.show_scores = show_scores
-		self.show_bot_accounts = show_bot_accounts
-		self.show_read_posts = show_read_posts
-		self.show_new_post_notifs = show_new_post_notifs
-		self.email_verified = email_verified
-		self.accepted_application = accepted_application
-		self.totp_2fa_url = totp_2fa_url
+		self.defaultSortType = defaultSortType
+		self.defaultListingType = defaultListingType
+		self.interfaceLanguage = interfaceLanguage
+		self.showAvatars = showAvatars
+		self.sendNotificationsToEmail = sendNotificationsToEmail
+		self.showScores = showScores
+		self.showBotAccounts = showBotAccounts
+		self.showReadPosts = showReadPosts
+		self.emailVerified = emailVerified
+		self.acceptedApplication = acceptedApplication
+		self.openLinksInNewTab = openLinksInNewTab
+		self.blurNsfw = blurNsfw
+		self.autoExpand = autoExpand
+		self.infiniteScrollEnabled = infiniteScrollEnabled
+		self.admin = admin
+		self.postListingMode = postListingMode
+		self.totp_2faEnabled = totp_2faEnabled
+		self.enableKeyboardNavigation = enableKeyboardNavigation
+		self.enableAnimatedImages = enableAnimatedImages
+		self.collapseBotComments = collapseBotComments
 	}
 }

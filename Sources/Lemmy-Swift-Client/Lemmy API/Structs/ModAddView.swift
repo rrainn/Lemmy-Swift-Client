@@ -1,17 +1,17 @@
 import Foundation
 
 public struct ModAddView: Codable, Hashable {
-	public let mod_add: ModAdd
+	public let modAdd: ModAdd
 	public let moderator: Person?
-	public let modded_person: Person
+	public let moddedPerson: Person
 
 	public init(
-		mod_add: ModAdd,
+		modAdd: ModAdd,
 		moderator: Person? = nil,
-		modded_person: Person
+		moddedPerson: Person
 	) {
-		self.mod_add = mod_add
+		self.modAdd = modAdd
 		self.moderator = moderator
-		self.modded_person = modded_person
+		self.moddedPerson = moddedPerson
 	}
 }

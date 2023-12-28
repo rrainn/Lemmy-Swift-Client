@@ -1,26 +1,29 @@
 import Foundation
 
 public struct MyUserInfo: Codable, Hashable {
-	public let local_user_view: LocalUserView
+	public let localUserView: LocalUserView
 	public let follows: [CommunityFollowerView]
 	public let moderates: [CommunityModeratorView]
-	public let community_blocks: [CommunityBlockView]
-	public let person_blocks: [PersonBlockView]
-	public let discussion_languages: [LanguageId]
+	public let communityBlocks: [CommunityBlockView]
+	public let instanceBlocks: [InstanceBlockView]
+	public let personBlocks: [PersonBlockView]
+	public let discussionLanguages: [LanguageId]
 
 	public init(
-		local_user_view: LocalUserView,
+		localUserView: LocalUserView,
 		follows: [CommunityFollowerView],
 		moderates: [CommunityModeratorView],
-		community_blocks: [CommunityBlockView],
-		person_blocks: [PersonBlockView],
-		discussion_languages: [LanguageId]
+		communityBlocks: [CommunityBlockView],
+		instanceBlocks: [InstanceBlockView],
+		personBlocks: [PersonBlockView],
+		discussionLanguages: [LanguageId]
 	) {
-		self.local_user_view = local_user_view
+		self.localUserView = localUserView
 		self.follows = follows
 		self.moderates = moderates
-		self.community_blocks = community_blocks
-		self.person_blocks = person_blocks
-		self.discussion_languages = discussion_languages
+		self.communityBlocks = communityBlocks
+		self.instanceBlocks = instanceBlocks
+		self.personBlocks = personBlocks
+		self.discussionLanguages = discussionLanguages
 	}
 }

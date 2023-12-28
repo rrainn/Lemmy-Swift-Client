@@ -6,23 +6,17 @@ public struct EditCommentRequest: APIRequest {
 	public static let httpMethod: HTTPMethod = .put
 	public static let path: String = "/comment"
 
-	public let comment_id: CommentId
+	public let commentId: CommentId
 	public let content: String?
-	public let language_id: LanguageId?
-	public let form_id: String?
-	public let auth: String
+	public let languageId: LanguageId?
 
 	public init(
-		comment_id: CommentId,
+		commentId: CommentId,
 		content: String? = nil,
-		language_id: LanguageId? = nil,
-		form_id: String? = nil,
-		auth: String
+		languageId: LanguageId? = nil
 	) {
-		self.comment_id = comment_id
+		self.commentId = commentId
 		self.content = content
-		self.language_id = language_id
-		self.form_id = form_id
-		self.auth = auth
+		self.languageId = languageId
 	}
 }

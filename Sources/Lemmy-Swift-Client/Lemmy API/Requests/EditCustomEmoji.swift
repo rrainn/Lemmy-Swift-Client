@@ -8,24 +8,21 @@ public struct EditCustomEmojiRequest: APIRequest {
 
 	public let id: CustomEmojiId
 	public let category: String
-	public let image_url: String
-	public let alt_text: String
+	public let imageUrl: String
+	public let altText: String
 	public let keywords: [String]
-	public let auth: String
 
 	public init(
 		id: CustomEmojiId,
 		category: String,
-		image_url: String,
-		alt_text: String,
-		keywords: [String],
-		auth: String
+		imageUrl: String,
+		altText: String,
+		keywords: [String]
 	) {
 		self.id = id
 		self.category = category
-		self.image_url = image_url
-		self.alt_text = alt_text
+		self.imageUrl = imageUrl
+		self.altText = altText
 		self.keywords = keywords
-		self.auth = auth
 	}
 }

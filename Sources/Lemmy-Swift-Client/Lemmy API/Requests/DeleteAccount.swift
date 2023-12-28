@@ -1,23 +1,19 @@
 import Foundation
 
 public struct DeleteAccountRequest: APIRequest {
-	public typealias Response = DeleteAccountResponse
+	public typealias Response = SuccessResponse
 
 	public static let httpMethod: HTTPMethod = .post
 	public static let path: String = "/user/delete_account"
 
 	public let password: String
-	public let auth: String
+	public let deleteContent: Bool
 
 	public init(
 		password: String,
-		auth: String
+		deleteContent: Bool
 	) {
 		self.password = password
-		self.auth = auth
+		self.deleteContent = deleteContent
 	}
-}
-
-public struct DeleteAccountResponse: APIResponse {
-	public init() {}
 }

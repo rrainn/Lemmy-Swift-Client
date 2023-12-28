@@ -1,26 +1,26 @@
 import Foundation
 
 public struct ModlogListParams: Codable, Hashable {
-	public let community_id: CommunityId?
-	public let mod_person_id: PersonId?
-	public let other_person_id: PersonId?
+	public let communityId: CommunityId?
+	public let modPersonId: PersonId?
+	public let otherPersonId: PersonId?
 	public let page: Int?
 	public let limit: Int?
-	public let hide_modlog_names: Bool
+	public let hideModlogNames: Bool
 
 	public init(
-		community_id: CommunityId? = nil,
-		mod_person_id: PersonId? = nil,
-		other_person_id: PersonId? = nil,
+		communityId: CommunityId? = nil,
+		modPersonId: PersonId? = nil,
+		otherPersonId: PersonId? = nil,
 		page: Int? = nil,
 		limit: Int? = nil,
-		hide_modlog_names: Bool
+		hideModlogNames: Bool
 	) {
-		self.community_id = community_id
-		self.mod_person_id = mod_person_id
-		self.other_person_id = other_person_id
+		self.communityId = communityId
+		self.modPersonId = modPersonId
+		self.otherPersonId = otherPersonId
 		self.page = page
 		self.limit = limit
-		self.hide_modlog_names = hide_modlog_names
+		self.hideModlogNames = hideModlogNames
 	}
 }

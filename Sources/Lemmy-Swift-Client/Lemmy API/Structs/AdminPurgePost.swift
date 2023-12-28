@@ -2,22 +2,22 @@ import Foundation
 
 public struct AdminPurgePost: Codable, Identifiable, Hashable {
 	public let id: Int
-	public let admin_person_id: PersonId
-	public let community_id: CommunityId
+	public let adminPersonId: PersonId
+	public let communityId: CommunityId
 	public let reason: String?
-	public let when_: String
+	public let when: String
 
 	public init(
 		id: Int,
-		admin_person_id: PersonId,
-		community_id: CommunityId,
+		adminPersonId: PersonId,
+		communityId: CommunityId,
 		reason: String? = nil,
-		when_: String
+		when: String
 	) {
 		self.id = id
-		self.admin_person_id = admin_person_id
-		self.community_id = community_id
+		self.adminPersonId = adminPersonId
+		self.communityId = communityId
 		self.reason = reason
-		self.when_ = when_
+		self.when = when
 	}
 }

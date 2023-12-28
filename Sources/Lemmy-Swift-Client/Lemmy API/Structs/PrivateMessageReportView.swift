@@ -1,22 +1,22 @@
 import Foundation
 
 public struct PrivateMessageReportView: Codable, Hashable {
-	public let private_message_report: PrivateMessageReport
-	public let private_message: PrivateMessage
-	public let private_message_creator: Person
+	public let privateMessageReport: PrivateMessageReport
+	public let privateMessage: PrivateMessage
+	public let privateMessageCreator: Person
 	public let creator: Person
 	public let resolver: Person?
 
 	public init(
-		private_message_report: PrivateMessageReport,
-		private_message: PrivateMessage,
-		private_message_creator: Person,
+		privateMessageReport: PrivateMessageReport,
+		privateMessage: PrivateMessage,
+		privateMessageCreator: Person,
 		creator: Person,
 		resolver: Person? = nil
 	) {
-		self.private_message_report = private_message_report
-		self.private_message = private_message
-		self.private_message_creator = private_message_creator
+		self.privateMessageReport = privateMessageReport
+		self.privateMessage = privateMessage
+		self.privateMessageCreator = privateMessageCreator
 		self.creator = creator
 		self.resolver = resolver
 	}

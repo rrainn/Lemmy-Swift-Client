@@ -7,13 +7,10 @@ public struct GetCommentRequest: APIRequest {
 	public static let path: String = "/comment"
 
 	public let id: CommentId
-	public let auth: String?
 
 	public init(
-		id: CommentId,
-		auth: String? = nil
+		id: CommentId
 	) {
 		self.id = id
-		self.auth = auth
 	}
 }

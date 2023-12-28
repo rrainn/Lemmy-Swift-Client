@@ -6,30 +6,27 @@ public struct BlockPersonRequest: APIRequest {
 	public static let httpMethod: HTTPMethod = .post
 	public static let path: String = "/user/block"
 
-	public let person_id: PersonId
+	public let personId: PersonId
 	public let block: Bool
-	public let auth: String
 
 	public init(
-		person_id: PersonId,
-		block: Bool,
-		auth: String
+		personId: PersonId,
+		block: Bool
 	) {
-		self.person_id = person_id
+		self.personId = personId
 		self.block = block
-		self.auth = auth
 	}
 }
 
 public struct BlockPersonResponse: APIResponse {
-	public let person_view: PersonView
+	public let personView: PersonView
 	public let blocked: Bool
 
 	public init(
-		person_view: PersonView,
+		personView: PersonView,
 		blocked: Bool
 	) {
-		self.person_view = person_view
+		self.personView = personView
 		self.blocked = blocked
 	}
 }

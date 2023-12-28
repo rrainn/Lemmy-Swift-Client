@@ -6,49 +6,46 @@ public struct GetPersonDetailsRequest: APIRequest {
 	public static let httpMethod: HTTPMethod = .get
 	public static let path: String = "/user"
 
-	public let person_id: PersonId?
+	public let personId: PersonId?
 	public let username: String?
 	public let sort: SortType?
 	public let page: Int?
 	public let limit: Int?
-	public let community_id: CommunityId?
-	public let saved_only: Bool?
-	public let auth: String?
+	public let communityId: CommunityId?
+	public let savedOnly: Bool?
 
 	public init(
-		person_id: PersonId? = nil,
+		personId: PersonId? = nil,
 		username: String? = nil,
 		sort: SortType? = nil,
 		page: Int? = nil,
 		limit: Int? = nil,
-		community_id: CommunityId? = nil,
-		saved_only: Bool? = nil,
-		auth: String? = nil
+		communityId: CommunityId? = nil,
+		savedOnly: Bool? = nil
 	) {
-		self.person_id = person_id
+		self.personId = personId
 		self.username = username
 		self.sort = sort
 		self.page = page
 		self.limit = limit
-		self.community_id = community_id
-		self.saved_only = saved_only
-		self.auth = auth
+		self.communityId = communityId
+		self.savedOnly = savedOnly
 	}
 }
 
 public struct GetPersonDetailsResponse: APIResponse {
-	public let person_view: PersonView
+	public let personView: PersonView
 	public let comments: [CommentView]
 	public let posts: [PostView]
 	public let moderates: [CommunityModeratorView]
 
 	public init(
-		person_view: PersonView,
+		personView: PersonView,
 		comments: [CommentView],
 		posts: [PostView],
 		moderates: [CommunityModeratorView]
 	) {
-		self.person_view = person_view
+		self.personView = personView
 		self.comments = comments
 		self.posts = posts
 		self.moderates = moderates

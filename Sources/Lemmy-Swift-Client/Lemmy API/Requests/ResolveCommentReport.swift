@@ -6,17 +6,14 @@ public struct ResolveCommentReportRequest: APIRequest {
 	public static let httpMethod: HTTPMethod = .put
 	public static let path: String = "/comment/report/resolve"
 
-	public let report_id: CommentReportId
+	public let reportId: CommentReportId
 	public let resolved: Bool
-	public let auth: String
 
 	public init(
-		report_id: CommentReportId,
-		resolved: Bool,
-		auth: String
+		reportId: CommentReportId,
+		resolved: Bool
 	) {
-		self.report_id = report_id
+		self.reportId = reportId
 		self.resolved = resolved
-		self.auth = auth
 	}
 }

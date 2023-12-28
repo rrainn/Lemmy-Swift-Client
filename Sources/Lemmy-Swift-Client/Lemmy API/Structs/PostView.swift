@@ -4,38 +4,44 @@ public struct PostView: Codable, Hashable {
 	public let post: Post
 	public let creator: Person
 	public let community: Community
-	public let creator_banned_from_community: Bool
+	public let creatorBannedFromCommunity: Bool
+	public let creatorIsModerator: Bool
+	public let creatorIsAdmin: Bool
 	public let counts: PostAggregates
 	public let subscribed: SubscribedType
 	public let saved: Bool
 	public let read: Bool
-	public let creator_blocked: Bool
-	public let my_vote: Int?
-	public let unread_comments: Int
+	public let creatorBlocked: Bool
+	public let myVote: Int?
+	public let unreadComments: Int
 
 	public init(
 		post: Post,
 		creator: Person,
 		community: Community,
-		creator_banned_from_community: Bool,
+		creatorBannedFromCommunity: Bool,
+		creatorIsModerator: Bool,
+		creatorIsAdmin: Bool,
 		counts: PostAggregates,
 		subscribed: SubscribedType,
 		saved: Bool,
 		read: Bool,
-		creator_blocked: Bool,
-		my_vote: Int? = nil,
-		unread_comments: Int
+		creatorBlocked: Bool,
+		myVote: Int? = nil,
+		unreadComments: Int
 	) {
 		self.post = post
 		self.creator = creator
 		self.community = community
-		self.creator_banned_from_community = creator_banned_from_community
+		self.creatorBannedFromCommunity = creatorBannedFromCommunity
+		self.creatorIsModerator = creatorIsModerator
+		self.creatorIsAdmin = creatorIsAdmin
 		self.counts = counts
 		self.subscribed = subscribed
 		self.saved = saved
 		self.read = read
-		self.creator_blocked = creator_blocked
-		self.my_vote = my_vote
-		self.unread_comments = unread_comments
+		self.creatorBlocked = creatorBlocked
+		self.myVote = myVote
+		self.unreadComments = unreadComments
 	}
 }

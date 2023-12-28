@@ -1,7 +1,7 @@
 import Foundation
 
 public struct ModRemoveCommentView: Codable, Hashable {
-	public let mod_remove_comment: ModRemoveComment
+	public let modRemoveComment: ModRemoveComment
 	public let moderator: Person?
 	public let comment: Comment
 	public let commenter: Person
@@ -9,14 +9,14 @@ public struct ModRemoveCommentView: Codable, Hashable {
 	public let community: Community
 
 	public init(
-		mod_remove_comment: ModRemoveComment,
+		modRemoveComment: ModRemoveComment,
 		moderator: Person? = nil,
 		comment: Comment,
 		commenter: Person,
 		post: Post,
 		community: Community
 	) {
-		self.mod_remove_comment = mod_remove_comment
+		self.modRemoveComment = modRemoveComment
 		self.moderator = moderator
 		self.comment = comment
 		self.commenter = commenter

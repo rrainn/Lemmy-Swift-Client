@@ -9,12 +9,12 @@ public struct Site: Codable, Identifiable, Hashable {
 	public let icon: String?
 	public let banner: String?
 	public let description: String?
-	public let actor_id: String
-	public let last_refreshed_at: String
-	public let inbox_url: String
-	public let private_key: String?
-	public let public_key: String
-	public let instance_id: InstanceId
+	public let actorId: String
+	public let lastRefreshedAt: String
+	public let inboxUrl: String
+	public let privateKey: String?
+	public let publicKey: String
+	public let instanceId: InstanceId
 
 	public init(
 		id: SiteId,
@@ -25,12 +25,12 @@ public struct Site: Codable, Identifiable, Hashable {
 		icon: String? = nil,
 		banner: String? = nil,
 		description: String? = nil,
-		actor_id: String,
-		last_refreshed_at: String,
-		inbox_url: String,
-		private_key: String? = nil,
-		public_key: String,
-		instance_id: InstanceId
+		actorId: String,
+		lastRefreshedAt: String,
+		inboxUrl: String,
+		privateKey: String? = nil,
+		publicKey: String,
+		instanceId: InstanceId
 	) {
 		self.id = id
 		self.name = name
@@ -40,11 +40,11 @@ public struct Site: Codable, Identifiable, Hashable {
 		self.icon = icon
 		self.banner = banner
 		self.description = description
-		self.actor_id = actor_id
-		self.last_refreshed_at = last_refreshed_at
-		self.inbox_url = inbox_url
-		self.private_key = private_key
-		self.public_key = public_key
-		self.instance_id = instance_id
+		self.actorId = actorId
+		self.lastRefreshedAt = lastRefreshedAt
+		self.inboxUrl = inboxUrl
+		self.privateKey = privateKey
+		self.publicKey = publicKey
+		self.instanceId = instanceId
 	}
 }

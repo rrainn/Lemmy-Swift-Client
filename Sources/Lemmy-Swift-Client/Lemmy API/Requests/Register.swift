@@ -8,32 +8,32 @@ public struct RegisterRequest: APIRequest {
 
 	public let username: String
 	public let password: String
-	public let password_verify: String
-	public let show_nsfw: Bool
+	public let passwordVerify: String
+	public let showNsfw: Bool
 	public let email: String?
-	public let captcha_uuid: String?
-	public let captcha_answer: String?
+	public let captchaUuid: String?
+	public let captchaAnswer: String?
 	public let honeypot: String?
 	public let answer: String?
 
 	public init(
 		username: String,
 		password: String,
-		password_verify: String,
-		show_nsfw: Bool,
+		passwordVerify: String,
+		showNsfw: Bool,
 		email: String? = nil,
-		captcha_uuid: String? = nil,
-		captcha_answer: String? = nil,
+		captchaUuid: String? = nil,
+		captchaAnswer: String? = nil,
 		honeypot: String? = nil,
 		answer: String? = nil
 	) {
 		self.username = username
 		self.password = password
-		self.password_verify = password_verify
-		self.show_nsfw = show_nsfw
+		self.passwordVerify = passwordVerify
+		self.showNsfw = showNsfw
 		self.email = email
-		self.captcha_uuid = captcha_uuid
-		self.captcha_answer = captcha_answer
+		self.captchaUuid = captchaUuid
+		self.captchaAnswer = captchaAnswer
 		self.honeypot = honeypot
 		self.answer = answer
 	}
@@ -41,16 +41,16 @@ public struct RegisterRequest: APIRequest {
 
 public struct LoginResponse: APIResponse {
 	public let jwt: String?
-	public let registration_created: Bool
-	public let verify_email_sent: Bool
+	public let registrationCreated: Bool
+	public let verifyEmailSent: Bool
 
 	public init(
 		jwt: String? = nil,
-		registration_created: Bool,
-		verify_email_sent: Bool
+		registrationCreated: Bool,
+		verifyEmailSent: Bool
 	) {
 		self.jwt = jwt
-		self.registration_created = registration_created
-		self.verify_email_sent = verify_email_sent
+		self.registrationCreated = registrationCreated
+		self.verifyEmailSent = verifyEmailSent
 	}
 }

@@ -1,20 +1,17 @@
 import Foundation
 
 public struct ListRegistrationApplications: Codable, Hashable {
-	public let unread_only: Bool?
+	public let unreadOnly: Bool?
 	public let page: Int?
 	public let limit: Int?
-	public let auth: String
 
 	public init(
-		unread_only: Bool? = nil,
+		unreadOnly: Bool? = nil,
 		page: Int? = nil,
-		limit: Int? = nil,
-		auth: String
+		limit: Int? = nil
 	) {
-		self.unread_only = unread_only
+		self.unreadOnly = unreadOnly
 		self.page = page
 		self.limit = limit
-		self.auth = auth
 	}
 }

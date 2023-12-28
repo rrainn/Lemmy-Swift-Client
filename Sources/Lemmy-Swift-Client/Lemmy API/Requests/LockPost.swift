@@ -6,17 +6,14 @@ public struct LockPostRequest: APIRequest {
 	public static let httpMethod: HTTPMethod = .post
 	public static let path: String = "/post/lock"
 
-	public let post_id: PostId
+	public let postId: PostId
 	public let locked: Bool
-	public let auth: String
 
 	public init(
-		post_id: PostId,
-		locked: Bool,
-		auth: String
+		postId: PostId,
+		locked: Bool
 	) {
-		self.post_id = post_id
+		self.postId = postId
 		self.locked = locked
-		self.auth = auth
 	}
 }

@@ -8,34 +8,31 @@ public struct GetCommunityRequest: APIRequest {
 
 	public let id: CommunityId?
 	public let name: String?
-	public let auth: String?
 
 	public init(
 		id: CommunityId? = nil,
-		name: String? = nil,
-		auth: String? = nil
+		name: String? = nil
 	) {
 		self.id = id
 		self.name = name
-		self.auth = auth
 	}
 }
 
 public struct GetCommunityResponse: APIResponse {
-	public let community_view: CommunityView
+	public let communityView: CommunityView
 	public let site: Site?
 	public let moderators: [CommunityModeratorView]
-	public let discussion_languages: [LanguageId]
+	public let discussionLanguages: [LanguageId]
 
 	public init(
-		community_view: CommunityView,
+		communityView: CommunityView,
 		site: Site? = nil,
 		moderators: [CommunityModeratorView],
-		discussion_languages: [LanguageId]
+		discussionLanguages: [LanguageId]
 	) {
-		self.community_view = community_view
+		self.communityView = communityView
 		self.site = site
 		self.moderators = moderators
-		self.discussion_languages = discussion_languages
+		self.discussionLanguages = discussionLanguages
 	}
 }
