@@ -142,7 +142,7 @@ function lowercaseFirstLetter(str) {
 
 function snakeToCamel(str) {
 	let converted = str.toLowerCase().replace(/([-_][a-z])/g, group => {
-		group.toUpperCase().replace('-', '').replace('_', '')
+		return group.toUpperCase().replace('-', '').replace('_', '')
 	});
 
 	if (converted.slice(-1) === "_") {

@@ -1,157 +1,157 @@
 import Foundation
 
 public enum LemmyErrorType: String, Codable, CustomStringConvertible, CaseIterable {
-	case report_reason_required
-	case report_too_long
-	case not_a_moderator
-	case not_an_admin
-	case cant_block_yourself
-	case cant_block_admin
-	case couldnt_update_user
-	case passwords_do_not_match
-	case email_not_verified
-	case email_required
-	case couldnt_update_comment
-	case couldnt_update_private_message
-	case cannot_leave_admin
-	case no_lines_in_html
-	case site_metadata_page_is_not_doctype_html
-	case pictrs_response_error
-	case pictrs_purge_response_error
-	case pictrs_caching_disabled
-	case image_url_missing_path_segments
-	case image_url_missing_last_path_segment
-	case pictrs_api_key_not_provided
-	case no_content_type_header
-	case not_an_image_type
-	case not_a_mod_or_admin
-	case no_admins
-	case not_top_admin
-	case not_top_mod
-	case not_logged_in
-	case site_ban
-	case deleted
-	case banned_from_community
-	case couldnt_find_community
-	case couldnt_find_person
-	case person_is_blocked
-	case community_is_blocked
-	case instance_is_blocked
-	case downvotes_are_disabled
-	case instance_is_private
-	case invalid_password
-	case site_description_length_overflow
-	case honeypot_failed
-	case registration_application_is_pending
-	case cant_enable_private_instance_and_federation_together
-	case locked
-	case couldnt_create_comment
-	case max_comment_depth_reached
-	case no_comment_edit_allowed
-	case only_admins_can_create_communities
-	case community_already_exists
-	case language_not_allowed
-	case only_mods_can_post_in_community
-	case couldnt_update_post
-	case no_post_edit_allowed
-	case couldnt_find_post
-	case edit_private_message_not_allowed
-	case site_already_exists
-	case application_question_required
-	case invalid_default_post_listing_type
-	case registration_closed
-	case registration_application_answer_required
-	case email_already_exists
-	case federation_forbidden_by_strict_allow_list
-	case person_is_banned_from_community
-	case object_is_not_public
-	case invalid_community
-	case cannot_create_post_or_comment_in_deleted_or_removed_community
-	case cannot_receive_page
-	case new_post_cannot_be_locked
-	case only_local_admin_can_remove_community
-	case only_local_admin_can_restore_community
-	case no_id_given
-	case incorrect_login
-	case invalid_query
-	case object_not_local
-	case post_is_locked
-	case person_is_banned_from_site
-	case invalid_vote_value
-	case page_does_not_specify_creator
-	case page_does_not_specify_group
-	case no_community_found_in_cc
-	case no_email_setup
-	case email_smtp_server_needs_a_port
-	case missing_an_email
-	case rate_limit_error
-	case invalid_name
-	case invalid_display_name
-	case invalid_matrix_id
-	case invalid_post_title
-	case invalid_body_field
-	case bio_length_overflow
-	case missing_totp_token
-	case missing_totp_secret
-	case incorrect_totp_token
-	case couldnt_parse_totp_secret
-	case couldnt_generate_totp
-	case totp_already_enabled
-	case couldnt_like_comment
-	case couldnt_save_comment
-	case couldnt_create_report
-	case couldnt_resolve_report
-	case community_moderator_already_exists
-	case community_user_already_banned
-	case community_block_already_exists
-	case community_follower_already_exists
-	case couldnt_update_community_hidden_status
-	case person_block_already_exists
-	case user_already_exists
-	case token_not_found
-	case couldnt_like_post
-	case couldnt_save_post
-	case couldnt_mark_post_as_read
-	case couldnt_update_community
-	case couldnt_update_replies
-	case couldnt_update_person_mentions
-	case post_title_too_long
-	case couldnt_create_post
-	case couldnt_create_private_message
-	case couldnt_update_private
-	case system_err_login
-	case couldnt_set_all_registrations_accepted
-	case couldnt_set_all_email_verified
-	case banned
-	case couldnt_get_comments
-	case couldnt_get_posts
-	case invalid_url
-	case email_send_failed
-	case slurs
-	case couldnt_find_object
-	case registration_denied
-	case federation_disabled
-	case domain_blocked
-	case domain_not_in_allow_list
-	case federation_disabled_by_strict_allow_list
-	case site_name_required
-	case site_name_length_overflow
-	case permissive_regex
-	case invalid_regex
-	case captcha_incorrect
-	case password_reset_limit_reached
-	case couldnt_create_audio_captcha
-	case invalid_url_scheme
-	case couldnt_send_webmention
-	case contradicting_filters
-	case instance_block_already_exists
-	case auth_cookie_insecure
-	case too_many_items
-	case community_has_no_followers
-	case ban_expiration_in_past
-	case invalid_unix_time
-	case invalid_bot_action
-	case unknown
+	case report_reason_required = "report_reason_required"
+	case report_too_long = "report_too_long"
+	case not_a_moderator = "not_a_moderator"
+	case not_an_admin = "not_an_admin"
+	case cant_block_yourself = "cant_block_yourself"
+	case cant_block_admin = "cant_block_admin"
+	case couldnt_update_user = "couldnt_update_user"
+	case passwords_do_not_match = "passwords_do_not_match"
+	case email_not_verified = "email_not_verified"
+	case email_required = "email_required"
+	case couldnt_update_comment = "couldnt_update_comment"
+	case couldnt_update_private_message = "couldnt_update_private_message"
+	case cannot_leave_admin = "cannot_leave_admin"
+	case no_lines_in_html = "no_lines_in_html"
+	case site_metadata_page_is_not_doctype_html = "site_metadata_page_is_not_doctype_html"
+	case pictrs_response_error = "pictrs_response_error"
+	case pictrs_purge_response_error = "pictrs_purge_response_error"
+	case pictrs_caching_disabled = "pictrs_caching_disabled"
+	case image_url_missing_path_segments = "image_url_missing_path_segments"
+	case image_url_missing_last_path_segment = "image_url_missing_last_path_segment"
+	case pictrs_api_key_not_provided = "pictrs_api_key_not_provided"
+	case no_content_type_header = "no_content_type_header"
+	case not_an_image_type = "not_an_image_type"
+	case not_a_mod_or_admin = "not_a_mod_or_admin"
+	case no_admins = "no_admins"
+	case not_top_admin = "not_top_admin"
+	case not_top_mod = "not_top_mod"
+	case not_logged_in = "not_logged_in"
+	case site_ban = "site_ban"
+	case deleted = "deleted"
+	case banned_from_community = "banned_from_community"
+	case couldnt_find_community = "couldnt_find_community"
+	case couldnt_find_person = "couldnt_find_person"
+	case person_is_blocked = "person_is_blocked"
+	case community_is_blocked = "community_is_blocked"
+	case instance_is_blocked = "instance_is_blocked"
+	case downvotes_are_disabled = "downvotes_are_disabled"
+	case instance_is_private = "instance_is_private"
+	case invalid_password = "invalid_password"
+	case site_description_length_overflow = "site_description_length_overflow"
+	case honeypot_failed = "honeypot_failed"
+	case registration_application_is_pending = "registration_application_is_pending"
+	case cant_enable_private_instance_and_federation_together = "cant_enable_private_instance_and_federation_together"
+	case locked = "locked"
+	case couldnt_create_comment = "couldnt_create_comment"
+	case max_comment_depth_reached = "max_comment_depth_reached"
+	case no_comment_edit_allowed = "no_comment_edit_allowed"
+	case only_admins_can_create_communities = "only_admins_can_create_communities"
+	case community_already_exists = "community_already_exists"
+	case language_not_allowed = "language_not_allowed"
+	case only_mods_can_post_in_community = "only_mods_can_post_in_community"
+	case couldnt_update_post = "couldnt_update_post"
+	case no_post_edit_allowed = "no_post_edit_allowed"
+	case couldnt_find_post = "couldnt_find_post"
+	case edit_private_message_not_allowed = "edit_private_message_not_allowed"
+	case site_already_exists = "site_already_exists"
+	case application_question_required = "application_question_required"
+	case invalid_default_post_listing_type = "invalid_default_post_listing_type"
+	case registration_closed = "registration_closed"
+	case registration_application_answer_required = "registration_application_answer_required"
+	case email_already_exists = "email_already_exists"
+	case federation_forbidden_by_strict_allow_list = "federation_forbidden_by_strict_allow_list"
+	case person_is_banned_from_community = "person_is_banned_from_community"
+	case object_is_not_public = "object_is_not_public"
+	case invalid_community = "invalid_community"
+	case cannot_create_post_or_comment_in_deleted_or_removed_community = "cannot_create_post_or_comment_in_deleted_or_removed_community"
+	case cannot_receive_page = "cannot_receive_page"
+	case new_post_cannot_be_locked = "new_post_cannot_be_locked"
+	case only_local_admin_can_remove_community = "only_local_admin_can_remove_community"
+	case only_local_admin_can_restore_community = "only_local_admin_can_restore_community"
+	case no_id_given = "no_id_given"
+	case incorrect_login = "incorrect_login"
+	case invalid_query = "invalid_query"
+	case object_not_local = "object_not_local"
+	case post_is_locked = "post_is_locked"
+	case person_is_banned_from_site = "person_is_banned_from_site"
+	case invalid_vote_value = "invalid_vote_value"
+	case page_does_not_specify_creator = "page_does_not_specify_creator"
+	case page_does_not_specify_group = "page_does_not_specify_group"
+	case no_community_found_in_cc = "no_community_found_in_cc"
+	case no_email_setup = "no_email_setup"
+	case email_smtp_server_needs_a_port = "email_smtp_server_needs_a_port"
+	case missing_an_email = "missing_an_email"
+	case rate_limit_error = "rate_limit_error"
+	case invalid_name = "invalid_name"
+	case invalid_display_name = "invalid_display_name"
+	case invalid_matrix_id = "invalid_matrix_id"
+	case invalid_post_title = "invalid_post_title"
+	case invalid_body_field = "invalid_body_field"
+	case bio_length_overflow = "bio_length_overflow"
+	case missing_totp_token = "missing_totp_token"
+	case missing_totp_secret = "missing_totp_secret"
+	case incorrect_totp_token = "incorrect_totp_token"
+	case couldnt_parse_totp_secret = "couldnt_parse_totp_secret"
+	case couldnt_generate_totp = "couldnt_generate_totp"
+	case totp_already_enabled = "totp_already_enabled"
+	case couldnt_like_comment = "couldnt_like_comment"
+	case couldnt_save_comment = "couldnt_save_comment"
+	case couldnt_create_report = "couldnt_create_report"
+	case couldnt_resolve_report = "couldnt_resolve_report"
+	case community_moderator_already_exists = "community_moderator_already_exists"
+	case community_user_already_banned = "community_user_already_banned"
+	case community_block_already_exists = "community_block_already_exists"
+	case community_follower_already_exists = "community_follower_already_exists"
+	case couldnt_update_community_hidden_status = "couldnt_update_community_hidden_status"
+	case person_block_already_exists = "person_block_already_exists"
+	case user_already_exists = "user_already_exists"
+	case token_not_found = "token_not_found"
+	case couldnt_like_post = "couldnt_like_post"
+	case couldnt_save_post = "couldnt_save_post"
+	case couldnt_mark_post_as_read = "couldnt_mark_post_as_read"
+	case couldnt_update_community = "couldnt_update_community"
+	case couldnt_update_replies = "couldnt_update_replies"
+	case couldnt_update_person_mentions = "couldnt_update_person_mentions"
+	case post_title_too_long = "post_title_too_long"
+	case couldnt_create_post = "couldnt_create_post"
+	case couldnt_create_private_message = "couldnt_create_private_message"
+	case couldnt_update_private = "couldnt_update_private"
+	case system_err_login = "system_err_login"
+	case couldnt_set_all_registrations_accepted = "couldnt_set_all_registrations_accepted"
+	case couldnt_set_all_email_verified = "couldnt_set_all_email_verified"
+	case banned = "banned"
+	case couldnt_get_comments = "couldnt_get_comments"
+	case couldnt_get_posts = "couldnt_get_posts"
+	case invalid_url = "invalid_url"
+	case email_send_failed = "email_send_failed"
+	case slurs = "slurs"
+	case couldnt_find_object = "couldnt_find_object"
+	case registration_denied = "registration_denied"
+	case federation_disabled = "federation_disabled"
+	case domain_blocked = "domain_blocked"
+	case domain_not_in_allow_list = "domain_not_in_allow_list"
+	case federation_disabled_by_strict_allow_list = "federation_disabled_by_strict_allow_list"
+	case site_name_required = "site_name_required"
+	case site_name_length_overflow = "site_name_length_overflow"
+	case permissive_regex = "permissive_regex"
+	case invalid_regex = "invalid_regex"
+	case captcha_incorrect = "captcha_incorrect"
+	case password_reset_limit_reached = "password_reset_limit_reached"
+	case couldnt_create_audio_captcha = "couldnt_create_audio_captcha"
+	case invalid_url_scheme = "invalid_url_scheme"
+	case couldnt_send_webmention = "couldnt_send_webmention"
+	case contradicting_filters = "contradicting_filters"
+	case instance_block_already_exists = "instance_block_already_exists"
+	case too_many_items = "too_many_items"
+	case community_has_no_followers = "community_has_no_followers"
+	case ban_expiration_in_past = "ban_expiration_in_past"
+	case invalid_unix_time = "invalid_unix_time"
+	case invalid_bot_action = "invalid_bot_action"
+	case cant_block_local_instance = "cant_block_local_instance"
+	case unknown = "unknown"
 
 	public var description: String {
 		return rawValue
