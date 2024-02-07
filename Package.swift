@@ -6,11 +6,11 @@ import PackageDescription
 let package = Package(
 	name: "Lemmy-Swift-Client",
 	platforms: [
-		.iOS(.v16),
+		.iOS(.v13),
 		.macOS(.v13),
-		.tvOS(.v16),
+		.tvOS(.v13),
 		.watchOS(.v9),
-		.macCatalyst(.v16)
+		.macCatalyst(.v13)
 	],
 	products: [
 		// Products define the executables and libraries a package produces, making them visible to other packages.
