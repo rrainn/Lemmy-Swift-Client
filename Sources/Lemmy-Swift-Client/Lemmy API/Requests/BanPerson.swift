@@ -6,15 +6,15 @@ public struct BanPersonRequest: APIRequest {
 	public static let httpMethod: HTTPMethod = .post
 	public static let path: String = "/user/ban"
 
-	public let person_id: PersonId
-	public let ban: Bool
+	public let person_id: PersonId?
+	public let ban: Bool?
 	public let remove_data: Bool?
 	public let reason: String?
 	public let expires: Int?
 
 	public init(
-		person_id: PersonId,
-		ban: Bool,
+		person_id: PersonId? = nil,
+		ban: Bool? = nil,
 		remove_data: Bool? = nil,
 		reason: String? = nil,
 		expires: Int? = nil
@@ -28,12 +28,12 @@ public struct BanPersonRequest: APIRequest {
 }
 
 public struct BanPersonResponse: APIResponse {
-	public let person_view: PersonView
-	public let banned: Bool
+	public let person_view: PersonView?
+	public let banned: Bool?
 
 	public init(
-		person_view: PersonView,
-		banned: Bool
+		person_view: PersonView? = nil,
+		banned: Bool? = nil
 	) {
 		self.person_view = person_view
 		self.banned = banned

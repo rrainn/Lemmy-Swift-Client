@@ -1,24 +1,24 @@
 import Foundation
 
 public struct ModBanFromCommunity: Codable, Identifiable, Hashable {
-	public let id: Int
-	public let mod_person_id: PersonId
-	public let other_person_id: PersonId
-	public let community_id: CommunityId
+	public let id: Int?
+	public let mod_person_id: PersonId?
+	public let other_person_id: PersonId?
+	public let community_id: CommunityId?
 	public let reason: String?
-	public let banned: Bool
+	public let banned: Bool?
 	public let expires: String?
-	public let when_: String
+	public let when_: String?
 
 	public init(
-		id: Int,
-		mod_person_id: PersonId,
-		other_person_id: PersonId,
-		community_id: CommunityId,
+		id: Int? = nil,
+		mod_person_id: PersonId? = nil,
+		other_person_id: PersonId? = nil,
+		community_id: CommunityId? = nil,
 		reason: String? = nil,
-		banned: Bool,
+		banned: Bool? = nil,
 		expires: String? = nil,
-		when_: String
+		when_: String? = nil
 	) {
 		self.id = id
 		self.mod_person_id = mod_person_id

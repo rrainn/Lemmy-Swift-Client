@@ -28,10 +28,10 @@ public struct ListCommunitiesRequest: APIRequest {
 }
 
 public struct ListCommunitiesResponse: APIResponse {
-	public let communities: [CommunityView]
+	public let communities: [CommunityView]?
 
 	public init(
-		communities: [CommunityView]
+		communities: [CommunityView]? = nil
 	) {
 		self.communities = communities
 	}

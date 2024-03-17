@@ -6,12 +6,12 @@ public struct BlockInstanceRequest: APIRequest {
 	public static let httpMethod: HTTPMethod = .post
 	public static let path: String = "/site/block"
 
-	public let instance_id: InstanceId
-	public let block: Bool
+	public let instance_id: InstanceId?
+	public let block: Bool?
 
 	public init(
-		instance_id: InstanceId,
-		block: Bool
+		instance_id: InstanceId? = nil,
+		block: Bool? = nil
 	) {
 		self.instance_id = instance_id
 		self.block = block
@@ -19,10 +19,10 @@ public struct BlockInstanceRequest: APIRequest {
 }
 
 public struct BlockInstanceResponse: APIResponse {
-	public let blocked: Bool
+	public let blocked: Bool?
 
 	public init(
-		blocked: Bool
+		blocked: Bool? = nil
 	) {
 		self.blocked = blocked
 	}

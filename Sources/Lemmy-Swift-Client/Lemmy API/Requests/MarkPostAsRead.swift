@@ -8,12 +8,12 @@ public struct MarkPostAsReadRequest: APIRequest {
 
 	public let post_id: PostId?
 	public let post_ids: [PostId]?
-	public let read: Bool
+	public let read: Bool?
 
 	public init(
 		post_id: PostId? = nil,
 		post_ids: [PostId]? = nil,
-		read: Bool
+		read: Bool? = nil
 	) {
 		self.post_id = post_id
 		self.post_ids = post_ids

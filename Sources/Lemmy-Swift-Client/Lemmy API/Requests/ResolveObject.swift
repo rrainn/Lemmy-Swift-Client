@@ -6,10 +6,10 @@ public struct ResolveObjectRequest: APIRequest {
 	public static let httpMethod: HTTPMethod = .get
 	public static let path: String = "/resolve_object"
 
-	public let q: String
+	public let q: String?
 
 	public init(
-		q: String
+		q: String? = nil
 	) {
 		self.q = q
 	}

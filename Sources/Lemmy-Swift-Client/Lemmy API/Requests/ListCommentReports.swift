@@ -25,10 +25,10 @@ public struct ListCommentReportsRequest: APIRequest {
 }
 
 public struct ListCommentReportsResponse: APIResponse {
-	public let comment_reports: [CommentReportView]
+	public let comment_reports: [CommentReportView]?
 
 	public init(
-		comment_reports: [CommentReportView]
+		comment_reports: [CommentReportView]? = nil
 	) {
 		self.comment_reports = comment_reports
 	}

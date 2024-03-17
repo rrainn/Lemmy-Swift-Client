@@ -6,7 +6,7 @@ public struct SearchRequest: APIRequest {
 	public static let httpMethod: HTTPMethod = .get
 	public static let path: String = "/search"
 
-	public let q: String
+	public let q: String?
 	public let community_id: CommunityId?
 	public let community_name: String?
 	public let creator_id: PersonId?
@@ -17,7 +17,7 @@ public struct SearchRequest: APIRequest {
 	public let limit: Int?
 
 	public init(
-		q: String,
+		q: String? = nil,
 		community_id: CommunityId? = nil,
 		community_name: String? = nil,
 		creator_id: PersonId? = nil,
@@ -40,18 +40,18 @@ public struct SearchRequest: APIRequest {
 }
 
 public struct SearchResponse: APIResponse {
-	public let type_: SearchType
-	public let comments: [CommentView]
-	public let posts: [PostView]
-	public let communities: [CommunityView]
-	public let users: [PersonView]
+	public let type_: SearchType?
+	public let comments: [CommentView]?
+	public let posts: [PostView]?
+	public let communities: [CommunityView]?
+	public let users: [PersonView]?
 
 	public init(
-		type_: SearchType,
-		comments: [CommentView],
-		posts: [PostView],
-		communities: [CommunityView],
-		users: [PersonView]
+		type_: SearchType? = nil,
+		comments: [CommentView]? = nil,
+		posts: [PostView]? = nil,
+		communities: [CommunityView]? = nil,
+		users: [PersonView]? = nil
 	) {
 		self.type_ = type_
 		self.comments = comments

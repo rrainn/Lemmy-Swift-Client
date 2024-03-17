@@ -1,35 +1,35 @@
 import Foundation
 
 public struct CommentReplyView: Codable, Hashable {
-	public let comment_reply: CommentReply
-	public let comment: Comment
-	public let creator: Person
-	public let post: Post
-	public let community: Community
-	public let recipient: Person
-	public let counts: CommentAggregates
-	public let creator_banned_from_community: Bool
-	public let creator_is_moderator: Bool
-	public let creator_is_admin: Bool
-	public let subscribed: SubscribedType
-	public let saved: Bool
-	public let creator_blocked: Bool
+	public let comment_reply: CommentReply?
+	public let comment: Comment?
+	public let creator: Person?
+	public let post: Post?
+	public let community: Community?
+	public let recipient: Person?
+	public let counts: CommentAggregates?
+	public let creator_banned_from_community: Bool?
+	public let creator_is_moderator: Bool?
+	public let creator_is_admin: Bool?
+	public let subscribed: SubscribedType?
+	public let saved: Bool?
+	public let creator_blocked: Bool?
 	public let my_vote: Int?
 
 	public init(
-		comment_reply: CommentReply,
-		comment: Comment,
-		creator: Person,
-		post: Post,
-		community: Community,
-		recipient: Person,
-		counts: CommentAggregates,
-		creator_banned_from_community: Bool,
-		creator_is_moderator: Bool,
-		creator_is_admin: Bool,
-		subscribed: SubscribedType,
-		saved: Bool,
-		creator_blocked: Bool,
+		comment_reply: CommentReply? = nil,
+		comment: Comment? = nil,
+		creator: Person? = nil,
+		post: Post? = nil,
+		community: Community? = nil,
+		recipient: Person? = nil,
+		counts: CommentAggregates? = nil,
+		creator_banned_from_community: Bool? = nil,
+		creator_is_moderator: Bool? = nil,
+		creator_is_admin: Bool? = nil,
+		subscribed: SubscribedType? = nil,
+		saved: Bool? = nil,
+		creator_blocked: Bool? = nil,
 		my_vote: Int? = nil
 	) {
 		self.comment_reply = comment_reply

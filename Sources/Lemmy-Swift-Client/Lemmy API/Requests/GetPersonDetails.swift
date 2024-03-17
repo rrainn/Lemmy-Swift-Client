@@ -34,16 +34,16 @@ public struct GetPersonDetailsRequest: APIRequest {
 }
 
 public struct GetPersonDetailsResponse: APIResponse {
-	public let person_view: PersonView
-	public let comments: [CommentView]
-	public let posts: [PostView]
-	public let moderates: [CommunityModeratorView]
+	public let person_view: PersonView?
+	public let comments: [CommentView]?
+	public let posts: [PostView]?
+	public let moderates: [CommunityModeratorView]?
 
 	public init(
-		person_view: PersonView,
-		comments: [CommentView],
-		posts: [PostView],
-		moderates: [CommunityModeratorView]
+		person_view: PersonView? = nil,
+		comments: [CommentView]? = nil,
+		posts: [PostView]? = nil,
+		moderates: [CommunityModeratorView]? = nil
 	) {
 		self.person_view = person_view
 		self.comments = comments

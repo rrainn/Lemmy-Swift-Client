@@ -6,13 +6,13 @@ public struct RemoveCommentRequest: APIRequest {
 	public static let httpMethod: HTTPMethod = .post
 	public static let path: String = "/comment/remove"
 
-	public let comment_id: CommentId
-	public let removed: Bool
+	public let comment_id: CommentId?
+	public let removed: Bool?
 	public let reason: String?
 
 	public init(
-		comment_id: CommentId,
-		removed: Bool,
+		comment_id: CommentId? = nil,
+		removed: Bool? = nil,
 		reason: String? = nil
 	) {
 		self.comment_id = comment_id

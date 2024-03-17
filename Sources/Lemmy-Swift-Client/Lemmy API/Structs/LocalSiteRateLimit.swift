@@ -1,42 +1,42 @@
 import Foundation
 
 public struct LocalSiteRateLimit: Codable, Hashable {
-	public let local_site_id: LocalSiteId
-	public let message: Int
-	public let message_per_second: Int
-	public let post: Int
-	public let post_per_second: Int
-	public let register: Int
-	public let register_per_second: Int
-	public let image: Int
-	public let image_per_second: Int
-	public let comment: Int
-	public let comment_per_second: Int
-	public let search: Int
-	public let search_per_second: Int
-	public let published: String
+	public let local_site_id: LocalSiteId?
+	public let message: Int?
+	public let message_per_second: Int?
+	public let post: Int?
+	public let post_per_second: Int?
+	public let register: Int?
+	public let register_per_second: Int?
+	public let image: Int?
+	public let image_per_second: Int?
+	public let comment: Int?
+	public let comment_per_second: Int?
+	public let search: Int?
+	public let search_per_second: Int?
+	public let published: String?
 	public let updated: String?
-	public let import_user_settings: Int
-	public let import_user_settings_per_second: Int
+	public let import_user_settings: Int?
+	public let import_user_settings_per_second: Int?
 
 	public init(
-		local_site_id: LocalSiteId,
-		message: Int,
-		message_per_second: Int,
-		post: Int,
-		post_per_second: Int,
-		register: Int,
-		register_per_second: Int,
-		image: Int,
-		image_per_second: Int,
-		comment: Int,
-		comment_per_second: Int,
-		search: Int,
-		search_per_second: Int,
-		published: String,
+		local_site_id: LocalSiteId? = nil,
+		message: Int? = nil,
+		message_per_second: Int? = nil,
+		post: Int? = nil,
+		post_per_second: Int? = nil,
+		register: Int? = nil,
+		register_per_second: Int? = nil,
+		image: Int? = nil,
+		image_per_second: Int? = nil,
+		comment: Int? = nil,
+		comment_per_second: Int? = nil,
+		search: Int? = nil,
+		search_per_second: Int? = nil,
+		published: String? = nil,
 		updated: String? = nil,
-		import_user_settings: Int,
-		import_user_settings_per_second: Int
+		import_user_settings: Int? = nil,
+		import_user_settings_per_second: Int? = nil
 	) {
 		self.local_site_id = local_site_id
 		self.message = message

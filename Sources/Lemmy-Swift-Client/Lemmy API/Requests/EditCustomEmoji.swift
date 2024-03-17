@@ -6,18 +6,18 @@ public struct EditCustomEmojiRequest: APIRequest {
 	public static let httpMethod: HTTPMethod = .put
 	public static let path: String = "/custom_emoji"
 
-	public let id: CustomEmojiId
-	public let category: String
-	public let image_url: String
-	public let alt_text: String
-	public let keywords: [String]
+	public let id: CustomEmojiId?
+	public let category: String?
+	public let image_url: String?
+	public let alt_text: String?
+	public let keywords: [String]?
 
 	public init(
-		id: CustomEmojiId,
-		category: String,
-		image_url: String,
-		alt_text: String,
-		keywords: [String]
+		id: CustomEmojiId? = nil,
+		category: String? = nil,
+		image_url: String? = nil,
+		alt_text: String? = nil,
+		keywords: [String]? = nil
 	) {
 		self.id = id
 		self.category = category

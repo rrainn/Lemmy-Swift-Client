@@ -6,12 +6,12 @@ public struct UpdateTotpRequest: APIRequest {
 	public static let httpMethod: HTTPMethod = .post
 	public static let path: String = "/user/totp/update"
 
-	public let totp_token: String
-	public let enabled: Bool
+	public let totp_token: String?
+	public let enabled: Bool?
 
 	public init(
-		totp_token: String,
-		enabled: Bool
+		totp_token: String? = nil,
+		enabled: Bool? = nil
 	) {
 		self.totp_token = totp_token
 		self.enabled = enabled
@@ -19,10 +19,10 @@ public struct UpdateTotpRequest: APIRequest {
 }
 
 public struct UpdateTotpResponse: APIResponse {
-	public let enabled: Bool
+	public let enabled: Bool?
 
 	public init(
-		enabled: Bool
+		enabled: Bool? = nil
 	) {
 		self.enabled = enabled
 	}

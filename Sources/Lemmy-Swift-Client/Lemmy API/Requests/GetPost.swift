@@ -19,16 +19,16 @@ public struct GetPostRequest: APIRequest {
 }
 
 public struct GetPostResponse: APIResponse {
-	public let post_view: PostView
-	public let community_view: CommunityView
-	public let moderators: [CommunityModeratorView]
-	public let cross_posts: [PostView]
+	public let post_view: PostView?
+	public let community_view: CommunityView?
+	public let moderators: [CommunityModeratorView]?
+	public let cross_posts: [PostView]?
 
 	public init(
-		post_view: PostView,
-		community_view: CommunityView,
-		moderators: [CommunityModeratorView],
-		cross_posts: [PostView]
+		post_view: PostView? = nil,
+		community_view: CommunityView? = nil,
+		moderators: [CommunityModeratorView]? = nil,
+		cross_posts: [PostView]? = nil
 	) {
 		self.post_view = post_view
 		self.community_view = community_view

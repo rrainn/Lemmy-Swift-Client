@@ -1,20 +1,20 @@
 import Foundation
 
 public struct ModHideCommunity: Codable, Identifiable, Hashable {
-	public let id: Int
-	public let community_id: CommunityId
-	public let mod_person_id: PersonId
-	public let when_: String
+	public let id: Int?
+	public let community_id: CommunityId?
+	public let mod_person_id: PersonId?
+	public let when_: String?
 	public let reason: String?
-	public let hidden: Bool
+	public let hidden: Bool?
 
 	public init(
-		id: Int,
-		community_id: CommunityId,
-		mod_person_id: PersonId,
-		when_: String,
+		id: Int? = nil,
+		community_id: CommunityId? = nil,
+		mod_person_id: PersonId? = nil,
+		when_: String? = nil,
 		reason: String? = nil,
-		hidden: Bool
+		hidden: Bool? = nil
 	) {
 		self.id = id
 		self.community_id = community_id

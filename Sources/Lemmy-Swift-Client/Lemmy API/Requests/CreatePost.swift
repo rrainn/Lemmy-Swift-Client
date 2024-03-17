@@ -6,8 +6,8 @@ public struct CreatePostRequest: APIRequest {
 	public static let httpMethod: HTTPMethod = .post
 	public static let path: String = "/post"
 
-	public let name: String
-	public let community_id: CommunityId
+	public let name: String?
+	public let community_id: CommunityId?
 	public let url: String?
 	public let body: String?
 	public let honeypot: String?
@@ -15,8 +15,8 @@ public struct CreatePostRequest: APIRequest {
 	public let language_id: LanguageId?
 
 	public init(
-		name: String,
-		community_id: CommunityId,
+		name: String? = nil,
+		community_id: CommunityId? = nil,
 		url: String? = nil,
 		body: String? = nil,
 		honeypot: String? = nil,
@@ -34,10 +34,10 @@ public struct CreatePostRequest: APIRequest {
 }
 
 public struct PostResponse: APIResponse {
-	public let post_view: PostView
+	public let post_view: PostView?
 
 	public init(
-		post_view: PostView
+		post_view: PostView? = nil
 	) {
 		self.post_view = post_view
 	}

@@ -1,18 +1,18 @@
 import Foundation
 
 public struct ModLockPost: Codable, Identifiable, Hashable {
-	public let id: Int
-	public let mod_person_id: PersonId
-	public let post_id: PostId
-	public let locked: Bool
-	public let when_: String
+	public let id: Int?
+	public let mod_person_id: PersonId?
+	public let post_id: PostId?
+	public let locked: Bool?
+	public let when_: String?
 
 	public init(
-		id: Int,
-		mod_person_id: PersonId,
-		post_id: PostId,
-		locked: Bool,
-		when_: String
+		id: Int? = nil,
+		mod_person_id: PersonId? = nil,
+		post_id: PostId? = nil,
+		locked: Bool? = nil,
+		when_: String? = nil
 	) {
 		self.id = id
 		self.mod_person_id = mod_person_id

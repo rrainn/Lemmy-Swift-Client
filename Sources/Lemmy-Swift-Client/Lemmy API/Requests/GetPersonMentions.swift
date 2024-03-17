@@ -25,10 +25,10 @@ public struct GetPersonMentionsRequest: APIRequest {
 }
 
 public struct GetPersonMentionsResponse: APIResponse {
-	public let mentions: [PersonMentionView]
+	public let mentions: [PersonMentionView]?
 
 	public init(
-		mentions: [PersonMentionView]
+		mentions: [PersonMentionView]? = nil
 	) {
 		self.mentions = mentions
 	}

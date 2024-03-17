@@ -6,12 +6,12 @@ public struct BlockCommunityRequest: APIRequest {
 	public static let httpMethod: HTTPMethod = .post
 	public static let path: String = "/community/block"
 
-	public let community_id: CommunityId
-	public let block: Bool
+	public let community_id: CommunityId?
+	public let block: Bool?
 
 	public init(
-		community_id: CommunityId,
-		block: Bool
+		community_id: CommunityId? = nil,
+		block: Bool? = nil
 	) {
 		self.community_id = community_id
 		self.block = block
@@ -19,12 +19,12 @@ public struct BlockCommunityRequest: APIRequest {
 }
 
 public struct BlockCommunityResponse: APIResponse {
-	public let community_view: CommunityView
-	public let blocked: Bool
+	public let community_view: CommunityView?
+	public let blocked: Bool?
 
 	public init(
-		community_view: CommunityView,
-		blocked: Bool
+		community_view: CommunityView? = nil,
+		blocked: Bool? = nil
 	) {
 		self.community_view = community_view
 		self.blocked = blocked

@@ -1,26 +1,26 @@
 import Foundation
 
 public struct CommunityAggregates: Codable, Hashable {
-	public let community_id: CommunityId
-	public let subscribers: Int
-	public let posts: Int
-	public let comments: Int
-	public let published: String
-	public let users_active_day: Int
-	public let users_active_week: Int
-	public let users_active_month: Int
-	public let users_active_half_year: Int
+	public let community_id: CommunityId?
+	public let subscribers: Int?
+	public let posts: Int?
+	public let comments: Int?
+	public let published: String?
+	public let users_active_day: Int?
+	public let users_active_week: Int?
+	public let users_active_month: Int?
+	public let users_active_half_year: Int?
 
 	public init(
-		community_id: CommunityId,
-		subscribers: Int,
-		posts: Int,
-		comments: Int,
-		published: String,
-		users_active_day: Int,
-		users_active_week: Int,
-		users_active_month: Int,
-		users_active_half_year: Int
+		community_id: CommunityId? = nil,
+		subscribers: Int? = nil,
+		posts: Int? = nil,
+		comments: Int? = nil,
+		published: String? = nil,
+		users_active_day: Int? = nil,
+		users_active_week: Int? = nil,
+		users_active_month: Int? = nil,
+		users_active_half_year: Int? = nil
 	) {
 		self.community_id = community_id
 		self.subscribers = subscribers

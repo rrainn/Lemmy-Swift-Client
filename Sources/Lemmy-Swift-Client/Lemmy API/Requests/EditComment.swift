@@ -6,12 +6,12 @@ public struct EditCommentRequest: APIRequest {
 	public static let httpMethod: HTTPMethod = .put
 	public static let path: String = "/comment"
 
-	public let comment_id: CommentId
+	public let comment_id: CommentId?
 	public let content: String?
 	public let language_id: LanguageId?
 
 	public init(
-		comment_id: CommentId,
+		comment_id: CommentId? = nil,
 		content: String? = nil,
 		language_id: LanguageId? = nil
 	) {

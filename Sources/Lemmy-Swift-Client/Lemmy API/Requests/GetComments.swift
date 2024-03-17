@@ -49,10 +49,10 @@ public struct GetCommentsRequest: APIRequest {
 }
 
 public struct GetCommentsResponse: APIResponse {
-	public let comments: [CommentView]
+	public let comments: [CommentView]?
 
 	public init(
-		comments: [CommentView]
+		comments: [CommentView]? = nil
 	) {
 		self.comments = comments
 	}

@@ -6,17 +6,17 @@ public struct BanFromCommunityRequest: APIRequest {
 	public static let httpMethod: HTTPMethod = .post
 	public static let path: String = "/community/ban_user"
 
-	public let community_id: CommunityId
-	public let person_id: PersonId
-	public let ban: Bool
+	public let community_id: CommunityId?
+	public let person_id: PersonId?
+	public let ban: Bool?
 	public let remove_data: Bool?
 	public let reason: String?
 	public let expires: Int?
 
 	public init(
-		community_id: CommunityId,
-		person_id: PersonId,
-		ban: Bool,
+		community_id: CommunityId? = nil,
+		person_id: PersonId? = nil,
+		ban: Bool? = nil,
 		remove_data: Bool? = nil,
 		reason: String? = nil,
 		expires: Int? = nil
@@ -31,12 +31,12 @@ public struct BanFromCommunityRequest: APIRequest {
 }
 
 public struct BanFromCommunityResponse: APIResponse {
-	public let person_view: PersonView
-	public let banned: Bool
+	public let person_view: PersonView?
+	public let banned: Bool?
 
 	public init(
-		person_view: PersonView,
-		banned: Bool
+		person_view: PersonView? = nil,
+		banned: Bool? = nil
 	) {
 		self.person_view = person_view
 		self.banned = banned

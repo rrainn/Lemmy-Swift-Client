@@ -1,18 +1,18 @@
 import Foundation
 
 public struct InstanceWithFederationState: Codable, Identifiable, Hashable {
-	public let id: InstanceId
-	public let domain: String
-	public let published: String
+	public let id: InstanceId?
+	public let domain: String?
+	public let published: String?
 	public let updated: String?
 	public let software: String?
 	public let version: String?
 	public let federation_state: ReadableFederationState?
 
 	public init(
-		id: InstanceId,
-		domain: String,
-		published: String,
+		id: InstanceId? = nil,
+		domain: String? = nil,
+		published: String? = nil,
 		updated: String? = nil,
 		software: String? = nil,
 		version: String? = nil,

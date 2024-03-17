@@ -6,10 +6,10 @@ public struct DeleteCustomEmojiRequest: APIRequest {
 	public static let httpMethod: HTTPMethod = .post
 	public static let path: String = "/custom_emoji/delete"
 
-	public let id: CustomEmojiId
+	public let id: CustomEmojiId?
 
 	public init(
-		id: CustomEmojiId
+		id: CustomEmojiId? = nil
 	) {
 		self.id = id
 	}

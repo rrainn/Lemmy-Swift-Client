@@ -1,28 +1,28 @@
 import Foundation
 
 public struct PrivateMessage: Codable, Identifiable, Hashable {
-	public let id: PrivateMessageId
-	public let creator_id: PersonId
-	public let recipient_id: PersonId
-	public let content: String
-	public let deleted: Bool
-	public let read: Bool
-	public let published: String
+	public let id: PrivateMessageId?
+	public let creator_id: PersonId?
+	public let recipient_id: PersonId?
+	public let content: String?
+	public let deleted: Bool?
+	public let read: Bool?
+	public let published: String?
 	public let updated: String?
-	public let ap_id: String
-	public let local: Bool
+	public let ap_id: String?
+	public let local: Bool?
 
 	public init(
-		id: PrivateMessageId,
-		creator_id: PersonId,
-		recipient_id: PersonId,
-		content: String,
-		deleted: Bool,
-		read: Bool,
-		published: String,
+		id: PrivateMessageId? = nil,
+		creator_id: PersonId? = nil,
+		recipient_id: PersonId? = nil,
+		content: String? = nil,
+		deleted: Bool? = nil,
+		read: Bool? = nil,
+		published: String? = nil,
 		updated: String? = nil,
-		ap_id: String,
-		local: Bool
+		ap_id: String? = nil,
+		local: Bool? = nil
 	) {
 		self.id = id
 		self.creator_id = creator_id

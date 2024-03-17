@@ -6,10 +6,10 @@ public struct VerifyEmailRequest: APIRequest {
 	public static let httpMethod: HTTPMethod = .post
 	public static let path: String = "/user/verify_email"
 
-	public let token: String
+	public let token: String?
 
 	public init(
-		token: String
+		token: String? = nil
 	) {
 		self.token = token
 	}

@@ -43,11 +43,11 @@ public struct GetPostsRequest: APIRequest {
 }
 
 public struct GetPostsResponse: APIResponse {
-	public let posts: [PostView]
+	public let posts: [PostView]?
 	public let next_page: PaginationCursor?
 
 	public init(
-		posts: [PostView],
+		posts: [PostView]? = nil,
 		next_page: PaginationCursor? = nil
 	) {
 		self.posts = posts

@@ -6,10 +6,10 @@ public struct PasswordResetRequest: APIRequest {
 	public static let httpMethod: HTTPMethod = .post
 	public static let path: String = "/user/password_reset"
 
-	public let email: String
+	public let email: String?
 
 	public init(
-		email: String
+		email: String? = nil
 	) {
 		self.email = email
 	}

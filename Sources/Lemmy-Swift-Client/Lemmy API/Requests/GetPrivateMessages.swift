@@ -25,10 +25,10 @@ public struct GetPrivateMessagesRequest: APIRequest {
 }
 
 public struct PrivateMessagesResponse: APIResponse {
-	public let private_messages: [PrivateMessageView]
+	public let private_messages: [PrivateMessageView]?
 
 	public init(
-		private_messages: [PrivateMessageView]
+		private_messages: [PrivateMessageView]? = nil
 	) {
 		self.private_messages = private_messages
 	}

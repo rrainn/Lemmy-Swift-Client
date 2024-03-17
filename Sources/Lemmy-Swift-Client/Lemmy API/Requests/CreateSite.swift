@@ -6,7 +6,7 @@ public struct CreateSiteRequest: APIRequest {
 	public static let httpMethod: HTTPMethod = .post
 	public static let path: String = "/site"
 
-	public let name: String
+	public let name: String?
 	public let sidebar: String?
 	public let description: String?
 	public let icon: String?
@@ -47,7 +47,7 @@ public struct CreateSiteRequest: APIRequest {
 	public let registration_mode: RegistrationMode?
 
 	public init(
-		name: String,
+		name: String? = nil,
 		sidebar: String? = nil,
 		description: String? = nil,
 		icon: String? = nil,
@@ -130,12 +130,12 @@ public struct CreateSiteRequest: APIRequest {
 }
 
 public struct SiteResponse: APIResponse {
-	public let site_view: SiteView
-	public let taglines: [Tagline]
+	public let site_view: SiteView?
+	public let taglines: [Tagline]?
 
 	public init(
-		site_view: SiteView,
-		taglines: [Tagline]
+		site_view: SiteView? = nil,
+		taglines: [Tagline]? = nil
 	) {
 		self.site_view = site_view
 		self.taglines = taglines

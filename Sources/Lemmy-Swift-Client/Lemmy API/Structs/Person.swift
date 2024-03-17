@@ -1,40 +1,40 @@
 import Foundation
 
 public struct Person: Codable, Identifiable, Hashable {
-	public let id: PersonId
-	public let name: String
+	public let id: PersonId?
+	public let name: String?
 	public let display_name: String?
 	public let avatar: String?
-	public let banned: Bool
-	public let published: String
+	public let banned: Bool?
+	public let published: String?
 	public let updated: String?
-	public let actor_id: String
+	public let actor_id: String?
 	public let bio: String?
-	public let local: Bool
+	public let local: Bool?
 	public let banner: String?
-	public let deleted: Bool
+	public let deleted: Bool?
 	public let matrix_user_id: String?
-	public let bot_account: Bool
+	public let bot_account: Bool?
 	public let ban_expires: String?
-	public let instance_id: InstanceId
+	public let instance_id: InstanceId?
 
 	public init(
-		id: PersonId,
-		name: String,
+		id: PersonId? = nil,
+		name: String? = nil,
 		display_name: String? = nil,
 		avatar: String? = nil,
-		banned: Bool,
-		published: String,
+		banned: Bool? = nil,
+		published: String? = nil,
 		updated: String? = nil,
-		actor_id: String,
+		actor_id: String? = nil,
 		bio: String? = nil,
-		local: Bool,
+		local: Bool? = nil,
 		banner: String? = nil,
-		deleted: Bool,
+		deleted: Bool? = nil,
 		matrix_user_id: String? = nil,
-		bot_account: Bool,
+		bot_account: Bool? = nil,
 		ban_expires: String? = nil,
-		instance_id: InstanceId
+		instance_id: InstanceId? = nil
 	) {
 		self.id = id
 		self.name = name

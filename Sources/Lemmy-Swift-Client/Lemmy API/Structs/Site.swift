@@ -1,36 +1,36 @@
 import Foundation
 
 public struct Site: Codable, Identifiable, Hashable {
-	public let id: SiteId
-	public let name: String
+	public let id: SiteId?
+	public let name: String?
 	public let sidebar: String?
-	public let published: String
+	public let published: String?
 	public let updated: String?
 	public let icon: String?
 	public let banner: String?
 	public let description: String?
-	public let actor_id: String
-	public let last_refreshed_at: String
-	public let inbox_url: String
+	public let actor_id: String?
+	public let last_refreshed_at: String?
+	public let inbox_url: String?
 	public let private_key: String?
-	public let public_key: String
-	public let instance_id: InstanceId
+	public let public_key: String?
+	public let instance_id: InstanceId?
 
 	public init(
-		id: SiteId,
-		name: String,
+		id: SiteId? = nil,
+		name: String? = nil,
 		sidebar: String? = nil,
-		published: String,
+		published: String? = nil,
 		updated: String? = nil,
 		icon: String? = nil,
 		banner: String? = nil,
 		description: String? = nil,
-		actor_id: String,
-		last_refreshed_at: String,
-		inbox_url: String,
+		actor_id: String? = nil,
+		last_refreshed_at: String? = nil,
+		inbox_url: String? = nil,
 		private_key: String? = nil,
-		public_key: String,
-		instance_id: InstanceId
+		public_key: String? = nil,
+		instance_id: InstanceId? = nil
 	) {
 		self.id = id
 		self.name = name

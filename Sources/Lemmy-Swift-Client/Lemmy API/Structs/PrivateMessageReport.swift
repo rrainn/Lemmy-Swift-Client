@@ -1,25 +1,25 @@
 import Foundation
 
 public struct PrivateMessageReport: Codable, Identifiable, Hashable {
-	public let id: PrivateMessageReportId
-	public let creator_id: PersonId
-	public let private_message_id: PrivateMessageId
-	public let original_pm_text: String
-	public let reason: String
-	public let resolved: Bool
+	public let id: PrivateMessageReportId?
+	public let creator_id: PersonId?
+	public let private_message_id: PrivateMessageId?
+	public let original_pm_text: String?
+	public let reason: String?
+	public let resolved: Bool?
 	public let resolver_id: PersonId?
-	public let published: String
+	public let published: String?
 	public let updated: String?
 
 	public init(
-		id: PrivateMessageReportId,
-		creator_id: PersonId,
-		private_message_id: PrivateMessageId,
-		original_pm_text: String,
-		reason: String,
-		resolved: Bool,
+		id: PrivateMessageReportId? = nil,
+		creator_id: PersonId? = nil,
+		private_message_id: PrivateMessageId? = nil,
+		original_pm_text: String? = nil,
+		reason: String? = nil,
+		resolved: Bool? = nil,
 		resolver_id: PersonId? = nil,
-		published: String,
+		published: String? = nil,
 		updated: String? = nil
 	) {
 		self.id = id

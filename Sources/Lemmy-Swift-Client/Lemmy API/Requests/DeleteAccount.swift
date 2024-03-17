@@ -6,12 +6,12 @@ public struct DeleteAccountRequest: APIRequest {
 	public static let httpMethod: HTTPMethod = .post
 	public static let path: String = "/user/delete_account"
 
-	public let password: String
-	public let delete_content: Bool
+	public let password: String?
+	public let delete_content: Bool?
 
 	public init(
-		password: String,
-		delete_content: Bool
+		password: String? = nil,
+		delete_content: Bool? = nil
 	) {
 		self.password = password
 		self.delete_content = delete_content

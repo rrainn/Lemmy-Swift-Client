@@ -6,7 +6,7 @@ public struct EditPostRequest: APIRequest {
 	public static let httpMethod: HTTPMethod = .put
 	public static let path: String = "/post"
 
-	public let post_id: PostId
+	public let post_id: PostId?
 	public let name: String?
 	public let url: String?
 	public let body: String?
@@ -14,7 +14,7 @@ public struct EditPostRequest: APIRequest {
 	public let language_id: LanguageId?
 
 	public init(
-		post_id: PostId,
+		post_id: PostId? = nil,
 		name: String? = nil,
 		url: String? = nil,
 		body: String? = nil,

@@ -1,14 +1,14 @@
 import Foundation
 
 public struct LoginToken: Codable, Hashable {
-	public let user_id: LocalUserId
-	public let published: String
+	public let user_id: LocalUserId?
+	public let published: String?
 	public let ip: String?
 	public let user_agent: String?
 
 	public init(
-		user_id: LocalUserId,
-		published: String,
+		user_id: LocalUserId? = nil,
+		published: String? = nil,
 		ip: String? = nil,
 		user_agent: String? = nil
 	) {

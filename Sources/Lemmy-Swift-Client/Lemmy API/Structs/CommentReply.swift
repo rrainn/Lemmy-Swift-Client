@@ -1,18 +1,18 @@
 import Foundation
 
 public struct CommentReply: Codable, Identifiable, Hashable {
-	public let id: CommentReplyId
-	public let recipient_id: PersonId
-	public let comment_id: CommentId
-	public let read: Bool
-	public let published: String
+	public let id: CommentReplyId?
+	public let recipient_id: PersonId?
+	public let comment_id: CommentId?
+	public let read: Bool?
+	public let published: String?
 
 	public init(
-		id: CommentReplyId,
-		recipient_id: PersonId,
-		comment_id: CommentId,
-		read: Bool,
-		published: String
+		id: CommentReplyId? = nil,
+		recipient_id: PersonId? = nil,
+		comment_id: CommentId? = nil,
+		read: Bool? = nil,
+		published: String? = nil
 	) {
 		self.id = id
 		self.recipient_id = recipient_id

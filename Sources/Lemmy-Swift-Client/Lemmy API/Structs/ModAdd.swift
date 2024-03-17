@@ -1,18 +1,18 @@
 import Foundation
 
 public struct ModAdd: Codable, Identifiable, Hashable {
-	public let id: Int
-	public let mod_person_id: PersonId
-	public let other_person_id: PersonId
-	public let removed: Bool
-	public let when_: String
+	public let id: Int?
+	public let mod_person_id: PersonId?
+	public let other_person_id: PersonId?
+	public let removed: Bool?
+	public let when_: String?
 
 	public init(
-		id: Int,
-		mod_person_id: PersonId,
-		other_person_id: PersonId,
-		removed: Bool,
-		when_: String
+		id: Int? = nil,
+		mod_person_id: PersonId? = nil,
+		other_person_id: PersonId? = nil,
+		removed: Bool? = nil,
+		when_: String? = nil
 	) {
 		self.id = id
 		self.mod_person_id = mod_person_id

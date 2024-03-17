@@ -1,18 +1,18 @@
 import Foundation
 
 public struct ReadableFederationState: Codable, Hashable {
-	public let instance_id: InstanceId
+	public let instance_id: InstanceId?
 	public let last_successful_id: ActivityId?
 	public let last_successful_published_time: String?
-	public let fail_count: Int
+	public let fail_count: Int?
 	public let last_retry: String?
 	public let next_retry: String?
 
 	public init(
-		instance_id: InstanceId,
+		instance_id: InstanceId? = nil,
 		last_successful_id: ActivityId? = nil,
 		last_successful_published_time: String? = nil,
-		fail_count: Int,
+		fail_count: Int? = nil,
 		last_retry: String? = nil,
 		next_retry: String? = nil
 	) {

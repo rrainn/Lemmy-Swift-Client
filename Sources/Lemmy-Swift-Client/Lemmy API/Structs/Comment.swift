@@ -1,34 +1,34 @@
 import Foundation
 
 public struct Comment: Codable, Identifiable, Hashable {
-	public let id: CommentId
-	public let creator_id: PersonId
-	public let post_id: PostId
-	public let content: String
-	public let removed: Bool
-	public let published: String
+	public let id: CommentId?
+	public let creator_id: PersonId?
+	public let post_id: PostId?
+	public let content: String?
+	public let removed: Bool?
+	public let published: String?
 	public let updated: String?
-	public let deleted: Bool
-	public let ap_id: String
-	public let local: Bool
-	public let path: String
-	public let distinguished: Bool
-	public let language_id: LanguageId
+	public let deleted: Bool?
+	public let ap_id: String?
+	public let local: Bool?
+	public let path: String?
+	public let distinguished: Bool?
+	public let language_id: LanguageId?
 
 	public init(
-		id: CommentId,
-		creator_id: PersonId,
-		post_id: PostId,
-		content: String,
-		removed: Bool,
-		published: String,
+		id: CommentId? = nil,
+		creator_id: PersonId? = nil,
+		post_id: PostId? = nil,
+		content: String? = nil,
+		removed: Bool? = nil,
+		published: String? = nil,
 		updated: String? = nil,
-		deleted: Bool,
-		ap_id: String,
-		local: Bool,
-		path: String,
-		distinguished: Bool,
-		language_id: LanguageId
+		deleted: Bool? = nil,
+		ap_id: String? = nil,
+		local: Bool? = nil,
+		path: String? = nil,
+		distinguished: Bool? = nil,
+		language_id: LanguageId? = nil
 	) {
 		self.id = id
 		self.creator_id = creator_id

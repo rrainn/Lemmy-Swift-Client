@@ -6,7 +6,7 @@ public struct EditCommunityRequest: APIRequest {
 	public static let httpMethod: HTTPMethod = .put
 	public static let path: String = "/community"
 
-	public let community_id: CommunityId
+	public let community_id: CommunityId?
 	public let title: String?
 	public let description: String?
 	public let icon: String?
@@ -16,7 +16,7 @@ public struct EditCommunityRequest: APIRequest {
 	public let discussion_languages: [LanguageId]?
 
 	public init(
-		community_id: CommunityId,
+		community_id: CommunityId? = nil,
 		title: String? = nil,
 		description: String? = nil,
 		icon: String? = nil,

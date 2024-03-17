@@ -6,10 +6,10 @@ public struct GetCommentRequest: APIRequest {
 	public static let httpMethod: HTTPMethod = .get
 	public static let path: String = "/comment"
 
-	public let id: CommentId
+	public let id: CommentId?
 
 	public init(
-		id: CommentId
+		id: CommentId? = nil
 	) {
 		self.id = id
 	}

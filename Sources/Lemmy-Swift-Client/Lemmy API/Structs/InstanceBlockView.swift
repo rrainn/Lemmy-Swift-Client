@@ -1,13 +1,13 @@
 import Foundation
 
 public struct InstanceBlockView: Codable, Hashable {
-	public let person: Person
-	public let instance: Instance
+	public let person: Person?
+	public let instance: Instance?
 	public let site: Site?
 
 	public init(
-		person: Person,
-		instance: Instance,
+		person: Person? = nil,
+		instance: Instance? = nil,
 		site: Site? = nil
 	) {
 		self.person = person

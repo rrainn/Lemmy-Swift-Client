@@ -1,26 +1,26 @@
 import Foundation
 
 public struct CommentReportView: Codable, Hashable {
-	public let comment_report: CommentReport
-	public let comment: Comment
-	public let post: Post
-	public let community: Community
-	public let creator: Person
-	public let comment_creator: Person
-	public let counts: CommentAggregates
-	public let creator_banned_from_community: Bool
+	public let comment_report: CommentReport?
+	public let comment: Comment?
+	public let post: Post?
+	public let community: Community?
+	public let creator: Person?
+	public let comment_creator: Person?
+	public let counts: CommentAggregates?
+	public let creator_banned_from_community: Bool?
 	public let my_vote: Int?
 	public let resolver: Person?
 
 	public init(
-		comment_report: CommentReport,
-		comment: Comment,
-		post: Post,
-		community: Community,
-		creator: Person,
-		comment_creator: Person,
-		counts: CommentAggregates,
-		creator_banned_from_community: Bool,
+		comment_report: CommentReport? = nil,
+		comment: Comment? = nil,
+		post: Post? = nil,
+		community: Community? = nil,
+		creator: Person? = nil,
+		comment_creator: Person? = nil,
+		counts: CommentAggregates? = nil,
+		creator_banned_from_community: Bool? = nil,
 		my_vote: Int? = nil,
 		resolver: Person? = nil
 	) {
