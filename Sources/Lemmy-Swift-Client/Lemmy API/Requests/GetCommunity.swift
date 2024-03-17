@@ -8,16 +8,13 @@ public struct GetCommunityRequest: APIRequest {
 
 	public let id: CommunityId?
 	public let name: String?
-	public let auth: String?
 
 	public init(
 		id: CommunityId? = nil,
-		name: String? = nil,
-		auth: String? = nil
+		name: String? = nil
 	) {
 		self.id = id
 		self.name = name
-		self.auth = auth
 	}
 }
 

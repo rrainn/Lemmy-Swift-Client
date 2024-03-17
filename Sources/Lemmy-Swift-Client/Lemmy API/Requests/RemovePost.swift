@@ -9,17 +9,14 @@ public struct RemovePostRequest: APIRequest {
 	public let post_id: PostId
 	public let removed: Bool
 	public let reason: String?
-	public let auth: String
 
 	public init(
 		post_id: PostId,
 		removed: Bool,
-		reason: String? = nil,
-		auth: String
+		reason: String? = nil
 	) {
 		self.post_id = post_id
 		self.removed = removed
 		self.reason = reason
-		self.auth = auth
 	}
 }

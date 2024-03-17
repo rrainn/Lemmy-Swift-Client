@@ -13,7 +13,9 @@ public struct GetPostsRequest: APIRequest {
 	public let community_id: CommunityId?
 	public let community_name: String?
 	public let saved_only: Bool?
-	public let auth: String?
+	public let liked_only: Bool?
+	public let disliked_only: Bool?
+	public let page_cursor: PaginationCursor?
 
 	public init(
 		type_: ListingType? = nil,
@@ -23,7 +25,9 @@ public struct GetPostsRequest: APIRequest {
 		community_id: CommunityId? = nil,
 		community_name: String? = nil,
 		saved_only: Bool? = nil,
-		auth: String? = nil
+		liked_only: Bool? = nil,
+		disliked_only: Bool? = nil,
+		page_cursor: PaginationCursor? = nil
 	) {
 		self.type_ = type_
 		self.sort = sort
@@ -32,16 +36,21 @@ public struct GetPostsRequest: APIRequest {
 		self.community_id = community_id
 		self.community_name = community_name
 		self.saved_only = saved_only
-		self.auth = auth
+		self.liked_only = liked_only
+		self.disliked_only = disliked_only
+		self.page_cursor = page_cursor
 	}
 }
 
 public struct GetPostsResponse: APIResponse {
 	public let posts: [PostView]
+	public let next_page: PaginationCursor?
 
 	public init(
-		posts: [PostView]
+		posts: [PostView],
+		next_page: PaginationCursor? = nil
 	) {
 		self.posts = posts
+		self.next_page = next_page
 	}
 }

@@ -8,15 +8,12 @@ public struct DeletePostRequest: APIRequest {
 
 	public let post_id: PostId
 	public let deleted: Bool
-	public let auth: String
 
 	public init(
 		post_id: PostId,
-		deleted: Bool,
-		auth: String
+		deleted: Bool
 	) {
 		self.post_id = post_id
 		self.deleted = deleted
-		self.auth = auth
 	}
 }

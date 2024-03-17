@@ -1,21 +1,6 @@
 import Foundation
 
-public struct GetSiteRequest: APIRequest {
-	public typealias Response = GetSiteResponse
-
-	public static let httpMethod: HTTPMethod = .get
-	public static let path: String = "/site"
-
-	public let auth: String?
-
-	public init(
-		auth: String? = nil
-	) {
-		self.auth = auth
-	}
-}
-
-public struct GetSiteResponse: APIResponse {
+public struct GetSiteResponse: Codable, Hashable {
 	public let site_view: SiteView
 	public let admins: [PersonView]
 	public let version: String

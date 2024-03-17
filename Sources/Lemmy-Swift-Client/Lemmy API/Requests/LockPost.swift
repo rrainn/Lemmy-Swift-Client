@@ -8,15 +8,12 @@ public struct LockPostRequest: APIRequest {
 
 	public let post_id: PostId
 	public let locked: Bool
-	public let auth: String
 
 	public init(
 		post_id: PostId,
-		locked: Bool,
-		auth: String
+		locked: Bool
 	) {
 		self.post_id = post_id
 		self.locked = locked
-		self.auth = auth
 	}
 }

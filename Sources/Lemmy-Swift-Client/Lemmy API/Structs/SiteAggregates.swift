@@ -1,7 +1,6 @@
 import Foundation
 
-public struct SiteAggregates: Codable, Identifiable, Hashable {
-	public let id: Int
+public struct SiteAggregates: Codable, Hashable {
 	public let site_id: SiteId
 	public let users: Int
 	public let posts: Int
@@ -13,7 +12,6 @@ public struct SiteAggregates: Codable, Identifiable, Hashable {
 	public let users_active_half_year: Int
 
 	public init(
-		id: Int,
 		site_id: SiteId,
 		users: Int,
 		posts: Int,
@@ -24,7 +22,6 @@ public struct SiteAggregates: Codable, Identifiable, Hashable {
 		users_active_month: Int,
 		users_active_half_year: Int
 	) {
-		self.id = id
 		self.site_id = site_id
 		self.users = users
 		self.posts = posts

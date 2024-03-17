@@ -14,7 +14,6 @@ public struct EditCommunityRequest: APIRequest {
 	public let nsfw: Bool?
 	public let posting_restricted_to_mods: Bool?
 	public let discussion_languages: [LanguageId]?
-	public let auth: String
 
 	public init(
 		community_id: CommunityId,
@@ -24,8 +23,7 @@ public struct EditCommunityRequest: APIRequest {
 		banner: String? = nil,
 		nsfw: Bool? = nil,
 		posting_restricted_to_mods: Bool? = nil,
-		discussion_languages: [LanguageId]? = nil,
-		auth: String
+		discussion_languages: [LanguageId]? = nil
 	) {
 		self.community_id = community_id
 		self.title = title
@@ -35,6 +33,5 @@ public struct EditCommunityRequest: APIRequest {
 		self.nsfw = nsfw
 		self.posting_restricted_to_mods = posting_restricted_to_mods
 		self.discussion_languages = discussion_languages
-		self.auth = auth
 	}
 }

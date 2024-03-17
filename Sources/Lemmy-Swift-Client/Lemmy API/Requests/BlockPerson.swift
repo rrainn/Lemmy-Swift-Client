@@ -8,16 +8,13 @@ public struct BlockPersonRequest: APIRequest {
 
 	public let person_id: PersonId
 	public let block: Bool
-	public let auth: String
 
 	public init(
 		person_id: PersonId,
-		block: Bool,
-		auth: String
+		block: Bool
 	) {
 		self.person_id = person_id
 		self.block = block
-		self.auth = auth
 	}
 }
 

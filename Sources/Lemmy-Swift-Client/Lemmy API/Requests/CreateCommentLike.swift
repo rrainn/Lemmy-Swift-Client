@@ -8,15 +8,12 @@ public struct CreateCommentLikeRequest: APIRequest {
 
 	public let comment_id: CommentId
 	public let score: Int
-	public let auth: String
 
 	public init(
 		comment_id: CommentId,
-		score: Int,
-		auth: String
+		score: Int
 	) {
 		self.comment_id = comment_id
 		self.score = score
-		self.auth = auth
 	}
 }

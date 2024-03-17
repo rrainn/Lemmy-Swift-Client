@@ -45,7 +45,6 @@ public struct CreateSiteRequest: APIRequest {
 	public let blocked_instances: [String]?
 	public let taglines: [String]?
 	public let registration_mode: RegistrationMode?
-	public let auth: String
 
 	public init(
 		name: String,
@@ -86,8 +85,7 @@ public struct CreateSiteRequest: APIRequest {
 		allowed_instances: [String]? = nil,
 		blocked_instances: [String]? = nil,
 		taglines: [String]? = nil,
-		registration_mode: RegistrationMode? = nil,
-		auth: String
+		registration_mode: RegistrationMode? = nil
 	) {
 		self.name = name
 		self.sidebar = sidebar
@@ -128,7 +126,6 @@ public struct CreateSiteRequest: APIRequest {
 		self.blocked_instances = blocked_instances
 		self.taglines = taglines
 		self.registration_mode = registration_mode
-		self.auth = auth
 	}
 }
 

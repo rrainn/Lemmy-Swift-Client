@@ -8,15 +8,12 @@ public struct FollowCommunityRequest: APIRequest {
 
 	public let community_id: CommunityId
 	public let follow: Bool
-	public let auth: String
 
 	public init(
 		community_id: CommunityId,
-		follow: Bool,
-		auth: String
+		follow: Bool
 	) {
 		self.community_id = community_id
 		self.follow = follow
-		self.auth = auth
 	}
 }

@@ -16,7 +16,8 @@ public struct GetCommentsRequest: APIRequest {
 	public let post_id: PostId?
 	public let parent_id: CommentId?
 	public let saved_only: Bool?
-	public let auth: String?
+	public let liked_only: Bool?
+	public let disliked_only: Bool?
 
 	public init(
 		type_: ListingType? = nil,
@@ -29,7 +30,8 @@ public struct GetCommentsRequest: APIRequest {
 		post_id: PostId? = nil,
 		parent_id: CommentId? = nil,
 		saved_only: Bool? = nil,
-		auth: String? = nil
+		liked_only: Bool? = nil,
+		disliked_only: Bool? = nil
 	) {
 		self.type_ = type_
 		self.sort = sort
@@ -41,7 +43,8 @@ public struct GetCommentsRequest: APIRequest {
 		self.post_id = post_id
 		self.parent_id = parent_id
 		self.saved_only = saved_only
-		self.auth = auth
+		self.liked_only = liked_only
+		self.disliked_only = disliked_only
 	}
 }
 

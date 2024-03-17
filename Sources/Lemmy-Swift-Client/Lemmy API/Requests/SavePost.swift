@@ -8,15 +8,12 @@ public struct SavePostRequest: APIRequest {
 
 	public let post_id: PostId
 	public let save: Bool
-	public let auth: String
 
 	public init(
 		post_id: PostId,
-		save: Bool,
-		auth: String
+		save: Bool
 	) {
 		self.post_id = post_id
 		self.save = save
-		self.auth = auth
 	}
 }

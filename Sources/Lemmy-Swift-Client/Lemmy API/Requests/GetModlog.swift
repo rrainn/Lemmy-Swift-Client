@@ -12,7 +12,6 @@ public struct GetModlogRequest: APIRequest {
 	public let limit: Int?
 	public let type_: ModlogActionType?
 	public let other_person_id: PersonId?
-	public let auth: String?
 
 	public init(
 		mod_person_id: PersonId? = nil,
@@ -20,8 +19,7 @@ public struct GetModlogRequest: APIRequest {
 		page: Int? = nil,
 		limit: Int? = nil,
 		type_: ModlogActionType? = nil,
-		other_person_id: PersonId? = nil,
-		auth: String? = nil
+		other_person_id: PersonId? = nil
 	) {
 		self.mod_person_id = mod_person_id
 		self.community_id = community_id
@@ -29,7 +27,6 @@ public struct GetModlogRequest: APIRequest {
 		self.limit = limit
 		self.type_ = type_
 		self.other_person_id = other_person_id
-		self.auth = auth
 	}
 }
 

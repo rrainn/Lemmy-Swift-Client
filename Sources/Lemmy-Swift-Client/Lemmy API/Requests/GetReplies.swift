@@ -10,20 +10,17 @@ public struct GetRepliesRequest: APIRequest {
 	public let page: Int?
 	public let limit: Int?
 	public let unread_only: Bool?
-	public let auth: String
 
 	public init(
 		sort: CommentSortType? = nil,
 		page: Int? = nil,
 		limit: Int? = nil,
-		unread_only: Bool? = nil,
-		auth: String
+		unread_only: Bool? = nil
 	) {
 		self.sort = sort
 		self.page = page
 		self.limit = limit
 		self.unread_only = unread_only
-		self.auth = auth
 	}
 }
 

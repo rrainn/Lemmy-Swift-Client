@@ -8,15 +8,12 @@ public struct CreatePostLikeRequest: APIRequest {
 
 	public let post_id: PostId
 	public let score: Int
-	public let auth: String
 
 	public init(
 		post_id: PostId,
-		score: Int,
-		auth: String
+		score: Int
 	) {
 		self.post_id = post_id
 		self.score = score
-		self.auth = auth
 	}
 }

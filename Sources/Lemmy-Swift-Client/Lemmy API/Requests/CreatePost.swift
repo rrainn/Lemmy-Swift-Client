@@ -13,7 +13,6 @@ public struct CreatePostRequest: APIRequest {
 	public let honeypot: String?
 	public let nsfw: Bool?
 	public let language_id: LanguageId?
-	public let auth: String
 
 	public init(
 		name: String,
@@ -22,8 +21,7 @@ public struct CreatePostRequest: APIRequest {
 		body: String? = nil,
 		honeypot: String? = nil,
 		nsfw: Bool? = nil,
-		language_id: LanguageId? = nil,
-		auth: String
+		language_id: LanguageId? = nil
 	) {
 		self.name = name
 		self.community_id = community_id
@@ -32,7 +30,6 @@ public struct CreatePostRequest: APIRequest {
 		self.honeypot = honeypot
 		self.nsfw = nsfw
 		self.language_id = language_id
-		self.auth = auth
 	}
 }
 

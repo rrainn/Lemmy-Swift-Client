@@ -5,6 +5,8 @@ public struct PostView: Codable, Hashable {
 	public let creator: Person
 	public let community: Community
 	public let creator_banned_from_community: Bool
+	public let creator_is_moderator: Bool
+	public let creator_is_admin: Bool
 	public let counts: PostAggregates
 	public let subscribed: SubscribedType
 	public let saved: Bool
@@ -18,6 +20,8 @@ public struct PostView: Codable, Hashable {
 		creator: Person,
 		community: Community,
 		creator_banned_from_community: Bool,
+		creator_is_moderator: Bool,
+		creator_is_admin: Bool,
 		counts: PostAggregates,
 		subscribed: SubscribedType,
 		saved: Bool,
@@ -30,6 +34,8 @@ public struct PostView: Codable, Hashable {
 		self.creator = creator
 		self.community = community
 		self.creator_banned_from_community = creator_banned_from_community
+		self.creator_is_moderator = creator_is_moderator
+		self.creator_is_admin = creator_is_admin
 		self.counts = counts
 		self.subscribed = subscribed
 		self.saved = saved

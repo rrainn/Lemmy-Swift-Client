@@ -8,15 +8,12 @@ public struct DeletePrivateMessageRequest: APIRequest {
 
 	public let private_message_id: PrivateMessageId
 	public let deleted: Bool
-	public let auth: String
 
 	public init(
 		private_message_id: PrivateMessageId,
-		deleted: Bool,
-		auth: String
+		deleted: Bool
 	) {
 		self.private_message_id = private_message_id
 		self.deleted = deleted
-		self.auth = auth
 	}
 }

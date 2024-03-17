@@ -1,7 +1,6 @@
 import Foundation
 
-public struct LocalSiteRateLimit: Codable, Identifiable, Hashable {
-	public let id: Int
+public struct LocalSiteRateLimit: Codable, Hashable {
 	public let local_site_id: LocalSiteId
 	public let message: Int
 	public let message_per_second: Int
@@ -17,9 +16,10 @@ public struct LocalSiteRateLimit: Codable, Identifiable, Hashable {
 	public let search_per_second: Int
 	public let published: String
 	public let updated: String?
+	public let import_user_settings: Int
+	public let import_user_settings_per_second: Int
 
 	public init(
-		id: Int,
 		local_site_id: LocalSiteId,
 		message: Int,
 		message_per_second: Int,
@@ -34,9 +34,10 @@ public struct LocalSiteRateLimit: Codable, Identifiable, Hashable {
 		search: Int,
 		search_per_second: Int,
 		published: String,
-		updated: String? = nil
+		updated: String? = nil,
+		import_user_settings: Int,
+		import_user_settings_per_second: Int
 	) {
-		self.id = id
 		self.local_site_id = local_site_id
 		self.message = message
 		self.message_per_second = message_per_second
@@ -52,5 +53,7 @@ public struct LocalSiteRateLimit: Codable, Identifiable, Hashable {
 		self.search_per_second = search_per_second
 		self.published = published
 		self.updated = updated
+		self.import_user_settings = import_user_settings
+		self.import_user_settings_per_second = import_user_settings_per_second
 	}
 }

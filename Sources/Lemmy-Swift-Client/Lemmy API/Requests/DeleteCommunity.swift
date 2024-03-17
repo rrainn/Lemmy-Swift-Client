@@ -8,15 +8,12 @@ public struct DeleteCommunityRequest: APIRequest {
 
 	public let community_id: CommunityId
 	public let deleted: Bool
-	public let auth: String
 
 	public init(
 		community_id: CommunityId,
-		deleted: Bool,
-		auth: String
+		deleted: Bool
 	) {
 		self.community_id = community_id
 		self.deleted = deleted
-		self.auth = auth
 	}
 }

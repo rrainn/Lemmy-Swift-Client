@@ -8,16 +8,13 @@ public struct AddAdminRequest: APIRequest {
 
 	public let person_id: PersonId
 	public let added: Bool
-	public let auth: String
 
 	public init(
 		person_id: PersonId,
-		added: Bool,
-		auth: String
+		added: Bool
 	) {
 		self.person_id = person_id
 		self.added = added
-		self.auth = auth
 	}
 }
 

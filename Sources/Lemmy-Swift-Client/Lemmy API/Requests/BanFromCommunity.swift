@@ -12,7 +12,6 @@ public struct BanFromCommunityRequest: APIRequest {
 	public let remove_data: Bool?
 	public let reason: String?
 	public let expires: Int?
-	public let auth: String
 
 	public init(
 		community_id: CommunityId,
@@ -20,8 +19,7 @@ public struct BanFromCommunityRequest: APIRequest {
 		ban: Bool,
 		remove_data: Bool? = nil,
 		reason: String? = nil,
-		expires: Int? = nil,
-		auth: String
+		expires: Int? = nil
 	) {
 		self.community_id = community_id
 		self.person_id = person_id
@@ -29,7 +27,6 @@ public struct BanFromCommunityRequest: APIRequest {
 		self.remove_data = remove_data
 		self.reason = reason
 		self.expires = expires
-		self.auth = auth
 	}
 }
 

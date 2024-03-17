@@ -11,22 +11,19 @@ public struct BanPersonRequest: APIRequest {
 	public let remove_data: Bool?
 	public let reason: String?
 	public let expires: Int?
-	public let auth: String
 
 	public init(
 		person_id: PersonId,
 		ban: Bool,
 		remove_data: Bool? = nil,
 		reason: String? = nil,
-		expires: Int? = nil,
-		auth: String
+		expires: Int? = nil
 	) {
 		self.person_id = person_id
 		self.ban = ban
 		self.remove_data = remove_data
 		self.reason = reason
 		self.expires = expires
-		self.auth = auth
 	}
 }
 

@@ -8,15 +8,12 @@ public struct ResolvePostReportRequest: APIRequest {
 
 	public let report_id: PostReportId
 	public let resolved: Bool
-	public let auth: String
 
 	public init(
 		report_id: PostReportId,
-		resolved: Bool,
-		auth: String
+		resolved: Bool
 	) {
 		self.report_id = report_id
 		self.resolved = resolved
-		self.auth = auth
 	}
 }

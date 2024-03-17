@@ -8,16 +8,13 @@ public struct CreatePostReportRequest: APIRequest {
 
 	public let post_id: PostId
 	public let reason: String
-	public let auth: String
 
 	public init(
 		post_id: PostId,
-		reason: String,
-		auth: String
+		reason: String
 	) {
 		self.post_id = post_id
 		self.reason = reason
-		self.auth = auth
 	}
 }
 

@@ -12,7 +12,6 @@ public struct EditPostRequest: APIRequest {
 	public let body: String?
 	public let nsfw: Bool?
 	public let language_id: LanguageId?
-	public let auth: String
 
 	public init(
 		post_id: PostId,
@@ -20,8 +19,7 @@ public struct EditPostRequest: APIRequest {
 		url: String? = nil,
 		body: String? = nil,
 		nsfw: Bool? = nil,
-		language_id: LanguageId? = nil,
-		auth: String
+		language_id: LanguageId? = nil
 	) {
 		self.post_id = post_id
 		self.name = name
@@ -29,6 +27,5 @@ public struct EditPostRequest: APIRequest {
 		self.body = body
 		self.nsfw = nsfw
 		self.language_id = language_id
-		self.auth = auth
 	}
 }

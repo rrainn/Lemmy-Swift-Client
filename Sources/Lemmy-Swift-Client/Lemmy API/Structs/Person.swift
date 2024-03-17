@@ -14,7 +14,6 @@ public struct Person: Codable, Identifiable, Hashable {
 	public let banner: String?
 	public let deleted: Bool
 	public let matrix_user_id: String?
-	public let admin: Bool
 	public let bot_account: Bool
 	public let ban_expires: String?
 	public let instance_id: InstanceId
@@ -33,7 +32,6 @@ public struct Person: Codable, Identifiable, Hashable {
 		banner: String? = nil,
 		deleted: Bool,
 		matrix_user_id: String? = nil,
-		admin: Bool,
 		bot_account: Bool,
 		ban_expires: String? = nil,
 		instance_id: InstanceId
@@ -51,7 +49,6 @@ public struct Person: Codable, Identifiable, Hashable {
 		self.banner = banner
 		self.deleted = deleted
 		self.matrix_user_id = matrix_user_id
-		self.admin = admin
 		self.bot_account = bot_account
 		self.ban_expires = ban_expires
 		self.instance_id = instance_id

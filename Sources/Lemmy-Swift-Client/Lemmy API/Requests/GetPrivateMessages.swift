@@ -9,18 +9,18 @@ public struct GetPrivateMessagesRequest: APIRequest {
 	public let unread_only: Bool?
 	public let page: Int?
 	public let limit: Int?
-	public let auth: String
+	public let creator_id: PersonId?
 
 	public init(
 		unread_only: Bool? = nil,
 		page: Int? = nil,
 		limit: Int? = nil,
-		auth: String
+		creator_id: PersonId? = nil
 	) {
 		self.unread_only = unread_only
 		self.page = page
 		self.limit = limit
-		self.auth = auth
+		self.creator_id = creator_id
 	}
 }
 

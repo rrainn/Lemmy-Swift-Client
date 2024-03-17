@@ -5,6 +5,7 @@ public enum CommentSortType: String, Codable, CustomStringConvertible, CaseItera
 	case top = "Top"
 	case new = "New"
 	case old = "Old"
+	case controversial = "Controversial"
 
 	public var description: String {
 		return rawValue

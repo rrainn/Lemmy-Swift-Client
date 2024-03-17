@@ -6,7 +6,6 @@ public struct ModRemoveCommunity: Codable, Identifiable, Hashable {
 	public let community_id: CommunityId
 	public let reason: String?
 	public let removed: Bool
-	public let expires: String?
 	public let when_: String
 
 	public init(
@@ -15,7 +14,6 @@ public struct ModRemoveCommunity: Codable, Identifiable, Hashable {
 		community_id: CommunityId,
 		reason: String? = nil,
 		removed: Bool,
-		expires: String? = nil,
 		when_: String
 	) {
 		self.id = id
@@ -23,7 +21,6 @@ public struct ModRemoveCommunity: Codable, Identifiable, Hashable {
 		self.community_id = community_id
 		self.reason = reason
 		self.removed = removed
-		self.expires = expires
 		self.when_ = when_
 	}
 }

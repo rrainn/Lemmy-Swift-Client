@@ -24,6 +24,7 @@ public struct LocalSite: Codable, Identifiable, Hashable {
 	public let updated: String?
 	public let registration_mode: RegistrationMode
 	public let reports_email_admins: Bool
+	public let federation_signed_fetch: Bool
 
 	public init(
 		id: LocalSiteId,
@@ -48,7 +49,8 @@ public struct LocalSite: Codable, Identifiable, Hashable {
 		published: String,
 		updated: String? = nil,
 		registration_mode: RegistrationMode,
-		reports_email_admins: Bool
+		reports_email_admins: Bool,
+		federation_signed_fetch: Bool
 	) {
 		self.id = id
 		self.site_id = site_id
@@ -73,5 +75,6 @@ public struct LocalSite: Codable, Identifiable, Hashable {
 		self.updated = updated
 		self.registration_mode = registration_mode
 		self.reports_email_admins = reports_email_admins
+		self.federation_signed_fetch = federation_signed_fetch
 	}
 }

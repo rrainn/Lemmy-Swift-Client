@@ -18,6 +18,8 @@ public enum SortType: String, Codable, CustomStringConvertible, CaseIterable {
 	case topThreeMonths = "TopThreeMonths"
 	case topSixMonths = "TopSixMonths"
 	case topNineMonths = "TopNineMonths"
+	case controversial = "Controversial"
+	case scaled = "Scaled"
 
 	public var description: String {
 		return rawValue

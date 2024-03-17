@@ -8,16 +8,13 @@ public struct GetPostRequest: APIRequest {
 
 	public let id: PostId?
 	public let comment_id: CommentId?
-	public let auth: String?
 
 	public init(
 		id: PostId? = nil,
-		comment_id: CommentId? = nil,
-		auth: String? = nil
+		comment_id: CommentId? = nil
 	) {
 		self.id = id
 		self.comment_id = comment_id
-		self.auth = auth
 	}
 }
 

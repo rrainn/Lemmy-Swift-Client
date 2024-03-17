@@ -46,7 +46,6 @@ public struct EditSiteRequest: APIRequest {
 	public let taglines: [String]?
 	public let registration_mode: RegistrationMode?
 	public let reports_email_admins: Bool?
-	public let auth: String
 
 	public init(
 		name: String? = nil,
@@ -88,8 +87,7 @@ public struct EditSiteRequest: APIRequest {
 		blocked_instances: [String]? = nil,
 		taglines: [String]? = nil,
 		registration_mode: RegistrationMode? = nil,
-		reports_email_admins: Bool? = nil,
-		auth: String
+		reports_email_admins: Bool? = nil
 	) {
 		self.name = name
 		self.sidebar = sidebar
@@ -131,6 +129,5 @@ public struct EditSiteRequest: APIRequest {
 		self.taglines = taglines
 		self.registration_mode = registration_mode
 		self.reports_email_admins = reports_email_admins
-		self.auth = auth
 	}
 }

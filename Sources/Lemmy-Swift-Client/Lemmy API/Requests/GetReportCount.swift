@@ -7,14 +7,11 @@ public struct GetReportCountRequest: APIRequest {
 	public static let path: String = "/user/report_count"
 
 	public let community_id: CommunityId?
-	public let auth: String
 
 	public init(
-		community_id: CommunityId? = nil,
-		auth: String
+		community_id: CommunityId? = nil
 	) {
 		self.community_id = community_id
-		self.auth = auth
 	}
 }
 

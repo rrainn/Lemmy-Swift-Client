@@ -8,16 +8,13 @@ public struct CreatePrivateMessageRequest: APIRequest {
 
 	public let content: String
 	public let recipient_id: PersonId
-	public let auth: String
 
 	public init(
 		content: String,
-		recipient_id: PersonId,
-		auth: String
+		recipient_id: PersonId
 	) {
 		self.content = content
 		self.recipient_id = recipient_id
-		self.auth = auth
 	}
 }
 

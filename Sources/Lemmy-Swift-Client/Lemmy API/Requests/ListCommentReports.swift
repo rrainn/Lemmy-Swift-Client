@@ -10,20 +10,17 @@ public struct ListCommentReportsRequest: APIRequest {
 	public let limit: Int?
 	public let unresolved_only: Bool?
 	public let community_id: CommunityId?
-	public let auth: String
 
 	public init(
 		page: Int? = nil,
 		limit: Int? = nil,
 		unresolved_only: Bool? = nil,
-		community_id: CommunityId? = nil,
-		auth: String
+		community_id: CommunityId? = nil
 	) {
 		self.page = page
 		self.limit = limit
 		self.unresolved_only = unresolved_only
 		self.community_id = community_id
-		self.auth = auth
 	}
 }
 

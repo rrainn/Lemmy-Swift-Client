@@ -8,16 +8,13 @@ public struct BlockCommunityRequest: APIRequest {
 
 	public let community_id: CommunityId
 	public let block: Bool
-	public let auth: String
 
 	public init(
 		community_id: CommunityId,
-		block: Bool,
-		auth: String
+		block: Bool
 	) {
 		self.community_id = community_id
 		self.block = block
-		self.auth = auth
 	}
 }
 

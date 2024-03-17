@@ -13,7 +13,6 @@ public struct GetPersonDetailsRequest: APIRequest {
 	public let limit: Int?
 	public let community_id: CommunityId?
 	public let saved_only: Bool?
-	public let auth: String?
 
 	public init(
 		person_id: PersonId? = nil,
@@ -22,8 +21,7 @@ public struct GetPersonDetailsRequest: APIRequest {
 		page: Int? = nil,
 		limit: Int? = nil,
 		community_id: CommunityId? = nil,
-		saved_only: Bool? = nil,
-		auth: String? = nil
+		saved_only: Bool? = nil
 	) {
 		self.person_id = person_id
 		self.username = username
@@ -32,7 +30,6 @@ public struct GetPersonDetailsRequest: APIRequest {
 		self.limit = limit
 		self.community_id = community_id
 		self.saved_only = saved_only
-		self.auth = auth
 	}
 }
 
