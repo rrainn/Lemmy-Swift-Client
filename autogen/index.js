@@ -93,7 +93,8 @@ const fs = require("fs").promises;
 			const parsedProperties = [];
 			for (const propertyName of properties.filter((a) => !!a[1])) {
 				let name = propertyName[1].trim();
-				let isOptional = false;
+				// Since the API is pretty unstable at this point we will make all properties optional. That way it won't fail to parse the response if a property is removed or renamed in a future version of the API.
+				let isOptional = true;
 				if (name.endsWith("?")) {
 					name = name.substring(0, name.length - 1);
 					isOptional = true;
