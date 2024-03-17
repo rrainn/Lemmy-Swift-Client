@@ -141,6 +141,11 @@ function lowercaseFirstLetter(str) {
 }
 
 function tsToSwiftType(tsType) {
+	const comment = /(\/\*.*\*\/)/gmu.exec(tsType)?.[1];
+	if (comment) {
+		tsType = tsType.replace(comment, "").trim();
+	}
+
 	switch (tsType) {
 		case "string":
 			return "String";
