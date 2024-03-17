@@ -42,8 +42,8 @@ const fs = require("fs").promises;
 
 		let type = "";
 		if (file.includes("export type ")) {
-			if (/export type (.*) = ([a-zA-Z]*?);/gu.exec(file)) {
-				const regexResult = /export type (.*) = ([a-zA-Z]*?);/gu.exec(file);
+			if (/export type (.*) = ([a-zA-Z\/\* ]*?);/gu.exec(file)) {
+				const regexResult = /export type (.*) = ([a-zA-Z\/\* ]*?);/gu.exec(file);
 
 				const swiftType = tsToSwiftType(regexResult[2]);
 				if (swiftType === undefined) {
