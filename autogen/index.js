@@ -136,7 +136,7 @@ const fs = require("fs").promises;
 	}
 	// Loop through all the requests that don't have a form
 	for (const [name, request] of Object.entries(requests)) {
-		if (request.formExists === false && !request.name.includes("[")) {
+		if (request.formExists === false && !request.name.includes("[") && !request.response.includes("[") && request.response !== "any") {
 			let result = "";
 			result += `public struct ${uppercaseFirstLetter(request.functionName)}Request: APIRequest {\n`;
 			result += `	public typealias Response = ${request.response}
