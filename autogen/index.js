@@ -14,14 +14,18 @@ const fs = require("fs").promises;
 
 	const httpFile = await fs.readFile(path.join(__dirname, "..", "lemmy-js-client", "src", "http.ts"), "utf-8");
 	const requests = {};
-	for (const request of [...httpFile.matchAll(/  \/\*\*\n   \* (.*)\n(?:(?!constructor).|\n)+?\((?:\n| )*?form: (.*?)(?:\n| )*?(?: = \{\})?\) \{\n.+<(?:\n| )*?(.*),(?:\n| )*?(.*)(?:\n| )*?>\(\s*HttpType\.(.*?),\s*"(.*)",\s*form/gmu)]) {
-		requests[request[2]] = {
-			"originalName": request[2],
-			"name": request[2] + "Request",
-			"response": request[4].trim(),
+	for (const request of [...httpFile.matchAll(/  \/\*\*\n   \* (.*)\n(?:.|\n)*?\*\/\n +((?!constructor)\w+?)\((?:\n| )*?(?:form: )?(.*?)?(?:\n| )*?(?: = \{\})?\) \{\n.+<(?:\n| )*?(.*),(?:\n| )*?(.*)(?:\n| )*?>\(\s*HttpType\.(.*?),\s*"(.*)",\s*(?:form|\{\})/gmu)]) {
+		const functionName = request[2].trim();
+		const name = request[3] ?? uppercaseFirstLetter(functionName);
+		requests[name] = {
+			"originalName": name,
+			"name": name + "Request",
+			"response": request[5].trim(),
 			"comment": request[1],
-			"path": request[6],
-			"method": request[5].toLowerCase(),
+			"path": request[7],
+			"method": request[6].toLowerCase(),
+			"formExists": Boolean(request[3]),
+			functionName
 		};
 	}
 
@@ -130,6 +134,28 @@ const fs = require("fs").promises;
 			}
 		}
 	}
+	// Loop through all the requests that don't have a form
+	for (const [name, request] of Object.entries(requests)) {
+		if (request.formExists === false && !request.name.includes("[")) {
+			let result = "";
+			result += `public struct ${uppercaseFirstLetter(request.functionName)}Request: APIRequest {\n`;
+			result += `	public typealias Response = ${request.response}
+
+	public static let httpMethod: HTTPMethod = .${request.method}
+	public static let path: String = "${request.path}"
+	`;
+			result += `
+	public init() {}
+}
+`;
+
+			const folderPath = path.join(__dirname, "..", "Sources", "Lemmy-Swift-Client", "Lemmy API", "Requests");
+			await fs.mkdir(folderPath, { recursive: true });
+			const newFilePath = path.join(folderPath, `${uppercaseFirstLetter(request.functionName)}.swift`);
+			await fs.writeFile(newFilePath, result.trim() + "\n");
+		}
+	}
+	console.log(requests);
 
 	for (const [name, response] of Object.entries(pendingResponses)) {
 		const newFilePath = path.join(__dirname, "..", "Sources", "Lemmy-Swift-Client", "Lemmy API", "Requests", name + ".swift");
@@ -139,6 +165,9 @@ const fs = require("fs").promises;
 
 function lowercaseFirstLetter(str) {
 	return str.charAt(0).toLowerCase() + str.slice(1);
+}
+function uppercaseFirstLetter(str) {
+	return str.charAt(0).toUpperCase() + str.slice(1);
 }
 
 function tsToSwiftType(tsType) {
