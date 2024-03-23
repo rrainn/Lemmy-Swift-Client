@@ -30,8 +30,13 @@ public class LemmyAPI {
 		self.headers = headers
 		self.urlSession = urlSession
 	}
-
-	public func urlRequest<T: APIRequest>(_ apiRequest: T) throws -> URLRequest {
+	
+	/// Method to get a ``URLRequest`` for a given Lemmy API request.
+	/// - Parameters:
+	///   - apiRequest: The API request object you want to run.
+	///   - auth: The JWT token for your auth command.
+	/// - Returns: ``URLRequest`` that you can run.
+	public func urlRequest<T: APIRequest>(_ apiRequest: T, auth: String? = nil) throws -> URLRequest {
 		var request = URLRequest(url: baseUrl.appending(path: T.path))
 		request.httpMethod = T.httpMethod.rawValue
 		let encoder = JSONEncoder()
@@ -48,15 +53,22 @@ public class LemmyAPI {
 			request.httpBody = try encoder.encode(apiRequest)
 		}
 		request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+		if let auth {
+			request.setValue("Bearer \(auth)", forHTTPHeaderField: "Authorization")
+		}
 		return request
 	}
 
 	/// Do request to lemmy server and return URLSession result
-	public func baseRequest<T: APIRequest>(_ apiRequest: T) async throws
+	/// - Parameters:
+	///   - apiRequest: The API request object you want to run.
+	///   - auth: The JWT token for your auth command.
+	/// - Returns: A tuple of the response, ``URLResponse`` & ``Data``
+	public func baseRequest<T: APIRequest>(_ apiRequest: T, auth: String? = nil) async throws
 		-> (T.Response, URLResponse, Data)
 	{
 		// Make Request
-		let request = try urlRequest(apiRequest)
+		let request = try urlRequest(apiRequest, auth: auth)
 		let (data, response) = try await urlSession.data(for: request)
 		if let urlResponse = response as? HTTPURLResponse,
 		   urlResponse.statusCode != 200
@@ -77,9 +89,14 @@ public class LemmyAPI {
 			throw LemmyAPIError.decodeError(error, data: data, request: request)
 		}
 	}
-
-	public func request<T: APIRequest>(_ apiRequest: T) async throws -> T.Response {
-		let (result, _, _) = try await baseRequest(apiRequest)
+	
+	/// Method to get a type safe Lemmy response for the given request.
+	/// - Parameters:
+	///   - apiRequest: The API request object you want to run.
+	///   - auth: The JWT token for your auth command.
+	/// - Returns: The Lemmy API response.
+	public func request<T: APIRequest>(_ apiRequest: T, auth: String? = nil) async throws -> T.Response {
+		let (result, _, _) = try await baseRequest(apiRequest, auth: auth)
 		return result
 	}
 }
