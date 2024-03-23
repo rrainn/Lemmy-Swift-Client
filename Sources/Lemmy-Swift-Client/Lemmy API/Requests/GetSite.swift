@@ -1,6 +1,13 @@
-import Foundation
+public struct GetSiteRequest: APIRequest {
+	public typealias Response = GetSiteResponse
 
-public struct GetSiteResponse: Codable, Hashable {
+	public static let httpMethod: HTTPMethod = .get
+	public static let path: String = "/site"
+	
+	public init() {}
+}
+
+public struct GetSiteResponse: APIResponse {
 	public let site_view: SiteView?
 	public let admins: [PersonView]?
 	public let version: String?
