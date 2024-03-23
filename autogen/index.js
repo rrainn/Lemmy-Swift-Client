@@ -155,7 +155,6 @@ const fs = require("fs").promises;
 			await fs.writeFile(newFilePath, result.trim() + "\n");
 		}
 	}
-	console.log(requests);
 
 	for (const [name, response] of Object.entries(pendingResponses)) {
 		const newFilePath = path.join(__dirname, "..", "Sources", "Lemmy-Swift-Client", "Lemmy API", "Requests", name + ".swift");
