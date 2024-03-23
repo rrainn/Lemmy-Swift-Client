@@ -14,11 +14,11 @@ const fs = require("fs").promises;
 
 	const httpFile = await fs.readFile(path.join(__dirname, "..", "lemmy-js-client", "src", "http.ts"), "utf-8");
 	const requests = {};
-	for (const request of [...httpFile.matchAll(/  \/\*\*\n   \* (.*)\n(?:.|\n)+?\(form: (.*?)(?: = \{\})?\) \{\n.+<(.*), (.*)>\(\s*HttpType\.(.*?),\s*"(.*)",\s*form/gmu)]) {
+	for (const request of [...httpFile.matchAll(/  \/\*\*\n   \* (.*)\n(?:(?!constructor).|\n)+?\((?:\n| )*?form: (.*?)(?:\n| )*?(?: = \{\})?\) \{\n.+<(?:\n| )*?(.*),(?:\n| )*?(.*)(?:\n| )*?>\(\s*HttpType\.(.*?),\s*"(.*)",\s*form/gmu)]) {
 		requests[request[2]] = {
 			"originalName": request[2],
 			"name": request[2] + "Request",
-			"response": request[4],
+			"response": request[4].trim(),
 			"comment": request[1],
 			"path": request[6],
 			"method": request[5].toLowerCase(),
