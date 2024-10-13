@@ -143,6 +143,10 @@ const fs = require("fs").promises;
 	}
 	// Loop through all the requests that don't have a form
 	for (const [name, request] of Object.entries(requests)) {
+		if (name == "ExportSettings") {
+			// ExportSettings has a response value of `string` which isn't currently valid since this library is setup to decode JSON for every response.
+			continue;
+		}
 		if (request.formExists === false && !request.name.includes("[") && !request.response.includes("[") && request.response !== "any") {
 			let result = "";
 			result += `public struct ${uppercaseFirstLetter(request.functionName)}Request: APIRequest {\n`;
