@@ -9,7 +9,6 @@ public struct SaveUserSettingsRequest: APIRequest {
 	public let show_nsfw: Bool?
 	public let blur_nsfw: Bool?
 	public let auto_expand: Bool?
-	public let show_scores: Bool?
 	public let theme: String?
 	public let default_sort_type: SortType?
 	public let default_listing_type: ListingType?
@@ -32,12 +31,15 @@ public struct SaveUserSettingsRequest: APIRequest {
 	public let enable_keyboard_navigation: Bool?
 	public let enable_animated_images: Bool?
 	public let collapse_bot_comments: Bool?
+	public let show_scores: Bool?
+	public let show_upvotes: Bool?
+	public let show_downvotes: Bool?
+	public let show_upvote_percentage: Bool?
 
 	public init(
 		show_nsfw: Bool? = nil,
 		blur_nsfw: Bool? = nil,
 		auto_expand: Bool? = nil,
-		show_scores: Bool? = nil,
 		theme: String? = nil,
 		default_sort_type: SortType? = nil,
 		default_listing_type: ListingType? = nil,
@@ -59,12 +61,15 @@ public struct SaveUserSettingsRequest: APIRequest {
 		post_listing_mode: PostListingMode? = nil,
 		enable_keyboard_navigation: Bool? = nil,
 		enable_animated_images: Bool? = nil,
-		collapse_bot_comments: Bool? = nil
+		collapse_bot_comments: Bool? = nil,
+		show_scores: Bool? = nil,
+		show_upvotes: Bool? = nil,
+		show_downvotes: Bool? = nil,
+		show_upvote_percentage: Bool? = nil
 	) {
 		self.show_nsfw = show_nsfw
 		self.blur_nsfw = blur_nsfw
 		self.auto_expand = auto_expand
-		self.show_scores = show_scores
 		self.theme = theme
 		self.default_sort_type = default_sort_type
 		self.default_listing_type = default_listing_type
@@ -87,5 +92,9 @@ public struct SaveUserSettingsRequest: APIRequest {
 		self.enable_keyboard_navigation = enable_keyboard_navigation
 		self.enable_animated_images = enable_animated_images
 		self.collapse_bot_comments = collapse_bot_comments
+		self.show_scores = show_scores
+		self.show_upvotes = show_upvotes
+		self.show_downvotes = show_downvotes
+		self.show_upvote_percentage = show_upvote_percentage
 	}
 }

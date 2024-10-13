@@ -12,9 +12,9 @@ public struct Site: Codable, Identifiable, Hashable {
 	public let actor_id: String?
 	public let last_refreshed_at: String?
 	public let inbox_url: String?
-	public let private_key: String?
 	public let public_key: String?
 	public let instance_id: InstanceId?
+	public let content_warning: String?
 
 	public init(
 		id: SiteId? = nil,
@@ -28,9 +28,9 @@ public struct Site: Codable, Identifiable, Hashable {
 		actor_id: String? = nil,
 		last_refreshed_at: String? = nil,
 		inbox_url: String? = nil,
-		private_key: String? = nil,
 		public_key: String? = nil,
-		instance_id: InstanceId? = nil
+		instance_id: InstanceId? = nil,
+		content_warning: String? = nil
 	) {
 		self.id = id
 		self.name = name
@@ -43,8 +43,8 @@ public struct Site: Codable, Identifiable, Hashable {
 		self.actor_id = actor_id
 		self.last_refreshed_at = last_refreshed_at
 		self.inbox_url = inbox_url
-		self.private_key = private_key
 		self.public_key = public_key
 		self.instance_id = instance_id
+		self.content_warning = content_warning
 	}
 }

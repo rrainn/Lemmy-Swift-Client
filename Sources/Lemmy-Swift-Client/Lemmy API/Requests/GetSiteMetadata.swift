@@ -16,10 +16,10 @@ public struct GetSiteMetadataRequest: APIRequest {
 }
 
 public struct GetSiteMetadataResponse: APIResponse {
-	public let metadata: SiteMetadata?
+	public let metadata: LinkMetadata?
 
 	public init(
-		metadata: SiteMetadata? = nil
+		metadata: LinkMetadata? = nil
 	) {
 		self.metadata = metadata
 	}

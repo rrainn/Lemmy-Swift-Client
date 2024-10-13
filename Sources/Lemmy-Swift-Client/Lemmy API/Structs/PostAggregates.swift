@@ -7,6 +7,7 @@ public struct PostAggregates: Codable, Hashable {
 	public let upvotes: Int?
 	public let downvotes: Int?
 	public let published: String?
+	public let newest_comment_time: String?
 
 	public init(
 		post_id: PostId? = nil,
@@ -14,7 +15,8 @@ public struct PostAggregates: Codable, Hashable {
 		score: Int? = nil,
 		upvotes: Int? = nil,
 		downvotes: Int? = nil,
-		published: String? = nil
+		published: String? = nil,
+		newest_comment_time: String? = nil
 	) {
 		self.post_id = post_id
 		self.comments = comments
@@ -22,5 +24,6 @@ public struct PostAggregates: Codable, Hashable {
 		self.upvotes = upvotes
 		self.downvotes = downvotes
 		self.published = published
+		self.newest_comment_time = newest_comment_time
 	}
 }

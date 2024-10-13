@@ -25,6 +25,8 @@ public struct LocalSite: Codable, Identifiable, Hashable {
 	public let registration_mode: RegistrationMode?
 	public let reports_email_admins: Bool?
 	public let federation_signed_fetch: Bool?
+	public let default_post_listing_mode: PostListingMode?
+	public let default_sort_type: SortType?
 
 	public init(
 		id: LocalSiteId? = nil,
@@ -50,7 +52,9 @@ public struct LocalSite: Codable, Identifiable, Hashable {
 		updated: String? = nil,
 		registration_mode: RegistrationMode? = nil,
 		reports_email_admins: Bool? = nil,
-		federation_signed_fetch: Bool? = nil
+		federation_signed_fetch: Bool? = nil,
+		default_post_listing_mode: PostListingMode? = nil,
+		default_sort_type: SortType? = nil
 	) {
 		self.id = id
 		self.site_id = site_id
@@ -76,5 +80,7 @@ public struct LocalSite: Codable, Identifiable, Hashable {
 		self.registration_mode = registration_mode
 		self.reports_email_admins = reports_email_admins
 		self.federation_signed_fetch = federation_signed_fetch
+		self.default_post_listing_mode = default_post_listing_mode
+		self.default_sort_type = default_sort_type
 	}
 }

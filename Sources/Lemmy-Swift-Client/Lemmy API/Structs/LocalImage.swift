@@ -1,6 +1,6 @@
 import Foundation
 
-public struct ImageUpload: Codable, Hashable {
+public struct LocalImage: Codable, Hashable {
 	public let local_user_id: LocalUserId?
 	public let pictrs_alias: String?
 	public let pictrs_delete_token: String?

@@ -10,17 +10,20 @@ public struct ListPostReportsRequest: APIRequest {
 	public let limit: Int?
 	public let unresolved_only: Bool?
 	public let community_id: CommunityId?
+	public let post_id: PostId?
 
 	public init(
 		page: Int? = nil,
 		limit: Int? = nil,
 		unresolved_only: Bool? = nil,
-		community_id: CommunityId? = nil
+		community_id: CommunityId? = nil,
+		post_id: PostId? = nil
 	) {
 		self.page = page
 		self.limit = limit
 		self.unresolved_only = unresolved_only
 		self.community_id = community_id
+		self.post_id = post_id
 	}
 }
 

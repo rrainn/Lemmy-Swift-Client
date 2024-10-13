@@ -16,6 +16,7 @@ public struct GetSiteResponse: APIResponse {
 	public let discussion_languages: [LanguageId]?
 	public let taglines: [Tagline]?
 	public let custom_emojis: [CustomEmojiView]?
+	public let blocked_urls: [LocalSiteUrlBlocklist]?
 
 	public init(
 		site_view: SiteView? = nil,
@@ -25,7 +26,8 @@ public struct GetSiteResponse: APIResponse {
 		all_languages: [Language]? = nil,
 		discussion_languages: [LanguageId]? = nil,
 		taglines: [Tagline]? = nil,
-		custom_emojis: [CustomEmojiView]? = nil
+		custom_emojis: [CustomEmojiView]? = nil,
+		blocked_urls: [LocalSiteUrlBlocklist]? = nil
 	) {
 		self.site_view = site_view
 		self.admins = admins
@@ -35,5 +37,6 @@ public struct GetSiteResponse: APIResponse {
 		self.discussion_languages = discussion_languages
 		self.taglines = taglines
 		self.custom_emojis = custom_emojis
+		self.blocked_urls = blocked_urls
 	}
 }

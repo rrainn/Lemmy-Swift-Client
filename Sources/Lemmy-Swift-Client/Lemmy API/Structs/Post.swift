@@ -22,6 +22,8 @@ public struct Post: Codable, Identifiable, Hashable {
 	public let language_id: LanguageId?
 	public let featured_community: Bool?
 	public let featured_local: Bool?
+	public let url_content_type: String?
+	public let alt_text: String?
 
 	public init(
 		id: PostId? = nil,
@@ -44,7 +46,9 @@ public struct Post: Codable, Identifiable, Hashable {
 		embed_video_url: String? = nil,
 		language_id: LanguageId? = nil,
 		featured_community: Bool? = nil,
-		featured_local: Bool? = nil
+		featured_local: Bool? = nil,
+		url_content_type: String? = nil,
+		alt_text: String? = nil
 	) {
 		self.id = id
 		self.name = name
@@ -67,5 +71,7 @@ public struct Post: Codable, Identifiable, Hashable {
 		self.language_id = language_id
 		self.featured_community = featured_community
 		self.featured_local = featured_local
+		self.url_content_type = url_content_type
+		self.alt_text = alt_text
 	}
 }

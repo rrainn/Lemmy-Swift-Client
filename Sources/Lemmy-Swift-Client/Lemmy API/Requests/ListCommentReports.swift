@@ -6,17 +6,20 @@ public struct ListCommentReportsRequest: APIRequest {
 	public static let httpMethod: HTTPMethod = .get
 	public static let path: String = "/comment/report/list"
 
+	public let comment_id: CommentId?
 	public let page: Int?
 	public let limit: Int?
 	public let unresolved_only: Bool?
 	public let community_id: CommunityId?
 
 	public init(
+		comment_id: CommentId? = nil,
 		page: Int? = nil,
 		limit: Int? = nil,
 		unresolved_only: Bool? = nil,
 		community_id: CommunityId? = nil
 	) {
+		self.comment_id = comment_id
 		self.page = page
 		self.limit = limit
 		self.unresolved_only = unresolved_only

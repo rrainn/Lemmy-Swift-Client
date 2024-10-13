@@ -19,6 +19,7 @@ public struct EditSiteRequest: APIRequest {
 	public let private_instance: Bool?
 	public let default_theme: String?
 	public let default_post_listing_type: ListingType?
+	public let default_sort_type: SortType?
 	public let legal_information: String?
 	public let application_email_admins: Bool?
 	public let hide_modlog_mod_names: Bool?
@@ -43,9 +44,12 @@ public struct EditSiteRequest: APIRequest {
 	public let captcha_difficulty: String?
 	public let allowed_instances: [String]?
 	public let blocked_instances: [String]?
+	public let blocked_urls: [String]?
 	public let taglines: [String]?
 	public let registration_mode: RegistrationMode?
 	public let reports_email_admins: Bool?
+	public let content_warning: String?
+	public let default_post_listing_mode: PostListingMode?
 
 	public init(
 		name: String? = nil,
@@ -61,6 +65,7 @@ public struct EditSiteRequest: APIRequest {
 		private_instance: Bool? = nil,
 		default_theme: String? = nil,
 		default_post_listing_type: ListingType? = nil,
+		default_sort_type: SortType? = nil,
 		legal_information: String? = nil,
 		application_email_admins: Bool? = nil,
 		hide_modlog_mod_names: Bool? = nil,
@@ -85,9 +90,12 @@ public struct EditSiteRequest: APIRequest {
 		captcha_difficulty: String? = nil,
 		allowed_instances: [String]? = nil,
 		blocked_instances: [String]? = nil,
+		blocked_urls: [String]? = nil,
 		taglines: [String]? = nil,
 		registration_mode: RegistrationMode? = nil,
-		reports_email_admins: Bool? = nil
+		reports_email_admins: Bool? = nil,
+		content_warning: String? = nil,
+		default_post_listing_mode: PostListingMode? = nil
 	) {
 		self.name = name
 		self.sidebar = sidebar
@@ -102,6 +110,7 @@ public struct EditSiteRequest: APIRequest {
 		self.private_instance = private_instance
 		self.default_theme = default_theme
 		self.default_post_listing_type = default_post_listing_type
+		self.default_sort_type = default_sort_type
 		self.legal_information = legal_information
 		self.application_email_admins = application_email_admins
 		self.hide_modlog_mod_names = hide_modlog_mod_names
@@ -126,8 +135,11 @@ public struct EditSiteRequest: APIRequest {
 		self.captcha_difficulty = captcha_difficulty
 		self.allowed_instances = allowed_instances
 		self.blocked_instances = blocked_instances
+		self.blocked_urls = blocked_urls
 		self.taglines = taglines
 		self.registration_mode = registration_mode
 		self.reports_email_admins = reports_email_admins
+		self.content_warning = content_warning
+		self.default_post_listing_mode = default_post_listing_mode
 	}
 }

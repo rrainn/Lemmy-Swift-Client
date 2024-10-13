@@ -17,6 +17,7 @@ public struct Community: Codable, Identifiable, Hashable {
 	public let hidden: Bool?
 	public let posting_restricted_to_mods: Bool?
 	public let instance_id: InstanceId?
+	public let visibility: CommunityVisibility?
 
 	public init(
 		id: CommunityId? = nil,
@@ -34,7 +35,8 @@ public struct Community: Codable, Identifiable, Hashable {
 		banner: String? = nil,
 		hidden: Bool? = nil,
 		posting_restricted_to_mods: Bool? = nil,
-		instance_id: InstanceId? = nil
+		instance_id: InstanceId? = nil,
+		visibility: CommunityVisibility? = nil
 	) {
 		self.id = id
 		self.name = name
@@ -52,5 +54,6 @@ public struct Community: Codable, Identifiable, Hashable {
 		self.hidden = hidden
 		self.posting_restricted_to_mods = posting_restricted_to_mods
 		self.instance_id = instance_id
+		self.visibility = visibility
 	}
 }

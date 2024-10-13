@@ -14,6 +14,7 @@ public struct CreateCommunityRequest: APIRequest {
 	public let nsfw: Bool?
 	public let posting_restricted_to_mods: Bool?
 	public let discussion_languages: [LanguageId]?
+	public let visibility: CommunityVisibility?
 
 	public init(
 		name: String? = nil,
@@ -23,7 +24,8 @@ public struct CreateCommunityRequest: APIRequest {
 		banner: String? = nil,
 		nsfw: Bool? = nil,
 		posting_restricted_to_mods: Bool? = nil,
-		discussion_languages: [LanguageId]? = nil
+		discussion_languages: [LanguageId]? = nil,
+		visibility: CommunityVisibility? = nil
 	) {
 		self.name = name
 		self.title = title
@@ -33,6 +35,7 @@ public struct CreateCommunityRequest: APIRequest {
 		self.nsfw = nsfw
 		self.posting_restricted_to_mods = posting_restricted_to_mods
 		self.discussion_languages = discussion_languages
+		self.visibility = visibility
 	}
 }
 
