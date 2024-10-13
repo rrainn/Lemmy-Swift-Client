@@ -64,7 +64,14 @@ const fs = require("fs").promises;
 				result += `public enum ${/export type (.*) =/gu.exec(file)[1]}: String, Codable, CustomStringConvertible, CaseIterable {\n`;
 				const cases = [...file.matchAll(/"(.*?)"/gu)];
 				for (const caseName of cases.filter((a) => !!a[1])) {
-					result += `\tcase ${lowercaseFirstLetter(caseName[1])} = "${caseName[1]}"\n`;
+					let finalCaseName = lowercaseFirstLetter(caseName[1]);
+					switch (finalCaseName) {
+						case "public":
+							finalCaseName = "publicValue";
+						default:
+							break;
+					}
+					result += `\tcase ${finalCaseName} = "${caseName[1]}"\n`;
 				}
 				result += `
 	public var description: String {
