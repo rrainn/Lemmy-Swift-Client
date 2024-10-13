@@ -1,7 +1,7 @@
 import Foundation
 
 public enum CommunityVisibility: String, Codable, CustomStringConvertible, CaseIterable {
-	case public = "Public"
+	case publicValue = "Public"
 	case localOnly = "LocalOnly"
 
 	public var description: String {
