@@ -16,6 +16,8 @@ public struct GetPostsRequest: APIRequest {
 	public let liked_only: Bool?
 	public let disliked_only: Bool?
 	public let show_hidden: Bool?
+	public let show_read: Bool?
+	public let show_nsfw: Bool?
 	public let page_cursor: PaginationCursor?
 
 	public init(
@@ -29,6 +31,8 @@ public struct GetPostsRequest: APIRequest {
 		liked_only: Bool? = nil,
 		disliked_only: Bool? = nil,
 		show_hidden: Bool? = nil,
+		show_read: Bool? = nil,
+		show_nsfw: Bool? = nil,
 		page_cursor: PaginationCursor? = nil
 	) {
 		self.type_ = type_
@@ -41,6 +45,8 @@ public struct GetPostsRequest: APIRequest {
 		self.liked_only = liked_only
 		self.disliked_only = disliked_only
 		self.show_hidden = show_hidden
+		self.show_read = show_read
+		self.show_nsfw = show_nsfw
 		self.page_cursor = page_cursor
 	}
 }

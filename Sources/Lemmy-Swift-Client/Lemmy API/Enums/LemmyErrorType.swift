@@ -29,6 +29,8 @@ public enum LemmyErrorType: String, Codable, CustomStringConvertible, CaseIterab
 	case not_top_admin = "not_top_admin"
 	case not_top_mod = "not_top_mod"
 	case not_logged_in = "not_logged_in"
+	case not_higher_mod = "not_higher_mod"
+	case not_higher_admin = "not_higher_admin"
 	case site_ban = "site_ban"
 	case deleted = "deleted"
 	case banned_from_community = "banned_from_community"
@@ -165,6 +167,8 @@ public enum LemmyErrorType: String, Codable, CustomStringConvertible, CaseIterab
 	case url_without_domain = "url_without_domain"
 	case inbox_timeout = "inbox_timeout"
 	case unknown = "unknown"
+	case cant_delete_site = "cant_delete_site"
+	case url_length_overflow = "url_length_overflow"
 
 	public var description: String {
 		return rawValue

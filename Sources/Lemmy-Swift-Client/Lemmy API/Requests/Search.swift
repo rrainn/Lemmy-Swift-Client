@@ -15,6 +15,7 @@ public struct SearchRequest: APIRequest {
 	public let listing_type: ListingType?
 	public let page: Int?
 	public let limit: Int?
+	public let post_title_only: Bool?
 
 	public init(
 		q: String? = nil,
@@ -25,7 +26,8 @@ public struct SearchRequest: APIRequest {
 		sort: SortType? = nil,
 		listing_type: ListingType? = nil,
 		page: Int? = nil,
-		limit: Int? = nil
+		limit: Int? = nil,
+		post_title_only: Bool? = nil
 	) {
 		self.q = q
 		self.community_id = community_id
@@ -36,6 +38,7 @@ public struct SearchRequest: APIRequest {
 		self.listing_type = listing_type
 		self.page = page
 		self.limit = limit
+		self.post_title_only = post_title_only
 	}
 }
 

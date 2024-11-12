@@ -6,12 +6,12 @@ public struct ApproveRegistrationApplicationRequest: APIRequest {
 	public static let httpMethod: HTTPMethod = .put
 	public static let path: String = "/admin/registration_application/approve"
 
-	public let id: Int?
+	public let id: RegistrationApplicationId?
 	public let approve: Bool?
 	public let deny_reason: String?
 
 	public init(
-		id: Int? = nil,
+		id: RegistrationApplicationId? = nil,
 		approve: Bool? = nil,
 		deny_reason: String? = nil
 	) {

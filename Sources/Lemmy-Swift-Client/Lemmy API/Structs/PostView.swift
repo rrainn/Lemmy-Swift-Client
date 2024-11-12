@@ -4,6 +4,7 @@ public struct PostView: Codable, Hashable {
 	public let post: Post?
 	public let creator: Person?
 	public let community: Community?
+	public let image_details: ImageDetails?
 	public let creator_banned_from_community: Bool?
 	public let banned_from_community: Bool?
 	public let creator_is_moderator: Bool?
@@ -21,6 +22,7 @@ public struct PostView: Codable, Hashable {
 		post: Post? = nil,
 		creator: Person? = nil,
 		community: Community? = nil,
+		image_details: ImageDetails? = nil,
 		creator_banned_from_community: Bool? = nil,
 		banned_from_community: Bool? = nil,
 		creator_is_moderator: Bool? = nil,
@@ -37,6 +39,7 @@ public struct PostView: Codable, Hashable {
 		self.post = post
 		self.creator = creator
 		self.community = community
+		self.image_details = image_details
 		self.creator_banned_from_community = creator_banned_from_community
 		self.banned_from_community = banned_from_community
 		self.creator_is_moderator = creator_is_moderator

@@ -1,7 +1,7 @@
 import Foundation
 
 public struct RegistrationApplication: Codable, Identifiable, Hashable {
-	public let id: Int?
+	public let id: RegistrationApplicationId?
 	public let local_user_id: LocalUserId?
 	public let answer: String?
 	public let admin_id: PersonId?
@@ -9,7 +9,7 @@ public struct RegistrationApplication: Codable, Identifiable, Hashable {
 	public let published: String?
 
 	public init(
-		id: Int? = nil,
+		id: RegistrationApplicationId? = nil,
 		local_user_id: LocalUserId? = nil,
 		answer: String? = nil,
 		admin_id: PersonId? = nil,
